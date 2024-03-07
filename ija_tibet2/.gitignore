@@ -1,0 +1,17 @@
+.idea
+*.iml
+target
+lib
+overlays
+.settings
+.classpath
+/bin/
+*.db
+/build/
+*.eml
+download
+build.xml
+restart.bat
+build.xml
+
+FrankConfig.xsd

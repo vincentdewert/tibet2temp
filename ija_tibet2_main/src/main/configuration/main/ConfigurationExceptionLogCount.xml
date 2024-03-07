@@ -1,0 +1,48 @@
+<module>
+	<adapter name="ExceptionLogCount" description="Logs data from a query"
+			active="${ExceptionLogCount.active}"
+			>
+			<receiver name="ExceptionLogCount" 
+			>
+				<listener name="ExceptionLogCount" className="nl.nn.adapterframework.receivers.JavaListener" />
+		</receiver>
+		<pipeline firstPipe="selectQuery">
+			<exits><exit name="EXIT" state="success" /></exits>
+			
+			<SenderPipe name="selectQuery" 
+					storeResultInSessionKey="selectQuery">
+				<FixedQuerySender 
+							query="${queryForLog}"
+							queryType="select">
+				</FixedQuerySender>
+				<forward name="success" path="formatQueryToLog"/>
+			</SenderPipe>
+			
+			<pipe name="formatQueryToLog" 
+					className="nl.nn.adapterframework.pipes.XsltPipe"
+					styleSheetName="ExceptionLogCount/xsl/QueryFormat4Output.xsl"
+					storeResultInSessionKey="formatQuery"
+					xsltVersion="2">
+				<forward name="success" path="writeFile"/>
+			</pipe> 
+			
+			<LocalFileSystemPipe name="writeFile"
+					action="append"
+					getInputFromSessionKey="formatQuery"
+					filename="${log.dir}/ija_tibet2-exceptionlogcount.log"
+					rotateSize="1000000"
+					numberOfBackups="3">
+				<forward name="success" path="EXIT" />
+			</LocalFileSystemPipe>
+		</pipeline>
+	</adapter>
+	
+	<scheduler active="${ExceptionLogCount.active}">
+		<SendMessageJob name="job_Query2Log"
+			javaListener="ExceptionLogCount"
+			cronExpression="${ExceptionLogCount.cron}"
+			description="logs results of a select query">
+		</SendMessageJob>
+	</scheduler>
+
+</module>

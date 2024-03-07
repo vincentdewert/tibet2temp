@@ -1,0 +1,43 @@
+<module>
+	<adapter name="GenerateWsdl-get" active="${generateWsdl.active}">
+		<receiver 
+			name="GenerateWsdl-get">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="GenerateWsdl-get" uriPattern="wsdl" method="GET" />
+		</receiver>
+		<pipeline firstPipe="generateWsdl">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<pipe name="generateWsdl" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="GenerateWsdl/xsl/GenerateWsdl.xsl" xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;">
+				<forward name="success" path="EXIT" />
+			</pipe>
+
+		</pipeline>
+	</adapter>
+	<adapter name="GenerateWsdl-post" active="${generateWsdl.active}">
+		<receiver 
+			name="GenerateWsdl-post">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="GenerateWsdl-post" uriPattern="wsdl" method="POST" />
+		</receiver>
+		<pipeline firstPipe="generateWsdl">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<pipe name="generateWsdl"
+				className="nl.nn.adapterframework.extensions.esb.WsdlGeneratorPipe">
+				<forward name="success" path="showGeneratedWsdl" />
+			</pipe>
+
+			<pipe name="showGeneratedWsdl" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="GenerateWsdl/xsl/ShowGeneratedWsdl.xsl" xsltVersion="2">
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

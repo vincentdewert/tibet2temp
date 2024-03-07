@@ -1,0 +1,44 @@
+<result>
+	<fielddefinition>
+		<field name="APPLICATIONFUNCTION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+		<field name="TYPE" type="CHAR" columnDisplaySize="1" precision="1" scale="0" isCurrency="false" columnTypeName="CHAR" columnClassName="java.lang.String"/>
+		<field name="COUNTER" type="NUMERIC" columnDisplaySize="22" precision="0" scale="-127" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+	</fielddefinition>
+	<rowset>
+		<row number="0">
+			<field name="APPLICATIONFUNCTION">Notify</field>
+			<field name="TYPE">A</field>
+			<field name="COUNTER">77</field>
+		</row>
+		<row number="1">
+			<field name="APPLICATIONFUNCTION">Notify.2</field>
+			<field name="TYPE">E</field>
+			<field name="COUNTER">7</field>
+		</row>
+		<row number="2">
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="TYPE">A</field>
+			<field name="COUNTER">640</field>
+		</row>
+		<row number="3">
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="TYPE">A</field>
+			<field name="COUNTER">560</field>
+		</row>
+		<row number="4">
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="TYPE">E</field>
+			<field name="COUNTER">65</field>
+		</row>
+		<row number="5">
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="TYPE">A</field>
+			<field name="COUNTER">600</field>
+		</row>
+		<row number="6">
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="TYPE">E</field>
+			<field name="COUNTER">16</field>
+		</row>
+	</rowset>
+</result>

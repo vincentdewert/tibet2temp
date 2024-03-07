@@ -1,0 +1,17 @@
+package test;
+
+import nl.nn.adapterframework.extensions.test.IbisTester;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import static org.junit.Assert.assertEquals;
+
+public class LarvaTest {
+
+    @Test
+    public void test() {
+        System.setProperty("ttxslce.active", "false");
+        IbisTester ibisTester = new IbisTester();
+        assertEquals(null, ibisTester.doTest());
+    }
+}

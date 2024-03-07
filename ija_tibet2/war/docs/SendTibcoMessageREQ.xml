@@ -1,0 +1,41 @@
+<Request>
+	<QueueConnectionFactory>qcf_tibco_esb_rr</QueueConnectionFactory>
+	<QueueDestination>ESB.CollectionAndDisbursement.TS.CollectionsDisbursements.CollectionsDisbursements.1.GetOutstandingBalanceOnPolicy.1.Request</QueueDestination>
+	<Timeout>10000</Timeout>
+	<Text><![CDATA[
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://nn.nl/XSD/Generic/MessageHeader/1" xmlns:ns1="http://nn.nl/XSD/CollectionAndDisbursement/CollectionsDisbursements/CollectionsDisbursements/1/GetOutstandingBalanceOnPolicy/1">
+	<SOAP-ENV:Header>
+		<MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/1">
+			<From>
+				<Id>GetOutstandingBalanceOnPolicy</Id>
+				<Location>ESB.CollectionAndDisbursement.TS.CollectionsDisbursements.CollectionsDisbursements.1.GetOutstandingBalanceOnPolicy.1.Request</Location>
+			</From>
+			<To>
+				<Location>ESB.CollectionAndDisbursement.TS.CollectionsDisbursements.CollectionsDisbursements.1.GetOutstandingBalanceOnPolicy.1.Request</Location>
+			</To>
+			<HeaderFields>
+				<CPAId>Policy</CPAId>
+				<ConversationId>07572563_82560281-fdac-4c73-8d19-4e944f4add05</ConversationId>
+				<MessageId>07572563_82560281-fdac-4c73-8d19-4e944f4add05</MessageId>
+				<Timestamp>2015-12-15T12:42:00</Timestamp>
+			</HeaderFields>
+			<Service>
+				<Name>CollectionsDisbursements</Name>
+				<Context>CollectionsDisbursements</Context>
+				<Action>
+					<Pradigm>Request</Pradigm>
+					<Name>GetOutstandingBalanceOnPolicy</Name>
+					<Version>1</Version>
+				</Action>
+			</Service>
+		</MessageHeader>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<ns1:Request>
+			<ns1:policyReference>07572563</ns1:policyReference>
+			<ns1:saldoDatum>2015-09-11</ns1:saldoDatum>
+		</ns1:Request>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+]]></Text>
+</Request>

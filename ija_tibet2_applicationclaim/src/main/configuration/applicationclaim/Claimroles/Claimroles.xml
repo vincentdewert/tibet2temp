@@ -1,0 +1,9 @@
+<!--This is a file with static values: make sure to change extractrole.xsl when changing this file  -->
+<roles>
+<role>CN=GRAPAB-TIBET2_BANK-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+<role>CN=GRAPAB-TIBET2_CNC-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+<role>CN=GRAPAB-TIBET2_NON-LIFE-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+<role>CN=GRAPAB-TIBET2_PENSIONS-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+<role>CN=GRAPAB-TIBET2_SERVICES-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+<role>CN=GRAPAB-TIBET2_TCT5-RW,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</role>
+</roles>

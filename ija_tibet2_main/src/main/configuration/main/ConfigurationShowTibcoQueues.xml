@@ -1,0 +1,636 @@
+<module>
+	<adapter name="GetEsbInfo">
+		<receiver
+			name="GetEsbInfo"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="GetEsbInfo" />
+		</receiver>
+		<pipeline firstPipe="getEsbInfo">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): uri, provUrl, qcf -->
+			<pipe
+				name="getEsbInfo"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="GetTibcoQueues/xsl/GetEsbInfo.xsl"
+				xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param name="uri" sessionKey="uri" />
+				<param name="provUrl" sessionKey="provUrl" />
+				<param name="qcf" sessionKey="qcf" />
+				<param name="esb_rr_url" value="${esb.rr.url}" />
+				<param name="esb_rr_alias" value="${esb.rr.alias}" />
+				<param name="esb_ff_url" value="${esb.ff.url}" />
+				<param name="esb_ff_alias" value="${esb.ff.alias}" />
+				<param name="esb_rr_large_url" value="${esb.rr.large.url}" />
+				<param name="esb_rr_large_alias" value="${esb.rr.large.alias}" />
+				<param name="esb_ff_log_url" value="${esb.ff.log.url}" />
+				<param name="esb_ff_log_alias" value="${esb.ff.log.alias}" />
+				<param name="p2p_rr_url" value="${p2p.rr.url}" />
+				<param name="p2p_rr_alias" value="${p2p.rr.alias}" />
+				<param name="p2p_ff_url" value="${p2p.ff.url}" />
+				<param name="p2p_ff_alias" value="${p2p.ff.alias}" />
+				<param name="p2p_rr_large_url" value="${p2p.rr.large.url}" />
+				<param name="p2p_rr_large_alias" value="${p2p.rr.large.alias}" />
+				
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="GetTibcoQueues">
+		<receiver
+			name="GetTibcoQueues"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="GetTibcoQueues" />
+		</receiver>
+		<pipeline firstPipe="getEsbInfo">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): uri, provUrl, queueName, queueItem, showAge, countOnly, timeout , infoOnly -->
+			<SenderPipe
+				name="getEsbInfo"
+			>
+				<sender
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetEsbInfo"
+				>
+					<param name="uri" sessionKey="uri" />
+					<param name="provUrl" sessionKey="provUrl" />
+				</sender>
+				<forward name="success" path="switchEsbInfo" />
+			</SenderPipe>
+			<pipe
+				name="switchEsbInfo"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(esbInfo/error)=0"
+			>
+				<forward name="true" path="getTibcoQueues" />
+				<forward name="false" path="error" />
+			</pipe>
+			<pipe
+				name="getTibcoQueues"
+				className="nl.nn.adapterframework.extensions.tibco.GetTibcoQueues"
+				skipTemporaryQueues="true"
+				throwException="false"
+				hideMessage="${getTibcoQueues.hideMessage}"
+				timeout="${getTibcoQueues.timeout}"
+				queueRegex="^(ESB|P2P)\..*"
+			>
+				<param name="url" xpathExpression="esbInfo/provUrl" />
+				<param name="authAlias" xpathExpression="esbInfo/authAlias" />
+				<param name="queueName" sessionKey="queueName" />
+				<param name="queueItem" sessionKey="queueItem" />
+				<param name="showAge" sessionKey="showAge" />
+				<param name="countOnly" sessionKey="countOnly" />
+				<param name="timeout" sessionKey="timeout" />
+				<param name="ldapUrl" value="${ldap.url}" />
+				<param name="infoOnly" sessionKey="infoOnly" />
+				
+				<forward name="success" path="EXIT" />
+			</pipe>
+			<pipe
+				name="error"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="GetTibcoQueues/xsl/GetError.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="CountTibcoQueuePublic">
+		<receiver
+			name="CountTibcoQueuePublic"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="CountTibcoQueuePublic"
+				uriPattern="qcount"
+				method="GET"
+				restPath="/rest-public"
+				view="false" />
+		</receiver>
+		<pipeline firstPipe="setContentType">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<pipe
+				name="setContentType"
+				className="nl.nn.adapterframework.pipes.PutInSession"
+				sessionKey="contentType"
+				value="text/plain"
+			>
+				<forward
+					name="success"
+					path="getTibcoQueues" />
+			</pipe>
+			<SenderPipe
+				name="getTibcoQueues"
+			>
+				<sender
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetTibcoQueues"
+				>
+					<param
+						name="provUrl"
+						sessionKey="provUrl" />
+					<param
+						name="queueName"
+						sessionKey="queueName" />
+					<param
+						name="countOnly"
+						value="true" />
+					<param
+						name="timeout"
+						sessionKey="timeout" />
+				</sender>
+				<forward
+					name="success"
+					path="switchGetTibcoQueues" />
+			</SenderPipe>
+			<pipe
+				name="switchGetTibcoQueues"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="name(*)='error'"
+			>
+				<forward
+					name="true"
+					path="error" />
+				<forward
+					name="false"
+					path="qCount" />
+			</pipe>
+			<pipe
+				name="qCount"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="qCount"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+			<FixedResultPipe
+				name="error"
+				returnString="error"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+		</pipeline>
+	</adapter>
+	<adapter name="ShowTibcoQueues">
+		<receiver
+			name="ShowTibcoQueues"
+			
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ShowTibcoQueues"
+				uriPattern="queues"
+				method="GET" />
+		</receiver>
+		<pipeline firstPipe="getTibcoQueues">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+			<SenderPipe
+				name="getTibcoQueues"
+			>
+				<sender
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetTibcoQueues"
+				>
+					<param name="uri" sessionKey="uri" />
+					<param name="queueName" sessionKey="queueName" />
+					<param name="queueItem" sessionKey="queueItem" />
+					<param name="showAge" sessionKey="showAge" />
+					<param name="countOnly" value="false" />
+					<param name="timeout" sessionKey="timeout" />
+					<param name="infoOnly" sessionKey="infoOnly" />
+				</sender>
+				<forward name="success" path="showTibcoQueues" />
+			</SenderPipe>
+			<!-- <LocalFileSystemPipe name="checkDirectory" action="list" inputFolder="C:/Users/vincent.de.wert/Documents/tibet2project/"/> -->
+			<!-- <FixedResultPipe name="StubMessageQueueLog"
+				filename="C:/Users/vincent.de.wert/Documents/tibet2project/showTibcoQueues_ESB_RR.xml">
+				<Forward name="success" path="showTibcoQueues"/>
+			</FixedResultPipe> -->
+			<pipe
+				name="showTibcoQueues"
+				className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="ShowTibcoQueues/xsl/ShowTibcoQueues.xsl"
+				xsltVersion="2"
+			>
+				<param name="showAge" sessionKey="showAge" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="StoreShowTibcoQueueToFileSystem">
+		<receiver
+			name="StoreShowTibcoQueueToFileSystem"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="StoreShowTibcoQueueToFileSystem" />
+		</receiver>
+		<pipeline firstPipe="setFileName">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): uri, showAge -->
+			<pipe
+				name="setFileName"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="concat('${log.dir}/showTibcoQueues_', $serverAlias, '.xml')"
+				storeResultInSessionKey="fileName" preserveInput="true"
+			>
+				<param name="serverAlias" xpathExpression="url" />
+				
+				<forward name="success" path="getTibcoQueues" />
+			</pipe>
+			<SenderPipe
+				name="getTibcoQueues"
+				storeResultInSessionKey="inputdocument"
+				active="!${GettibcoQueuesLocallyStubbed.active}"
+			>
+				<sender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetTibcoQueues"
+				>
+					<param name="uri" sessionKey="uri" />
+					<param name="showAge" sessionKey="showAge" />
+				</sender>
+				<forward name="success" path="writeFile" />
+			</SenderPipe>
+			<SenderPipe
+				name="getTibcoQueues"
+				storeResultInSessionKey="inputdocument"
+				active="${GettibcoQueuesLocallyStubbed.active}"
+			>
+				<sender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetTibcoQueues_OneType"
+				>
+					<param name="uri" sessionKey="uri" />
+					<param name="showAge" sessionKey="showAge" />
+				</sender>
+				<forward name="success" path="writeFile" />
+			</SenderPipe>
+			<pipe
+				name="writeFile"
+				className="nl.nn.adapterframework.pipes.LocalFileSystemPipe"
+				action="write"
+				preserveInput="true"
+				overwrite="true"
+			>
+				<param name="filename" sessionKey="fileName"/>
+				<forward name="success" path="getQueues" />
+			</pipe>
+			<pipe
+				name="getQueues"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				active="!${GettibcoQueuesLocallyStubbed.active}"
+				styleSheetName="ShowTibcoQueues/xsl/GetQueues.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="EXIT" />
+			</pipe>
+			<pipe
+				name="getQueues"
+				className="nl.nn.adapterframework.pipes.EchoPipe"
+				active="${GettibcoQueuesLocallyStubbed.active}"
+			>
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="StoreShowTibcoQueuesToFileSystem">
+		<receiver
+			name="StoreShowTibcoQueuesToFileSystem"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="StoreShowTibcoQueuesToFileSystem" />
+		</receiver>
+		<pipeline firstPipe="getUrls">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+			<FixedResultPipe
+				name="getUrls"
+				filename="ShowTibcoQueues/xml/Urls.xml"
+			>
+				<forward name="success" path="showTibcoQueues" />
+			</FixedResultPipe>
+			<pipe name="showTibcoQueues"
+				className="nl.nn.adapterframework.pipes.ForEachChildElementPipe"
+				elementXPathExpression="urls/url"
+				parallel="true"
+			>
+				<sender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="StoreShowTibcoQueueToFileSystem"
+				>
+					<param name="uri" xpathExpression="concat('/queues/',url)" />
+					<param name="showAge" value="true" />
+				</sender>
+				<forward name="success" path="deduplicateResults" />
+			</pipe>
+			<pipe
+				name="deduplicateResults"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowTibcoQueues/xsl/DeduplicateResults.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="formatQueues" />
+			</pipe>
+			<pipe
+				name="formatQueues"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowTibcoQueues/xsl/FormatQueues.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="writeFile" />
+			</pipe>
+			<pipe
+				name="writeFile"
+				className="nl.nn.adapterframework.pipes.LocalFileSystemPipe"
+				action="write"
+				preserveInput="true"
+				root="${log.dir}"
+				overwrite="true">
+
+				<param name="filename" value="${storeShowTibcoQueuesToFileSystem.fileName}"/>
+				<forward name="success" path="createAllTibcos" />
+			</pipe>
+			<pipe
+				name="createAllTibcos"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowTibcoQueues/xsl/CreateQnamesPlusBdAndSap.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="removeDuplicates" />
+			</pipe>
+			<pipe
+				name="removeDuplicates"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowTibcoQueues/xsl/RemoveDuplicates.xsl"
+				xsltVersion="2"
+			>
+				<forward name="success" path="writeAllTibcosFile" />
+			</pipe>
+			
+			<pipe
+				name="writeAllTibcosFile"
+				className="nl.nn.adapterframework.pipes.LocalFileSystemPipe"
+				action="write"
+				root="${log.dir}"
+				overwrite="true"
+			>
+				<param name="filename" value="allTibcoQueues.xml"/>
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<scheduler>
+		<SendMessageJob
+			name="jobStoreShowTibcoQueuesToFileSystem"
+			javaListener="StoreShowTibcoQueuesToFileSystem"
+			cronExpression="${storeShowTibcoQueuesToFileSystem.schedule.cron}"
+			description="Store ShowTibcoQueues to file system" />
+	</scheduler>
+	<adapter
+		name="ManageEmsRest"
+		active="${manageEmsRest.active}"
+	>
+		<receiver
+			name="ManageEmsRestGet"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ManageEmsRestGet"
+				uriPattern="queues2"
+				method="GET" />
+		</receiver>
+		<receiver
+			name="ManageEmsRestPost"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ManageEmsRestPost"
+				uriPattern="queues2"
+				method="POST" />
+		</receiver>
+		<receiver
+			name="ManageEmsRestPut"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ManageEmsRestPut"
+				uriPattern="queues2"
+				method="PUT" />
+		</receiver>
+		<receiver
+			name="ManageEmsRestDelete"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ManageEmsRestDelete"
+				uriPattern="queues2"
+				method="DELETE" />
+		</receiver>
+		<pipeline firstPipe="json2xml">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<pipe
+				name="json2xml"
+				className="nl.nn.adapterframework.pipes.JsonPipe"
+				skipOnEmptyInput="true"
+				ifParam="input"
+				ifValue="json"
+			>
+				<param
+					name="input"
+					sessionKey="input"
+					defaultValue="json" />
+				<forward
+					name="success"
+					path="storeOriginalRequest" />
+			</pipe>
+			<pipe
+				name="storeOriginalRequest"
+				className="nl.nn.adapterframework.pipes.PutInSession"
+				sessionKey="originalRequest"
+			>
+				<forward
+					name="success"
+					path="getEsbInfo" />
+			</pipe>
+			<SenderPipe
+				name="getEsbInfo"
+				storeResultInSessionKey="esbInfo"
+			>
+				<sender
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetEsbInfo"
+				>
+					<param
+						name="uri"
+						sessionKey="uri" />
+				</sender>
+				<forward
+					name="success"
+					path="switchEsbInfo" />
+			</SenderPipe>
+			<pipe
+				name="switchEsbInfo"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(esbInfo/error)=0"
+			>
+				<forward
+					name="true"
+					path="manageEmsREQ" />
+				<forward
+					name="false"
+					path="errorUnknownServerAlias" />
+			</pipe>
+			<pipe
+				name="errorUnknownServerAlias"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="concat($start, $serverAlias, $end)"
+			>
+				<param
+					name="start"
+					value="&lt;error&gt;unknown server alias [" />
+				<param
+					name="serverAlias"
+					xpathExpression="esbInfo/serverAlias" />
+				<param
+					name="end"
+					value="]&lt;/error&gt;" />
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+			<pipe
+				name="manageEmsREQ"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ManageEms/xsl/ManageEmsREQ.xsl"
+				xsltVersion="2"
+				emptyInputReplacement="&lt;dummy/&gt;"
+				getInputFromSessionKey="originalRequest"
+			>
+				<param
+					name="method"
+					sessionKey="method" />
+				<param
+					name="uri"
+					sessionKey="uri" />
+				<param
+					name="esbInfo"
+					sessionKey="esbInfo"
+					type="domdoc" />
+				<forward
+					name="success"
+					path="switchReadQueue" />
+			</pipe>
+			<pipe
+				name="switchReadQueue"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="root/action='readQueue' and string-length(root/queueName)=0"
+			>
+				<forward
+					name="true"
+					path="getTibcoQueues" />
+				<forward
+					name="false"
+					path="manageEms" />
+			</pipe>
+			<pipe
+				name="getTibcoQueues"
+				className="nl.nn.adapterframework.extensions.tibco.GetTibcoQueues"
+				skipTemporaryQueues="true"
+				throwException="false"
+				hideMessage="${getTibcoQueues.hideMessage}"
+				timeout="${getTibcoQueues.timeout}"
+				queueRegex="^(ESB|P2P)\..*"
+			>
+				<param
+					name="url"
+					xpathExpression="root/url" />
+				<param
+					name="authAlias"
+					xpathExpression="root/authAlias" />
+				<param
+					name="queueName"
+					sessionKey="root/queueName" />
+				<param
+					name="ldapUrl"
+					value="${ldap.url}" />
+				<param
+					name="infoOnly"
+					value="true" />
+				<forward
+					name="success"
+					path="xml2json" />
+			</pipe>
+			<pipe
+				name="manageEms"
+				className="nl.nn.adapterframework.extensions.tibco.ManageEmsPipe"
+			>
+				<param
+					name="url"
+					xpathExpression="root/url" />
+				<param
+					name="authAlias"
+					xpathExpression="root/authAlias" />
+				<param
+					name="action"
+					xpathExpression="root/action" />
+				<param
+					name="queueName"
+					xpathExpression="root/queueName" />
+				<param
+					name="principal"
+					xpathExpression="root/principal" />
+				<param
+					name="permissions"
+					xpathExpression="root/permissions" />
+				<forward
+					name="success"
+					path="xml2json" />
+			</pipe>
+			<pipe
+				name="xml2json"
+				className="nl.nn.adapterframework.pipes.JsonPipe"
+				direction="xml2json"
+				skipOnEmptyInput="true"
+				ifParam="output"
+				ifValue="json"
+			>
+				<param
+					name="output"
+					sessionKey="output"
+					defaultValue="json" />
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

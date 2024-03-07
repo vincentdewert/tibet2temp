@@ -1,0 +1,13 @@
+<!DOCTYPE configuration [
+	
+]>
+<configuration name="ija_tibet2">
+
+	<jmsRealms>
+		<jmsRealm realmName="jdbc" datasourceName="jdbc/ija_tibet2" />
+		<jmsRealm realmName="qcf_tibco_esb_ff_log" queueConnectionFactoryName="jms/qcf_tibco_esb_ff_log" />
+	</jmsRealms>
+
+
+
+</configuration>

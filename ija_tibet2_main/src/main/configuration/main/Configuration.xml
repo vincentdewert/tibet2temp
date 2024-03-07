@@ -1,0 +1,47 @@
+<!DOCTYPE configuration [
+
+	<!ENTITY ApplicationLog SYSTEM "./ConfigurationApplicationLog.xml">
+	<!ENTITY AuditLog SYSTEM "./ConfigurationAuditLog.xml">
+	<!ENTITY ExceptionLog SYSTEM "./ConfigurationExceptionLog.xml">
+	<!ENTITY CleanTableAuditLog SYSTEM "./ConfigurationCleanTableAuditLog.xml">
+	<!ENTITY CleanTableExceptionLog SYSTEM "./ConfigurationCleanTableExceptionLog.xml">
+
+	<!ENTITY SendTibcoMessage SYSTEM "./ConfigurationSendTibcoMessage.xml">
+	<!ENTITY ResendFromExceptionLog SYSTEM "./ConfigurationResendFromExceptionLog.xml">
+	<!ENTITY DeleteFromExceptionLog SYSTEM "./ConfigurationDeleteFromExceptionLog.xml">
+	<!ENTITY AuthorisationCheck SYSTEM "./ConfigurationAuthorisationCheck.xml">
+	<!ENTITY AuthorisationLog SYSTEM "./ConfigurationAuthorisationLog.xml">
+
+	<!ENTITY GenerateWsdl SYSTEM "./ConfigurationGenerateWsdl.xml">
+	<!ENTITY ShowFxF3v2Log SYSTEM "./ConfigurationShowFxF3v2Log.xml">
+	<!ENTITY ExceptionLogCount SYSTEM "ConfigurationExceptionLogCount.xml">
+	<!ENTITY ConfigurationShowTibcoQueues SYSTEM "ConfigurationShowTibcoQueues.xml">
+	
+	<!ENTITY StoreJsonLocalFileSystem SYSTEM "ConfigurationStoreJsonLocalFileSystem.xml">
+]>
+
+<configuration name="main">
+
+	<!-- functional adapters -->
+
+  	&ApplicationLog;
+	&AuthorisationLog;
+	&AuditLog;
+	&ExceptionLog;
+	&CleanTableAuditLog;
+	&CleanTableExceptionLog;
+	&SendTibcoMessage;
+	&ResendFromExceptionLog;
+	&DeleteFromExceptionLog;
+	&AuthorisationCheck;
+
+	<!-- TiBeT2 screen adapters -->
+	&GenerateWsdl;
+	&ShowFxF3v2Log;
+	&ConfigurationShowTibcoQueues;
+	&ExceptionLogCount;
+
+	<!-- Test adapters -->
+	&StoreJsonLocalFileSystem;
+
+</configuration>

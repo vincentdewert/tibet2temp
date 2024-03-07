@@ -1,0 +1,18 @@
+<result>
+	<fielddefinition>
+		<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+		<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+		<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+		<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+		<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	</fielddefinition>
+	<rowset>
+		<row number="0">
+			<field name="BUSINESSDOMAIN">SalesForceSupport</field>
+			<field name="SERVICENAME">Opportunity</field>
+			<field name="SERVICECONTEXT">OpportunitySalesForceSupport</field>
+			<field name="APPLICATIONNAME">Opportunity_2</field>
+			<field name="OPERATIONNAME">HandleOpportunity</field>
+		</row>
+	</rowset>
+</result>

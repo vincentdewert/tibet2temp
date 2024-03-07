@@ -1,0 +1,8 @@
+/*
+ * specific permissions for this ibis-project.
+ */
+
+grant codeBase "file:${application}" { 
+  // required for rerun from exceptionlog
+  permission java.security.SecurityPermission "printIdentity";
+};

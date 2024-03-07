@@ -1,0 +1,575 @@
+<result>
+	<rowset>
+		<row number="0">
+			<field name="ROWNUMBER">1</field>
+			<field name="LOGID">15236491</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID" null="true"/>
+			<field name="CPAID">SRTZZAPP0157-NNT12345-Ibis4SapCD-</field>
+			<field name="APPLICATIONFUNCTION">Notify</field>
+			<field name="LOG_TS">2015-10-28 17:08:57</field>
+			<field name="SENDERID">P2P.General.Ibis4SapCD.FileTransfer.Action</field>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA4051:22C16B69</JMSMessageID>
+						<JMSTimestamp>1446048537186</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSType>EMSAlert</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<Body>
+						<AuditResponse schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd">
+							<ResponseType>Alert</ResponseType>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID>CA2850007102</AuditID>
+								<CKPTInterval>5</CKPTInterval>
+								<CKPTCount/>
+								<NodeName>SRTZZAPP0093</NodeName>
+								<InitiatorFileName>E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis992342932585330387.*</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>Binary</Conversion>
+								<Department>ING NN</Department>
+								<Description>NNT12345-Ibis4SapCD</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IA28500009</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName>SRTZZAPP0157</ServerName>
+								<ZOSAllocationType/>
+								<ZOSAllocationPrimary>0</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>0</ZOSAllocationSecondary>
+								<ZOSRecordFormat/>
+								<ZOSRecordLength>0</ZOSRecordLength>
+								<ZOSBlocksize>0</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4sapcd/NNX12345/$(LocalFileName)</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>0</TransferByteCount>
+								<TransferCompressedByteCount>0</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-10-28T16:57:00</TransferStartDateTime>
+								<TransferEndDateTime>2015-10-28T16:57:01</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNT12345</ProcessName>
+								<UserData>NNT12345-Ibis4SapCD</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>One or more files transferred successfully. Success:2 Failure:0</TransferStatusMsg>
+								<InitiatorUserId>NPATZZAPP0014</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass/>
+								<ZOSAllocationDirectory/>
+								<Priority>2</Priority>
+								<RecordCount>1</RecordCount>
+								<NodeType/>
+								<NTDomain>INSIM</NTDomain>
+								<IPPort>46464</IPPort>
+								<ResponderTransactionID/>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError>N</TempError>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode/>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>0</TryCount>
+								<MaxTryCount>1</MaxTryCount>
+								<UNIXFilePermissions/>
+								<VersionNum>7.1.1</VersionNum>
+							</AuditRecord>
+						</AuditResponse>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="1">
+			<field name="ROWNUMBER">2</field>
+			<field name="LOGID">15236490</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID" null="true"/>
+			<field name="CPAID">SRTZZAPP0157-NNT12345-Ibis4SapCD-RA28502463</field>
+			<field name="APPLICATIONFUNCTION">Notify</field>
+			<field name="LOG_TS">2015-10-28 17:08:57</field>
+			<field name="SENDERID">P2P.General.Ibis4SapCD.FileTransfer.Action</field>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA4051:22C16B5F</JMSMessageID>
+						<JMSTimestamp>1446048537133</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSType>EMSAlert</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<Body>
+						<AuditResponse schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd">
+							<ResponseType>Alert</ResponseType>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID>CA2850007101</AuditID>
+								<CKPTInterval>5</CKPTInterval>
+								<CKPTCount/>
+								<NodeName>SRTZZAPP0093</NodeName>
+								<InitiatorFileName>E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis992342932585330387.xml</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>Binary</Conversion>
+								<Department>ING NN</Department>
+								<Description>NNT12345-Ibis4SapCD</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IA28500011</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName>SRTZZAPP0157</ServerName>
+								<ZOSAllocationType/>
+								<ZOSAllocationPrimary>0</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>0</ZOSAllocationSecondary>
+								<ZOSRecordFormat/>
+								<ZOSRecordLength>0</ZOSRecordLength>
+								<ZOSBlocksize>0</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4sapcd/NNX12345/ibis992342932585330387.xml</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>30</TransferByteCount>
+								<TransferCompressedByteCount>0</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-10-28T16:57:01</TransferStartDateTime>
+								<TransferEndDateTime>2015-10-28T16:57:01</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNT12345</ProcessName>
+								<UserData>NNT12345-Ibis4SapCD</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>Transfer Completed Successfully.</TransferStatusMsg>
+								<InitiatorUserId>NPATZZAPP0014</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass/>
+								<ZOSAllocationDirectory/>
+								<Priority>2</Priority>
+								<RecordCount>1</RecordCount>
+								<NodeType/>
+								<NTDomain>INSIM</NTDomain>
+								<IPPort>46464</IPPort>
+								<ResponderTransactionID>RA28502463</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError>N</TempError>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode/>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>1</TryCount>
+								<MaxTryCount>1</MaxTryCount>
+								<UNIXFilePermissions/>
+								<VersionNum>7.1.1</VersionNum>
+							</AuditRecord>
+						</AuditResponse>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="2">
+			<field name="ROWNUMBER">3</field>
+			<field name="LOGID">15236489</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID" null="true"/>
+			<field name="CPAID">SRTZZAPP0157-NNT12345-Ibis4SapCD-RA28502462</field>
+			<field name="APPLICATIONFUNCTION">Notify</field>
+			<field name="LOG_TS">2015-10-28 17:08:57</field>
+			<field name="SENDERID">P2P.General.Ibis4SapCD.FileTransfer.Action</field>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA4051:22C16B55</JMSMessageID>
+						<JMSTimestamp>1446048537077</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSType>EMSAlert</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<Body>
+						<AuditResponse schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd">
+							<ResponseType>Alert</ResponseType>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID>CA2850007100</AuditID>
+								<CKPTInterval>5</CKPTInterval>
+								<CKPTCount/>
+								<NodeName>SRTZZAPP0093</NodeName>
+								<InitiatorFileName>E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis992342932585330387.txt</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>Binary</Conversion>
+								<Department>ING NN</Department>
+								<Description>NNT12345-Ibis4SapCD</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IA28500010</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName>SRTZZAPP0157</ServerName>
+								<ZOSAllocationType/>
+								<ZOSAllocationPrimary>0</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>0</ZOSAllocationSecondary>
+								<ZOSRecordFormat/>
+								<ZOSRecordLength>0</ZOSRecordLength>
+								<ZOSBlocksize>0</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4sapcd/NNX12345/ibis992342932585330387.txt</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>7</TransferByteCount>
+								<TransferCompressedByteCount>0</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-10-28T16:57:00</TransferStartDateTime>
+								<TransferEndDateTime>2015-10-28T16:57:01</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNT12345</ProcessName>
+								<UserData>NNT12345-Ibis4SapCD</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>Transfer Completed Successfully.</TransferStatusMsg>
+								<InitiatorUserId>NPATZZAPP0014</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass/>
+								<ZOSAllocationDirectory/>
+								<Priority>2</Priority>
+								<RecordCount>1</RecordCount>
+								<NodeType/>
+								<NTDomain>INSIM</NTDomain>
+								<IPPort>46464</IPPort>
+								<ResponderTransactionID>RA28502462</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError>N</TempError>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode/>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>1</TryCount>
+								<MaxTryCount>1</MaxTryCount>
+								<UNIXFilePermissions/>
+								<VersionNum>7.1.1</VersionNum>
+							</AuditRecord>
+						</AuditResponse>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="9">
+			<field name="ROWNUMBER">10</field>
+			<field name="LOGID">15236260</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA385B:376830</field>
+			<field name="CPAID">SRTZZAPP0157-NNT12345-Ibis4SapCD-IA28500009</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-10-28 16:57:05</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA3868:224</JMSMessageID>
+						<JMSTimestamp>1446047825839</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA385B:376830</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IA28500009</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>SRTZZAPP0157</ServerName>
+							<HostName>srtzzapp0157.insim.biz</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>5</CKPTInterval>
+								<CKPTCount/>
+								<NodeName>SRTZZAPP0093</NodeName>
+								<InitiatorFileName>E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis992342932585330387.*</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>Binary</Conversion>
+								<Department/>
+								<Description>NNT12345-Ibis4SapCD</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IA28500009</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName/>
+								<ZOSAllocationType/>
+								<ZOSAllocationPrimary>0</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>0</ZOSAllocationSecondary>
+								<ZOSRecordFormat/>
+								<ZOSRecordLength>0</ZOSRecordLength>
+								<ZOSBlocksize>0</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4sapcd/NNX12345/$(LocalFileName)</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>0</TransferByteCount>
+								<TransferCompressedByteCount>0</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-10-28T16:57:00</TransferStartDateTime>
+								<TransferEndDateTime>2015-10-28T16:57:01</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNT12345</ProcessName>
+								<UserData>NNT12345-Ibis4SapCD</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>One or more files transferred successfully. Success:2 Failure:0</TransferStatusMsg>
+								<InitiatorUserId>NPATZZAPP0014</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass/>
+								<ZOSAllocationDirectory/>
+								<Priority>2</Priority>
+								<RecordCount>1</RecordCount>
+								<NodeType/>
+								<NTDomain>INSIM</NTDomain>
+								<IPPort>46464</IPPort>
+								<ResponderTransactionID/>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError>N</TempError>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode/>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>0</TryCount>
+								<MaxTryCount>1</MaxTryCount>
+								<UNIXFilePermissions/>
+								<VersionNum>7.1.1</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="13">
+			<field name="ROWNUMBER">14</field>
+			<field name="LOGID">15236256</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA385B:376830</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-10-28 16:57:00</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA3868:222</JMSMessageID>
+						<JMSTimestamp>1446047820680</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA385B:376830</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IA28500009</InitiatorTransactionID>
+						<Message>Transaction IA28500009 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully </Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="14">
+			<field name="ROWNUMBER">15</field>
+			<field name="LOGID">15236255</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.1E2755FEA405BA385B:376830</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-10-28 16:57:00</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Ibis4Scan</Id>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>SRTZZAPP0157_0ace08fd--10bc50f5_1507ea0e32d_-6e96</ConversationId>
+								<MessageId>SRTZZAPP0157_0ace08fd--10bc50f5_1507ea0e32d_-6e95</MessageId>
+								<Timestamp>2015-10-28T16:57:00</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>Ibis4Scan</SenderApplication>
+								<RecipientApplication/>
+								<Filename>E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis992342932585330387.*</Filename>
+								<TransferFlowId>NNT12345</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+	</rowset>
+</result>

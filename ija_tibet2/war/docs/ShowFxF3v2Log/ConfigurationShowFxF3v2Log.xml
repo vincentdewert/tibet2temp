@@ -1,0 +1,53 @@
+<module>
+	<adapter name="ShowFxF3v2Log">
+		<receiver 
+			name="ShowFxF3v2Log">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="ShowFxF3v2Log" uriPattern="fxf3v2" method="GET" />
+		</receiver>
+		<pipeline firstPipe="selectSummary">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<FixedResultPipe name="selectSummary" 
+				fileName="ShowFxF3v2Log/xml/summary.xml" storeResultInSessionKey="summary">
+				<forward name="success" path="getXmlBuild" />
+			</FixedResultPipe>
+
+			<FixedResultPipe name="getXmlBuild" 
+				fileName="ShowFxF3v2Log/xml/xmlBuild.xml" storeResultInSessionKey="xmlLogs">
+				<forward name="success" path="getFixedExecutes" />
+			</FixedResultPipe>
+
+
+			<pipe name="getFixedExecutes" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetFixedExecutes.xsl"
+				storeResultInSessionKey="fixedExecutes">
+				<forward name="success" path="getTransfers" />
+			</pipe>
+
+			<pipe name="getTransfers" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetTransfers.xsl" xsltVersion="2"
+				getInputFromSessionKey="xmlLogs" storeResultInSessionKey="transfers">
+				<param name="fixedExecutes" sessionKey="fixedExecutes" type="domdoc" />
+				<forward name="success" path="getJunk" />
+			</pipe>
+
+			<pipe name="getJunk" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetJunk.xsl" xsltVersion="2"
+				getInputFromSessionKey="xmlLogs" storeResultInSessionKey="junk">
+				<param name="transfers" sessionKey="transfers" type="domdoc" />
+				<forward name="success" path="showFxF3v2Log" />
+			</pipe>
+
+			<pipe name="showFxF3v2Log" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/ShowFxF3v2Log.xsl" xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;">
+				<param name="transfers" sessionKey="transfers" type="domdoc" />
+				<param name="junk" sessionKey="junk" type="domdoc" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

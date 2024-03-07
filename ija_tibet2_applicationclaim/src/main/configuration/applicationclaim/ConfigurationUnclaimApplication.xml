@@ -1,0 +1,138 @@
+<adapter
+	name="UnclaimApplication"
+	description="Deletes complete row to unclaim an already claimed ClaimeRole"
+>
+	<receiver
+		name="UnclaimApplication"
+	>
+		<listener
+			name="UnclaimApplication"
+			className="nl.nn.adapterframework.http.rest.ApiListener"
+			uriPattern="unclaimapplications"
+			method="POST" />
+	</receiver>
+	<pipeline firstPipe="FindPrincipal">
+		<exits>
+			<exit
+				name="Exit"
+				state="success"
+				code="201" />
+			<exit
+				name="ERROR"
+				state="error"
+				code="500" />
+		</exits>
+		<pipe
+			name="FindPrincipal"
+			className="nl.nn.adapterframework.pipes.GetPrincipalPipe"
+			storeResultInSessionKey="principal"
+			preserveInput="true"
+		>
+			<forward
+				name="success"
+				path="IsRoleClaimRole" />
+		</pipe>
+		<SenderPipe
+			name="IsRoleClaimRole"
+			storeResultInSessionKey="ResultRoleComparison"
+		>
+			<IbisLocalSender
+				javaListener="checkForStubAndReturnRoles"
+				className="nl.nn.adapterframework.senders.IbisLocalSender"
+			>
+				<param
+					name="principal"
+					sessionKey="principal" />
+			</IbisLocalSender>
+			<forward
+				name="success"
+				path="IfClaimRole" />
+		</SenderPipe>
+		<pipe
+			name="IfClaimRole"
+			className="nl.nn.adapterframework.pipes.XmlIf"
+			xpathExpression="string-length(roles/role[1]/text()) > 0"
+		>
+			<forward
+				name="then"
+				path="StoreInputInfoInSession" />
+			<forward
+				name="else"
+				path="NotAllowed" />
+		</pipe>
+		<FixedResultPipe
+			name="NotAllowed"
+			returnString="&#10060;  Sorry, you don't have any management roles."
+		>
+			<forward
+				name="error"
+				path="ERROR" />
+		</FixedResultPipe>
+		<pipe
+			name="StoreInputInfoInSession"
+			className="nl.nn.adapterframework.pipes.PutInSession"
+		>
+			<param
+				name="ServApplName"
+				sessionKey="originalMessage"
+				xpathExpression="input/servapplname"
+				defaultValue="null" />
+			<param
+				name="BusinessDomain"
+				sessionKey="originalMessage"
+				xpathExpression="input/businessdomain"
+				defaultValue="null" />
+			<param
+				name="ClaimRole"
+				sessionKey="originalMessage"
+				xpathExpression="input/claimrole"
+				defaultValue="null" />
+			<param
+				name="Role"
+				sessionKey="originalMessage"
+				xpathExpression="input/role"
+				defaultValue="null" />
+			<forward
+				name="success"
+				path="DeleteRecords" />
+			<forward
+				name="error"
+				path="ERROR" />
+		</pipe>
+		<SenderPipe
+			name="DeleteRecords"
+		>
+			<IbisLocalSender
+				javaListener="UnclaimDeleteRecords"
+				className="nl.nn.adapterframework.senders.IbisLocalSender"
+			>
+				<param
+					name="ServApplName"
+					sessionKey="ServApplName" />
+				<param
+					name="BusinessDomain"
+					sessionKey="BusinessDomain" />
+				<param
+					name="Role"
+					sessionKey="Role" />
+				<param
+					name="ClaimRole"
+					sessionKey="ClaimRole" />
+			</IbisLocalSender>
+			<forward
+				name="success"
+				path="Exit" />
+		</SenderPipe>
+		<FixedResultPipe
+			name="NotInRole"
+			returnString="&#10060;  Sorry, you don't have permissions to unclaim an application."
+		>
+			<forward
+				name="success"
+				path="Exit" />
+		</FixedResultPipe>
+		<pipe
+			name="ERROR"
+			className="nl.nn.adapterframework.pipes.ExceptionPipe" />
+	</pipeline>
+</adapter>

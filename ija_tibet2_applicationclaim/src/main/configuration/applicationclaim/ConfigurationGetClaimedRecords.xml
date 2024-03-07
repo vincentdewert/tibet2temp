@@ -1,0 +1,170 @@
+<module>
+	<adapter
+		name="GetClaimedRecords"
+		description="Shows all claimed queues belonging to a certain role or combination of roles"
+	>
+		<receiver
+			name="GetClaimedRecords"
+			
+		>
+			<listener
+				name="GetClaimedRecords"
+				className="nl.nn.adapterframework.http.rest.ApiListener"
+				uriPattern="getclaimedrecords"/>
+		</receiver>
+		<pipeline firstPipe="FindPrincipal">
+			<exits>
+				<exit
+					name="EXIT"
+					state="success"
+					code="201" />
+				<exit
+					name="ServerError"
+					state="error"
+					code="500" />
+			</exits>
+			<pipe
+				name="FindPrincipal"
+				className="nl.nn.adapterframework.pipes.GetPrincipalPipe"
+				storeResultInSessionKey="principal"
+			>
+				<forward
+					name="success"
+					path="IsRoleClaimRole" />
+			</pipe>
+			<SenderPipe
+				name="IsRoleClaimRole"
+			>
+				<IbisLocalSender
+					javaListener="checkForStubAndReturnRoles"
+				>
+					<param
+						name="principal"
+						sessionKey="principal" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="IfClaimRole" />
+			</SenderPipe>
+			<pipe
+				name="IfClaimRole"
+				className="nl.nn.adapterframework.pipes.XmlIf"
+				preserveInput="true"
+				xpathExpression="boolean(/roles/role[text()])"
+			>
+				<forward
+					name="then"
+					path="queryDb" />
+				<forward
+					name="else"
+					path="EXIT" />
+			</pipe>
+			<pipe
+				name="queryDb"
+				className="nl.nn.adapterframework.pipes.ForEachChildElementPipe"
+				elementXPathExpression="roles/role"
+			>
+				<sender
+					name="getRecordsFromAuthTable"
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="getRecordsFromAuthTable"
+				></sender>
+				<forward
+					name="exception"
+					path="ServerError" />
+				<forward
+					name="success"
+					path="formatResults" />
+			</pipe>
+			<pipe
+				name="formatResults"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				storeResultInSessionKey="authtablerecords"
+				styleSheetName="xml/xsl/formatQueryResults.xsl"
+			>
+				<forward
+					name="success"
+					path="getAllTibcoQueuesFile" />
+			</pipe>
+			<LocalFileSystemPipe
+				name="getAllTibcoQueuesFile"
+				storeResultInSessionKey="thequeues"
+				action="read"
+				filename="${log.dir}/allTibcoQueues.xml"
+			>
+				<forward
+					name="success"
+					path="combineResults" />
+			</LocalFileSystemPipe>
+			<pipe
+				name="combineResults"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				storeResultInSessionKey="authtablerecords"
+				styleSheetName="xml/xsl/combinefiles.xsl"
+			>
+				<param
+					name="authtablerecords"
+					sessionKey="authtablerecords"
+					type="domdoc" />
+				<forward
+					name="success"
+					path="cleanup" />
+			</pipe>
+			<pipe
+				name="cleanup"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="xml/xsl/cleanup.xsl"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter
+		name="getRecordsFromAuthTable"
+		description="gets the records that belong to a claimed role"
+	>
+		<receiver
+			name="getRecordsFromAuthTable"
+			
+		>
+			<listener
+				name="getRecordsFromAuthTable"
+				className="nl.nn.adapterframework.receivers.JavaListener"
+			>
+			</listener>
+		</receiver>
+		<pipeline firstPipe="SelectItems">
+			<exits>
+				<exit
+					name="Exit"
+					state="success"
+					code="201" />
+				<exit
+					name="ServerError"
+					state="error"
+					code="500" />
+			</exits>
+			<SenderPipe
+				name="SelectItems"
+			>
+				<FixedQuerySender
+					queryType="select"
+					query="SELECT BUSINESSDOMAIN, SERV_APPL_NAME, ROLE, CLAIM_ROLE FROM AUTHORISATION WHERE CLAIM_ROLE=?"
+				>
+					<param
+						name="role"
+						sessionKey="originalMessage"
+						xpathExpression="role" />
+				</FixedQuerySender>
+				<forward
+					name="exception"
+					path="ServerError" />
+				<forward
+					name="success"
+					path="Exit" />
+			</SenderPipe>
+		</pipeline>
+	</adapter>
+</module>

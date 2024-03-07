@@ -1,0 +1,22 @@
+			<pipe className="nl.nn.adapterframework.extensions.tibco.GetTibcoQueues"
+				name="getTibcoQueues" skipTemporaryQueues="true" throwException="false">
+				<param name="url" sessionKey="url" />
+				<!--param name="authAlias" sessionKey="authAlias" /-->
+				<param name="userName" value="NPADZZAPP0132" />
+				<param name="password" value="J.YERf6Wb?ws4m6nCmx!" />
+				<forward name="success" path="switchOutput2" />
+			</pipe>
+
+	<Resource
+		name="jdbc/ija_tibet2"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="TIBCOLOG2_USER"
+		password="wDMjP301"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@srdzzora0021:16560:DXXTIBET"
+		maxActive="10"
+		maxIdle="2"
+		maxWait="30000"
+	/>
+			

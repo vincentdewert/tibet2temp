@@ -1,0 +1,9 @@
+<project default="setup.input.directories">
+	<target name="setup.input.directories">
+		<property name="root.dir" value="D:/TEMP/ija_tibet2"/>
+		<delete dir="${root.dir}"/>
+		<mkdir dir="${root.dir}"/>
+		<touch file="${root.dir}/log.txt"/>
+	</target>
+</project>
+

@@ -1,0 +1,72 @@
+<Envelope>
+    <Header>
+        <MessageHeader>
+            <From>
+                <Id>SubmitTransfer_StartTransfer</Id>
+            </From>
+            <To>
+                <Location>ESB.Infrastructure.US.Log.BusinessLog.2.ExceptionLog.1.Action</Location>
+            </To>
+            <HeaderFields>
+                <CPAId>12501d0eafe74c9e83d3ca528fee0663</CPAId>
+                <ConversationId>8a608743b72b4c159ac53331e720cb72</ConversationId>
+                <MessageId>65146f06e3d846fbb279082fcc37aee2</MessageId>
+                <Timestamp>2015-09-15T10:46:41.885+02:00</Timestamp>
+            </HeaderFields>
+            <Service>
+                <Name>FxF3</Name>
+                <Context>SubmitTransfer</Context>
+                <Action>
+                    <Paradigm>Request</Paradigm>
+                    <Name>StartTransfer</Name>
+                    <Version>2</Version>
+                </Action>
+            </Service>
+        </MessageHeader>
+    </Header>
+    <Body>
+        <AuditLog_Action>
+            <Header>
+                <MessageId>d010936c563342539a144e21167a3728</MessageId>
+                <ConversationId>d010936c563342539a144e21167a3728</ConversationId>
+                <CPAId>I915500000</CPAId>
+                <BusinessDomain>Infrastructure</BusinessDomain>
+                <ServiceName>FxF3</ServiceName>
+                <ServiceContext>SubmitTransfer</ServiceContext>
+                <ServiceContextVersion>2</ServiceContextVersion>
+                <OperationName>StartTransferSubmitted</OperationName>
+                <OperationVersion>2</OperationVersion>
+                <ApplicationName>FxF3.2</ApplicationName>
+                <ApplicationFunction>StartTransferSubmitted</ApplicationFunction>
+                <Timestamp>2015-09-15T10:46:41.885+02:00</Timestamp>
+            </Header>
+            <Message>
+                <Text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms">
+    <JMSHeaders>
+        <jms1:JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</jms1:JMSDestination>
+        <jms1:JMSDeliveryMode>PERSISTENT</jms1:JMSDeliveryMode>
+        <jms1:JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138B608B:127</jms1:JMSMessageID>
+        <jms1:JMSTimestamp>1442306801855</jms1:JMSTimestamp>
+        <jms1:JMSExpiration>0</jms1:JMSExpiration>
+        <jms1:JMSRedelivered>false</jms1:JMSRedelivered>
+        <jms1:JMSPriority>4</jms1:JMSPriority>
+        <jms1:JMSCorrelationID>ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627</jms1:JMSCorrelationID>
+        <jms1:JMSType>Platform-Response</jms1:JMSType>
+    </JMSHeaders>
+    <JMSProperties/>
+    <OtherProperties>
+        <Status>Submit Success</Status>
+        <ResponseType>TransferImmediate</ResponseType>
+        <ReturnCode>0</ReturnCode>
+        <InitiatorTransactionID>I915500000</InitiatorTransactionID>
+        <Message>Transaction I915500000 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully </Message>
+        <NumRecords>0</NumRecords>
+    </OtherProperties>
+</jms1:ActivityOutput>]]></Text>
+                <Type>sent</Type>
+            </Message>
+        </AuditLog_Action>
+    </Body>
+</Envelope>

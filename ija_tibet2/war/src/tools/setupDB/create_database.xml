@@ -1,0 +1,16 @@
+<project default="create.database">
+	<target name="create.database">
+		<exec executable="docker" failonerror="true">
+			<arg value="cp"/>
+			<arg value="create_database.sql"/>
+			<arg value="OracleDatabase:/mnt/create_database.sql"/>
+		</exec>
+		<exec executable="docker" failonerror="true">
+			<arg value="exec"/>
+			<arg value="OracleDatabase"/>
+			<arg value="sqlplus"/>
+			<arg value="ija_tibet2_user/ija_tibet2_user"/>
+			<arg value="@/mnt/create_database.sql"/>
+		</exec>
+	</target>
+</project>

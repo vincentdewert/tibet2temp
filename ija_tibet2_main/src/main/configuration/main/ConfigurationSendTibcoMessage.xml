@@ -1,0 +1,157 @@
+<module>
+	<adapter name="SendTibcoMessage">
+		<receiver 
+			name="SendTibcoMessage">
+			<listener className="nl.nn.adapterframework.receivers.JavaListener"
+				name="SendTibcoMessage" />
+		</receiver>
+		<pipeline firstPipe="getEsbInfo">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<SenderPipe name="getEsbInfo"
+				storeResultInSessionKey="esbInfo">
+				<IbisLocalSender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetEsbInfo">
+					<param name="qcf" xpathExpression="Request/QueueConnectionFactory" />
+				</IbisLocalSender>
+				<forward name="success" path="getMessage" />
+			</SenderPipe>
+
+			<pipe name="getMessage" className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="Request/Text" getInputFromSessionKey="originalMessage">
+				<forward name="success" path="sendTibcoMessage" />
+			</pipe>
+
+			<pipe name="sendTibcoMessage"
+				className="nl.nn.adapterframework.extensions.tibco.SendTibcoMessage">
+				<param name="url" sessionKey="esbInfo" xpathExpression="esbInfo/provUrl" />
+				<param name="authAlias" sessionKey="esbInfo" xpathExpression="esbInfo/authAlias" />
+				<param name="messageProtocol" sessionKey="esbInfo"
+					xpathExpression="esbInfo/messageProtocol" />
+				<param name="queueName" sessionKey="originalMessage"
+					xpathExpression="Request/QueueDestination" />
+				<param name="replyTimeout" sessionKey="originalMessage"
+					xpathExpression="Request/Timeout" />
+				<param name="soapAction" sessionKey="originalMessage"
+					xpathExpression="Request/SoapAction" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="SendTibcoMessage-ws">
+		<receiver 
+			name="SendTibcoMessage-ws">
+			<listener className="nl.nn.adapterframework.http.WebServiceListener"
+				serviceNamespaceURI="http://nn.nl/service/SendTibcoMessage/" />
+		</receiver>
+		<pipeline firstPipe="SendTibcoMessage"
+			storeOriginalMessageWithoutNamespaces="true">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+			
+			<inputValidator className="nl.nn.adapterframework.pipes.XmlValidator"
+				schemaLocation="http://nn.nl/service/SendTibcoMessage/ SendTibcoMessage/xsd/SendTibcoMessage.xsd"
+				root="Request"
+				throwException="true" />
+				
+			<SenderPipe name="SendTibcoMessage"
+				getInputFromSessionKey="originalMessageWithoutNamespaces">
+				<sender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="SendTibcoMessage" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+		</pipeline>
+	</adapter>
+	<adapter name="SendTibcoMessage-get">
+		<receiver 
+			name="SendTibcoMessage-get">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="SendTibcoMessage-get" uriPattern="send" method="GET"
+				authRoles="IbisAdmin,IbisTester" />
+		</receiver>
+		<pipeline firstPipe="sendTibcoMessage">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<pipe name="sendTibcoMessage" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="SendTibcoMessage/xsl/SendTibcoMessage.xsl" xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;">
+				<forward name="success" path="EXIT" />
+			</pipe>
+
+		</pipeline>
+	</adapter>
+	<adapter name="SendTibcoMessage-post">
+		<receiver 
+			name="SendTibcoMessage-post">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="SendTibcoMessage-post" uriPattern="send" method="POST"
+				authRoles="IbisAdmin,IbisTester" />
+		</receiver>
+		<pipeline firstPipe="getEsbInfo">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<SenderPipe name="getEsbInfo"
+				storeResultInSessionKey="esbInfo">
+				<sender className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="GetEsbInfo">
+					<param name="qcf" sessionKey="qcf" />
+				</sender>
+				<forward name="success" path="switchWrap" />
+			</SenderPipe>
+
+			<pipe name="switchWrap" className="nl.nn.adapterframework.pipes.XmlSwitch"
+				forwardNameSessionKey="wrap" notFoundForwardName="sendTibcoMessage"
+				getInputFromSessionKey="message">
+				<forward name="on" path="wrapMessage" />
+			</pipe>
+
+			<pipe name="wrapMessage"
+				className="nl.nn.adapterframework.extensions.esb.DirectWrapperPipe"
+				throwException="false" storeResultInSessionKey="result">
+				<param name="destination" sessionKey="queue" />
+				<param name="cmhVersion" sessionKey="cmhVersion" />
+				<param name="addOutputNamespace" sessionKey="addNamespace" />
+				<forward name="success" path="switchWrapMessage" />
+			</pipe>
+
+			<pipe name="switchWrapMessage" className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="name(*)='error'">
+				<forward name="true" path="showSentTibcoMessage" />
+				<forward name="false" path="sendTibcoMessage" />
+			</pipe>
+
+			<pipe name="sendTibcoMessage"
+				className="nl.nn.adapterframework.extensions.tibco.SendTibcoMessage"
+				throwException="false" storeResultInSessionKey="result">
+				<param name="url" sessionKey="esbInfo" xpathExpression="esbInfo/provUrl" />
+				<param name="authAlias" sessionKey="esbInfo" xpathExpression="esbInfo/authAlias" />
+				<param name="messageProtocol" sessionKey="esbInfo"
+					xpathExpression="esbInfo/messageProtocol" />
+				<param name="queueName" sessionKey="queue" />
+				<param name="replyTimeout" sessionKey="timeout" />
+				<param name="soapAction" sessionKey="soapAction" />
+				<forward name="success" path="showSentTibcoMessage" />
+			</pipe>
+
+			<pipe name="showSentTibcoMessage" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="SendTibcoMessage/xsl/ShowSentTibcoMessage.xsl"
+				xsltVersion="2" getInputFromFixedValue="&lt;dummy/&gt;">
+				<param name="qcf" sessionKey="qcf" />
+				<param name="url" sessionKey="esbInfo" xpathExpression="esbInfo/provUrl" />
+				<param name="queue" sessionKey="queue" />
+				<param name="timeout" sessionKey="timeout" />
+				<param name="soapAction" sessionKey="soapAction" />
+				<param name="message" sessionKey="message" />
+				<param name="result" sessionKey="result" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

@@ -1,0 +1,44 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- 2012-11-23 # Peter Leeuwenburgh # initial version -->
+	<!-- 2012-12-20 # Peter Leeuwenburgh # added CPAId element and moved ExceptionType from ExceptionLog XSD -->
+	<xs:complexType name="HeaderType">
+		<xs:sequence>
+			<xs:element name="MessageId" type="xs:string"/>
+			<xs:element name="ConversationId" type="xs:string" minOccurs="0"/>
+			<xs:element name="CPAId" type="xs:string" minOccurs="0"/>
+			<xs:element name="BusinessDomain" type="xs:string" minOccurs="0"/>
+			<xs:element name="ServiceName" type="xs:string" minOccurs="0"/>
+			<xs:element name="ServiceContext" type="xs:string" minOccurs="0"/>
+			<xs:element name="ServiceContextVersion" type="xs:integer" minOccurs="0"/>
+			<xs:element name="OperationName" type="xs:string" minOccurs="0"/>
+			<xs:element name="OperationVersion" type="xs:integer" minOccurs="0"/>
+			<xs:element name="ApplicationName" type="xs:string" minOccurs="0"/>
+			<xs:element name="ApplicationFunction" type="xs:string" minOccurs="0"/>
+			<xs:element name="Timestamp" type="xs:dateTime"/>
+			<xs:element name="SenderId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>unique identification of the initiator (consumer of the service)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExceptionType">
+		<xs:sequence>
+			<xs:element name="Code" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>canonical error code with fixed value’s (e.g. ERR6002)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Reason" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>canonical reason description of the canonical error (e.g. Service Interface Request Time Out)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Text" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>detailed description of the error that occurred (or the stacktrace)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

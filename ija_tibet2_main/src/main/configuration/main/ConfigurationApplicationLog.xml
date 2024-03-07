@@ -1,0 +1,68 @@
+<module>
+	<adapter name="ApplicationLog">
+		<receiver 
+			name="ApplicationLog" transactionAttribute="Required"
+			numThreads="${numThreadsTibcoFFApplicationLog}">
+			<listener
+				className="nl.nn.adapterframework.extensions.tibco.TibcoLogJmsListener"
+				destinationName="jms/ApplicationLog" useReplyTo="false" jmsRealm="qcf_tibco_esb_ff_log" />
+			<errorStorage className="nl.nn.adapterframework.jdbc.JdbcTransactionalStorage"
+				slotId="${instance.name}/ApplicationLog" />
+		</receiver>
+		<pipeline firstPipe="SwitchEnvironment" transactionAttribute="Required">
+			<exits>
+				<exit name="EXIT" state="success" />
+			</exits>
+			<pipe name="SwitchEnvironment" className="nl.nn.adapterframework.pipes.XmlSwitch"
+				forwardNameSessionKey="environment" notFoundForwardName="WriteLog_System">
+				<forward name="BU-CFO_CRO" path="WriteLog_CFO_CRO" />
+				<forward name="BU-FM_HR_GroupApps" path="WriteLog_FM_HR_GroupApps" />
+				<forward name="BU-NNC" path="WriteLog_NNC" />
+				<forward name="BU-NNP" path="WriteLog_NNP" />
+				<forward name="BU-NNZ" path="WriteLog_NNZ" />
+			</pipe>
+
+			<SenderPipe name="WriteLog_CFO_CRO"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG_CFO_CRO" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+
+			<SenderPipe name="WriteLog_FM_HR_GroupApps"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG_FM_HR_GroupApps" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+
+			<SenderPipe name="WriteLog_NNC"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG_NNC" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+
+			<SenderPipe name="WriteLog_NNP"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG_NNP" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+
+			<SenderPipe name="WriteLog_NNZ"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG_NNZ" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+
+			<SenderPipe name="WriteLog_System"
+				>
+				<sender className="nl.nn.adapterframework.senders.LogSender"
+					logCategory="TIBCOLOG" />
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+		</pipeline>
+	</adapter>
+</module>

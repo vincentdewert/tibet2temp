@@ -1,0 +1,82 @@
+<adapter name="UnclaimDeleteRecords">
+	<receiver
+		
+		name="UnclaimDeleteRecords"
+	>
+		<listener
+			className="nl.nn.adapterframework.receivers.JavaListener"
+			name="UnclaimDeleteRecords" />
+	</receiver>
+	<pipeline firstPipe="DeleteRecord">
+		<exits>
+			<exit
+				name="Exit"
+				state="success"
+				code="201" />
+			<exit
+				name="ServerError"
+				state="error"
+				code="500" />
+		</exits>
+		<SenderPipe
+			name="DeleteRecord"
+		>
+			<FixedQuerySender
+				query="DELETE FROM authorisation WHERE
+					(BUSINESSDOMAIN=? and SERV_APPL_NAME=?
+					and ROLE=? and CLAIM_ROLE=?)"
+				queryType="other"
+			>
+				<param
+					name="BusinessDomain"
+					sessionKey="BusinessDomain" />
+				<param
+					name="ServApplName"
+					sessionKey="ServApplName" />
+				<param
+					name="Role"
+					sessionKey="Role" />
+				<param
+					name="ClaimRole"
+					sessionKey="ClaimRole" />
+			</FixedQuerySender>
+			<forward
+				name="success"
+				path="IfDeleted" />
+			<forward
+				name="error"
+				path="ERROR" />
+		</SenderPipe>
+		<pipe
+			name="IfDeleted"
+			className="nl.nn.adapterframework.pipes.XmlIf"
+			xpathExpression="result/rowsupdated/text() = '1'"
+		>
+			<forward
+				name="then"
+				path="DeleteSuccesMessage" />
+			<forward
+				name="else"
+				path="DeleteErrorMessage" />
+		</pipe>
+		<FixedResultPipe
+			name="DeleteSuccesMessage"
+			returnString="&#9989;  You've successfully unclaimd the application."
+		>
+			<forward
+				name="success"
+				path="Exit" />
+		</FixedResultPipe>
+		<FixedResultPipe
+			name="DeleteErrorMessage"
+			returnString="&#10060;  An error occurred while unclaiming the application. The unclaim didn't succeed."
+		>
+			<forward
+				name="success"
+				path="Exit" />
+		</FixedResultPipe>
+		<pipe
+			name="ERROR"
+			className="nl.nn.adapterframework.pipes.ExceptionPipe" />
+	</pipeline>
+</adapter>

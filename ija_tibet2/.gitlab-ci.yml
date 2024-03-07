@@ -1,0 +1,4 @@
+# Include the gitlab yaml template for this config
+include:
+  project: 'ibissource/cicd/ibis-gitlab-pipelines'
+  file: '/old/yml/ibis_pipeline_oldrepo.yml'

@@ -1,0 +1,63 @@
+<module>
+	<adapter name="AuthorisationLog" description="writes Authorisation table to log" active="${AuthorisationLog.active}">
+	
+		<receiver
+			
+			name="AuthorisationLog" active="true"
+		>
+			<listener className="nl.nn.adapterframework.receivers.JavaListener" name="AuthorisationLog"/>
+		
+		</receiver>
+		
+		<pipeline firstPipe="SelectAuthorisation">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+			
+			<SenderPipe
+				name="SelectAuthorisation"
+				storeResultInSessionKey="Authorisation">
+				<FixedQuerySender 
+					query="SELECT * FROM AUTHORISATION"
+					queryType="select">	
+				</FixedQuerySender>
+				<forward name="success" path="HashTable" />
+			</SenderPipe>
+			
+			<pipe 
+				name="HashTable"  
+				className="nl.nn.adapterframework.pipes.HashPipe" secret="patato">
+				<forward name="exception" path="Error"/>
+				<forward name="success" path="SendToLog" />
+			</pipe>
+			
+			<SenderPipe
+				name="SendToLog"
+			>
+				<sender
+					className="nl.nn.adapterframework.senders.LogSender"
+					logLevel="WARN"
+				/>
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+			
+			<pipe
+				name="Error" 
+				getInputFromFixedValue="&lt;result&gt;error&lt;/result&gt;"
+				className="nl.nn.adapterframework.pipes.EchoPipe" >
+				<forward name="success" path="EXIT" />
+			</pipe>
+	
+		</pipeline>
+	</adapter>
+	<!-- scheduler with cron expression  -->
+	<scheduler>
+		<SendMessageJob
+			 active="${AuthorisationLog.active}"
+			 name="AuthorisationLog.active"
+			 javaListener="AuthorisationLog"
+			 description="Runs every day at 15:00 to log the Authorisation table hash"
+			 cronExpression="${AuthorisationLog.schedule.cron}">
+		</SendMessageJob>
+	</scheduler>
+</module>

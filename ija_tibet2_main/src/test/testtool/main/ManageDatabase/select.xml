@@ -1,0 +1,14 @@
+<manageDatabaseREQ>
+	<select>
+		<tableName>IBISSTORE</tableName>
+		<order>MESSAGEKEY</order>
+	</select>
+	<select>
+		<tableName>AUDITLOG</tableName>
+		<order>LOGID</order>
+	</select>
+	<select>
+		<tableName>EXCEPTIONLOG</tableName>
+		<order>LOGID</order>
+	</select>
+</manageDatabaseREQ>

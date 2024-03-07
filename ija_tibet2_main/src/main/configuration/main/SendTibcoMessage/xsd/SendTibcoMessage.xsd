@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 16-10-2013, Peter Leeuwenburgh: initial version -->
+<!-- 04-07-2014, Peter Leeuwenburgh: moved Timeout element -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://nn.nl/service/SendTibcoMessage/" targetNamespace="http://nn.nl/service/SendTibcoMessage/">
+	<xsd:element name="Request" type="Request_Type"/>
+	<xsd:complexType name="Request_Type">
+		<xsd:sequence>
+			<xsd:element name="QueueConnectionFactory" type="QueueConnectionFactory_Type">
+				<xsd:annotation>
+					<xsd:documentation>(e.g. qcf_tibco_esb_rr)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="QueueDestination" type="NonEmptyString_Type">
+				<xsd:annotation>
+					<xsd:documentation>(e.g. ESB.CollectionAndDisbursement.TS.CollectionsDisbursements.CollectionsDisbursements.1.GetCollectionDisbursementAccountInformationOnPolicy.2.Request)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Timeout" type="xsd:positiveInteger" minOccurs="0"/>
+			<xsd:element name="SoapAction" type="NonEmptyString_Type" minOccurs="0"/>
+			<xsd:element name="Text" type="NonEmptyString_Type">
+				<xsd:annotation>
+					<xsd:documentation>(tip: use a CDATA section)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="QueueConnectionFactory_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="qcf_tibco_esb_rr"/>
+			<xsd:enumeration value="qcf_tibco_esb_ff"/>
+			<xsd:enumeration value="qcf_tibco_esb_rr_large"/>
+			<xsd:enumeration value="qcf_tibco_p2p_rr"/>
+			<xsd:enumeration value="qcf_tibco_p2p_ff"/>
+			<xsd:enumeration value="qcf_tibco_p2p_rr_large"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NonEmptyString_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:pattern value="(\s*[^\s]\s*)+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

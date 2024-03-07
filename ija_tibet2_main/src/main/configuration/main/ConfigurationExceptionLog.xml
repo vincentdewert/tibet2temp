@@ -1,0 +1,121 @@
+<adapter name="ExceptionLog">
+	<receiver name="ExceptionLog"
+		
+		transactionAttribute="Required" numThreads="${numThreadsTibcoFFExceptionLog}"
+		elementToMoveChain="Envelope;Body;ExceptionLog_Action;Message;Text">
+		<listener className="nl.nn.adapterframework.extensions.esb.EsbJmsListener"
+			destinationName="jms/ExceptionLog" jmsRealm="qcf_tibco_esb_ff_log"
+			messageProtocol="FF" timeOut="10000"/>
+		<errorStorage className="nl.nn.adapterframework.jdbc.JdbcTransactionalStorage"
+			slotId="${instance.name}/ExceptionLog" />
+	</receiver>
+
+	<pipeline firstPipe="InsertExceptionLog" transactionAttribute="Required">
+		<exits>
+			<exit name="EXIT" state="success" />
+		</exits>
+
+		<SenderPipe name="InsertExceptionLog"
+			storeResultInSessionKey="logId">
+			<FixedQuerySender className="nl.nn.adapterframework.jdbc.FixedQuerySender"
+				queryType="other"
+				query="INSERT INTO EXCEPTIONLOG  
+								( LOGID
+								, MESSAGEID
+								, CONVERSATIONID
+								, CPAID
+								, BUSINESSDOMAIN
+								, SERVICENAME
+								, SERVICECONTEXT
+								, SERVICECONTEXTVERSION
+								, OPERATIONNAME
+								, OPERATIONVERSION
+								, APPLICATIONNAME
+								, APPLICATIONFUNCTION
+								, LOG_TIMESTAMP
+								, SENDERID
+								, CRE_TIMESTAMP
+								, ERROR_CODE
+								, ERROR_REASON
+								, ERROR_TEXT
+								, MESSAGE
+								, RESEND_CONN_FACT
+								, RESEND_PROV_URL
+								, RESEND_DESTINATION
+								) VALUES (SEQ_LOG.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,SYSTIMESTAMP,?,?,?,EMPTY_BLOB(),?,?,?)"
+				resultQuery="SELECT SEQ_LOG.CURRVAL FROM DUAL" scalar="true">
+				<param name="MESSAGEID"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/MessageId"
+					maxLength="255" defaultValue="?" />
+				<param name="CONVERSATIONID"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ConversationId"
+					maxLength="255" />
+				<param name="CPAID" xpathExpression="Envelope/Body/ExceptionLog_Action/Header/CPAId"
+					maxLength="255" />
+				<param name="BUSINESSDOMAIN"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/BusinessDomain"
+					maxLength="30" />
+				<param name="SERVICENAME"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ServiceName"
+					maxLength="255" />
+				<param name="SERVICECONTEXT"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ServiceContext"
+					maxLength="255" />
+				<param name="SERVICECONTEXTVERSION"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ServiceContextVersion"
+					minInclusive="-999" maxInclusive="999" type="number" />
+				<param name="OPERATIONNAME"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/OperationName"
+					maxLength="255" />
+				<param name="OPERATIONVERSION"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/OperationVersion"
+					minInclusive="-999" maxInclusive="999" type="number" />
+				<param name="APPLICATIONNAME"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ApplicationName"
+					maxLength="255" />
+				<param name="APPLICATIONFUNCTION"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/ApplicationFunction"
+					maxLength="255" />
+				<param name="LOG_TIMESTAMP"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/Timestamp"
+					type="xmldatetime" defaultValue="1970-01-01T00:00:00Z" />
+				<param name="SENDERID"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Header/SenderId"
+					maxLength="255" />
+				<param name="ERROR_CODE" xpathExpression="Envelope/Body/ExceptionLog_Action/Exception/Code"
+					maxLength="30" defaultValue="?" />
+				<param name="ERROR_REASON"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Exception/Reason"
+					maxLength="255" defaultValue="?" />
+				<param name="ERROR_TEXT" xpathExpression="Envelope/Body/ExceptionLog_Action/Exception/Text"
+					maxLength="4000" />
+				<param name="RESEND_CONN_FACT"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Message/Resend/ConnectionFactory"
+					maxLength="255" />
+				<param name="RESEND_PROV_URL"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Message/Resend/ProviderUrl"
+					maxLength="255" />
+				<param name="RESEND_DESTINATION"
+					xpathExpression="Envelope/Body/ExceptionLog_Action/Message/Resend/Destination"
+					maxLength="255" />
+			</FixedQuerySender>
+			<forward name="success" path="switchTextIsEmpty" />
+		</SenderPipe>
+
+		<pipe name="switchTextIsEmpty" className="nl.nn.adapterframework.pipes.XmlSwitch"
+			forwardNameSessionKey="ref_Text" emptyForwardName="[emptySoExit]"
+			notFoundForwardName="InsertExceptionLog2">
+			<forward name="[emptySoExit]" path="EXIT" />
+		</pipe>
+
+		<SenderPipe name="InsertExceptionLog2"
+			getInputFromSessionKey="ref_Text">
+			<sender className="nl.nn.adapterframework.jdbc.FixedQuerySender"
+				query="SELECT MESSAGE FROM EXCEPTIONLOG WHERE LOGID=? FOR UPDATE"
+				queryType="updateBlob">
+				<param name="LOGID" sessionKey="logId" />
+			</sender>
+			<forward name="success" path="EXIT" />
+		</SenderPipe>
+	</pipeline>
+</adapter>

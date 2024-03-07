@@ -1,0 +1,36 @@
+<manageDatabaseREQ>
+	<insert>
+		<tableName>AUTHORISATION</tableName>
+		<columns>
+			<column>
+				<name>BUSINESSDOMAIN</name>
+				<value>Mortgages</value>
+			</column>
+			<column>
+				<name>SERV_APPL_NAME</name>
+				<value>Contract</value>
+			</column>
+			<column>
+				<name>ROLE</name>
+				<value>CN=GRAAAB-nJAMS_Application_Role_Hypotheken,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</value>
+			</column>
+		</columns>
+	</insert>
+	<insert>
+		<tableName>AUTHORISATION</tableName>
+		<columns>
+			<column>
+				<name>BUSINESSDOMAIN</name>
+				<value>Mortgages</value>
+			</column>
+			<column>
+				<name>SERV_APPL_NAME</name>
+				<value>Contract</value>
+			</column>
+			<column>
+				<name>ROLE</name>
+				<value>CN=GRAPAB-nJAMS_Application_Role_Hypotheken,OU=Application Security Groups,OU=Groups,OU=PRD,OU=AB,OU=Tenants,DC=INSIM,DC=BIZ</value>
+			</column>
+		</columns>
+	</insert>
+</manageDatabaseREQ>

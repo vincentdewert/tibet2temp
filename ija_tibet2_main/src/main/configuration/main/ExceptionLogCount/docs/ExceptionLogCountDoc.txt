@@ -1,0 +1,24 @@
+Voor de TIBET2HEALTH:
+ 
+ 
+2019-04-20, BUSINESSDOMAIN="TIBET2HEALTH",APPLICATIONFUNCTION=" TIBET2HEALTH ", APPLICATIONNAME=" TIBET2HEALTH ", COUNT="0" ß-------HARDCODED
+2019-04-20, BUSINESSDOMAIN="LifeRetailCB",APPLICATIONFUNCTION="NotifyBusinessPartnerUpdate", APPLICATIONNAME="Customer", COUNT="185"
+2019-04-20, BUSINESSDOMAIN="Mortgages",APPLICATIONFUNCTION="ProduceDocument_1", APPLICATIONNAME="MortgageContractDocument_2", COUNT="98"
+2019-04-20, BUSINESSDOMAIN="ConsumerCredit",APPLICATIONFUNCTION="NotifyPartyClose_1", APPLICATIONNAME="CreditAccountNotification", COUNT="7" 
+ 
+Dit is een extra regel, die aan begin van de cronjob wordt bijgevoegd. 
+Dus naast de dynamische output die vanuit de databasequery opgebouwd wordt, staat deze hardcoded regel altijd als eerste erin. Waarom? 
+Dit is een soort announce/begin-logging regel. 
+Dit geeft 2 vliegen in 1 klap:
+
+1. Als de exceptionlog helemaal leeg is, 
+		dan komt er geen output meer uit de DB query, 
+		en dan lijkt het alsof de job het niet doet,
+		want er wordt niks gelogd. Door de eerste regel hardcoded te pushen, 
+		zie je dus dat deze functionaliteit zijn werk doet.
+2. Voor het gebruik van de exceptionlog informatie, gaan teams zoeken op de hoeveelheid berichten van hun domein. 
+Als hun domain leeg is, dan zijn er geen results.
+Door deze hardcoded regel toe te voegen, kunnen teams zoeken op het totaal aantal berichten uit hun domain + het (neppe) ‘TIBET2HEALTH’ domein.
+Die heeft wel altijd een count, zei het 0. Door te zoeken op het totaal van hun domain + het Tibet2Health domain, is er altijd een resultaat. 
+SEen voorbeeld Splunk query hiervoor is:
+index=ibis_common env="prd" sourcetype="ibis:tibet2" BUSINESSDOMAIN="BankSavings" OR BUSINESSDOMAIN="TIBET2HEALTH" | dedup BUSINESSDOMAIN,APPLICATIONNAME,APPLICATIONFUNCTION | stats sum(COUNT)

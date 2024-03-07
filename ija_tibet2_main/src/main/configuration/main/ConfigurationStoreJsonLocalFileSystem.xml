@@ -1,0 +1,33 @@
+<Module>
+    <Adapter name="StoreJsonTestFile">
+        <Receiver name="input">
+            <JavaListener name="inputListener" serviceName="JsonData"/>
+        </Receiver>
+        <Pipeline firstPipe="putJsonDataInSession">
+            <Exits>
+                <Exit name="Exit" state="SUCCESS" />
+                <Exit name="Error" state="ERROR" />
+            </Exits>
+            <PutInSessionPipe
+                name="putJsonDataInSession"
+                sessionKey="jsonData">
+                <Forward name="success" path="deleteJsonFile" />
+            </PutInSessionPipe>
+            <LocalFileSystemPipe    
+                name="deleteJsonFile"
+                action="delete"
+                filename="data.json">
+                <Forward name="filenotfound" path="getJsonData"/>
+            </LocalFileSystemPipe>
+            <GetFromSessionPipe
+                name="getJsonData"
+                sessionKey="jsonData"/>
+            <LocalFileSystemPipe 
+                name="storeJsonData"
+                action="write"
+                overwrite="true"
+                filename="data.json"
+                outputFormat="JSON"/>
+        </Pipeline>
+    </Adapter>
+</Module>

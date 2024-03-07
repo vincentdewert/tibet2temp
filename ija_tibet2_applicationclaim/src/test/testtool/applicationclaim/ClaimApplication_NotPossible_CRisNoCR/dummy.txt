@@ -1,0 +1,1 @@
+Error. You don't have the right permissions to claim or unclaim an application.

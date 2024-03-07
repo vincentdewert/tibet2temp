@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header>
+		<MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/1">
+			<From>
+				<Id>Tibco4SapBP</Id>
+			</From>
+			<To>
+				<Location>ESB.Infrastructure.US.Log.BusinessLog.2.AuditLog.1.Action</Location>
+			</To>
+			<HeaderFields>
+				<CPAId>n/a</CPAId>
+				<ConversationId>rn09bt_0a3b8d50-b1b2190_13a30a74c9f_-430d</ConversationId>
+				<MessageId>rn09bt_0a3b8d50-b1b2190_13a30a74c9f_-430b</MessageId>
+				<Timestamp>2012-10-09T16:13:39</Timestamp>
+			</HeaderFields>
+			<Service>
+				<Name>Log</Name>
+				<Context>BusinessLog</Context>
+				<Action>
+					<Paradigm>Action</Paradigm>
+					<Name>AuditLog</Name>
+					<Version>1</Version>
+				</Action>
+			</Service>
+		</MessageHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<AuditLog_Action xmlns="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/AuditLog/1">
+			<Header>
+				<MessageId></MessageId>
+				<Timestamp>2001-12-17T09:30:47</Timestamp>
+			</Header>
+			<Message>
+				<Text></Text>
+				<Type>sent</Type>
+			</Message>
+		</AuditLog_Action>
+	</soapenv:Body>
+</soapenv:Envelope>

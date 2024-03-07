@@ -1,0 +1,3358 @@
+<result>
+	<rowset>
+		<row number="0">
+			<field name="ROWNUMBER">1</field>
+			<field name="LOGID">74425958</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID" null="true"/>
+			<field name="CPAID">SRAZZAPP0097-NNA00309-Ibis4Publishing-RB06501320</field>
+			<field name="APPLICATIONFUNCTION">Notify</field>
+			<field name="LOG_TS">2015-11-06 18:36:46</field>
+			<field name="SENDERID">P2P.General.Ibis4Publishing.FileTransfer.Action</field>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A31:8831060</JMSMessageID>
+						<JMSTimestamp>1446831406680</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSType>EMSAlert</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<Body>
+						<AuditResponse schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd">
+							<ResponseType>Alert</ResponseType>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID>CB0650018523</AuditID>
+								<CKPTInterval>0</CKPTInterval>
+								<CKPTCount/>
+								<NodeName>B001ACC</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department>ING NN</Department>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>RB06501320</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName>SRAZZAPP0097</ServerName>
+								<ZOSAllocationType/>
+								<ZOSAllocationPrimary/>
+								<ZOSAllocationSecondary/>
+								<ZOSRecordFormat/>
+								<ZOSRecordLength>0</ZOSRecordLength>
+								<ZOSBlocksize>0</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151106_183433314</ResponderFileName>
+								<SendRecv>Receive</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>84991440</TransferByteCount>
+								<TransferCompressedByteCount>84991440</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-06T18:34:33</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-06T18:34:48</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>Transfer Completed</TransferStatusMsg>
+								<InitiatorUserId>npaazzapp0016</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass/>
+								<ZOSAllocationDirectory/>
+								<Priority/>
+								<RecordCount/>
+								<NodeType/>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>IB06500003</ResponderTransactionID>
+								<ResponderUserId>WPRD0001</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError>N</TempError>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode/>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>0</TryCount>
+								<MaxTryCount>0</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>7.1 build 288. Maint Build 290 </VersionNum>
+							</AuditRecord>
+						</AuditResponse>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="1">
+			<field name="ROWNUMBER">2</field>
+			<field name="LOGID">74425955</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB992:264839</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB06500003</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-06 18:34:50</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3904953:11</JMSMessageID>
+						<JMSTimestamp>1446831290409</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB992:264839</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500003</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB06500003</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151106_183433314</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-06T18:34:33</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-06T18:34:48</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB06500003 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB06501320</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-06T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="2">
+			<field name="ROWNUMBER">3</field>
+			<field name="LOGID">74425954</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB992:264839</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-06 18:34:33</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3904953:10</JMSMessageID>
+						<JMSTimestamp>1446831273302</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB992:264839</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500003</InitiatorTransactionID>
+						<Message>Transaction IB06500003 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="3">
+			<field name="ROWNUMBER">4</field>
+			<field name="LOGID">74425953</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB992:264839</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-06 18:34:32</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="4">
+			<field name="ROWNUMBER">5</field>
+			<field name="LOGID">74425906</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A3903709:264775</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB06500002</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-06 18:27:07</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A39048D6:15</JMSMessageID>
+						<JMSTimestamp>1446830827450</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3903709:264775</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500002</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB06500002</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151106_182650439</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-06T18:26:50</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-06T18:27:05</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB06500002 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB06501311</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-06T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="5">
+			<field name="ROWNUMBER">6</field>
+			<field name="LOGID">74425905</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A3903709:264775</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-06 18:26:50</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A39048D6:14</JMSMessageID>
+						<JMSTimestamp>1446830810440</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3903709:264775</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500002</InitiatorTransactionID>
+						<Message>Transaction IB06500002 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="6">
+			<field name="ROWNUMBER">7</field>
+			<field name="LOGID">74425904</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A3903709:264775</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-06 18:26:49</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="7">
+			<field name="ROWNUMBER">8</field>
+			<field name="LOGID">74425535</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:264648</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB06500001</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-06 18:01:44</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A39047CA:8</JMSMessageID>
+						<JMSTimestamp>1446829304425</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:264648</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500001</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB06500001</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151106_180126363</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-06T18:01:26</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-06T18:01:41</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB06500001 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB06501282</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-06T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="8">
+			<field name="ROWNUMBER">9</field>
+			<field name="LOGID">74425512</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:264648</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-06 18:01:26</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A39047CA:7</JMSMessageID>
+						<JMSTimestamp>1446829286343</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:264648</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500001</InitiatorTransactionID>
+						<Message>Transaction IB06500001 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="9">
+			<field name="ROWNUMBER">10</field>
+			<field name="LOGID">74425511</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:264648</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-06 18:01:25</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="10">
+			<field name="ROWNUMBER">11</field>
+			<field name="LOGID">74420601</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A390370F:263464</field>
+			<field name="CPAID">B001ACC-NNA02105-IB06500000</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-06 12:30:49</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3903712:58</JMSMessageID>
+						<JMSTimestamp>1446809449884</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A390370F:263464</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500000</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>MC000090.RESTORE.PICO.SAP</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>Binary</Conversion>
+								<Department/>
+								<Description>NNA02105</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB06500000</InitiatorTransactionID>
+								<LocalCTFile/>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>00010</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>00104</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>00010</ZOSRecordLength>
+								<ZOSBlocksize>27990</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1>Initiator</PPASource1>
+								<PPAStatus1>Success</PPAStatus1>
+								<PPAType1>COMMAND</PPAType1>
+								<PPAData1>FUSUTIL RENAME $LFILE D:\data\xfb\NNA02105\Archive\$FILE</PPAData1>
+								<PPAReturnCode1>00000008</PPAReturnCode1>
+								<PPASource2>Initiator</PPASource2>
+								<PPAStatus2>Failure</PPAStatus2>
+								<PPAType2>COMMAND</PPAType2>
+								<PPAData2>FUSUTIL RENAME $LFILE D:\data\xfb\NNA02105\Rejected\$FILE</PPAData2>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/interfaces/BP14_OUT_LINEA_RECTA/send/*</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000000000040</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-06T12:30:43</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-06T12:30:45</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA02105</ProcessName>
+								<UserData>NNA02105</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB06500000 successfully transferred 4 records with node SRAZZAPP0289 40 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000000004</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB06500005</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-06T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="11">
+			<field name="ROWNUMBER">12</field>
+			<field name="LOGID">74420593</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A390370F:263464</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-06 12:30:43</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A3903712:57</JMSMessageID>
+						<JMSTimestamp>1446809443467</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A390370F:263464</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB06500000</InitiatorTransactionID>
+						<Message>Transaction IB06500000 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="12">
+			<field name="ROWNUMBER">13</field>
+			<field name="LOGID">74420592</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A390370F:263464</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-06 12:30:42</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>K20</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>PICO</SenderApplication>
+								<RecipientApplication>SAP</RecipientApplication>
+								<Filename>MC000090.RESTORE.PICO.SAP</Filename>
+								<TransferFlowId>NNA02105</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="13">
+			<field name="ROWNUMBER">14</field>
+			<field name="LOGID">74113329</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:243423</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500009</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:46:54</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9E:54</JMSMessageID>
+						<JMSTimestamp>1446461214202</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:243423</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500009</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500009</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_114634804</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:46:34</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:46:50</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500009 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500844</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="14">
+			<field name="ROWNUMBER">15</field>
+			<field name="LOGID">74113321</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:243423</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:46:35</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9E:53</JMSMessageID>
+						<JMSTimestamp>1446461195037</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:243423</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500009</InitiatorTransactionID>
+						<Message>Transaction IB02500009 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="15">
+			<field name="ROWNUMBER">16</field>
+			<field name="LOGID">74113320</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA9B:243423</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:46:34</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="16">
+			<field name="ROWNUMBER">17</field>
+			<field name="LOGID">74113198</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA3F:243386</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500008</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:39:53</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA42:50</JMSMessageID>
+						<JMSTimestamp>1446460793704</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA3F:243386</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500008</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L44ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500008</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L44ACAPD.WORK_20151102_113946465</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000004126752</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:39:46</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:39:47</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500008 successfully transferred 126 records with node SRAZZAPP0097 4126752 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000000126</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500831</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="17">
+			<field name="ROWNUMBER">18</field>
+			<field name="LOGID">74113197</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA3F:243386</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:39:46</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA42:49</JMSMessageID>
+						<JMSTimestamp>1446460786445</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA3F:243386</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500008</InitiatorTransactionID>
+						<Message>Transaction IB02500008 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="18">
+			<field name="ROWNUMBER">19</field>
+			<field name="LOGID">74113196</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EBA3F:243386</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:39:46</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L44</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L44ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="19">
+			<field name="ROWNUMBER">20</field>
+			<field name="LOGID">74113060</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F1:243340</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500007</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:31:25</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F4:46</JMSMessageID>
+						<JMSTimestamp>1446460285348</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F1:243340</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500007</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500007</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_113043197</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:30:43</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:31:06</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500007 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500824</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="20">
+			<field name="ROWNUMBER">21</field>
+			<field name="LOGID">74113049</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F1:243340</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:30:43</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F4:45</JMSMessageID>
+						<JMSTimestamp>1446460243182</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F1:243340</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500007</InitiatorTransactionID>
+						<Message>Transaction IB02500007 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="21">
+			<field name="ROWNUMBER">22</field>
+			<field name="LOGID">74113048</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB9F1:243340</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:30:42</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="22">
+			<field name="ROWNUMBER">23</field>
+			<field name="LOGID">74112910</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB999:243291</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500006</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:21:40</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB99D:42</JMSMessageID>
+						<JMSTimestamp>1446459700385</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB999:243291</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500006</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500006</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_112121157</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:21:21</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:21:35</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500006 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500807</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="23">
+			<field name="ROWNUMBER">24</field>
+			<field name="LOGID">74112891</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB999:243291</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:21:21</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB99D:41</JMSMessageID>
+						<JMSTimestamp>1446459681141</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB999:243291</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500006</InitiatorTransactionID>
+						<Message>Transaction IB02500006 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="24">
+			<field name="ROWNUMBER">25</field>
+			<field name="LOGID">74112890</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB999:243291</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:21:20</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="25">
+			<field name="ROWNUMBER">26</field>
+			<field name="LOGID">74112763</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8F8:243244</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500005</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:15:24</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB95C:35</JMSMessageID>
+						<JMSTimestamp>1446459324648</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8F8:243244</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500005</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500005</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_111503450</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:15:03</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:15:19</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500005 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500796</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="26">
+			<field name="ROWNUMBER">27</field>
+			<field name="LOGID">74112752</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8F8:243244</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:15:03</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB95C:34</JMSMessageID>
+						<JMSTimestamp>1446459303432</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8F8:243244</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500005</InitiatorTransactionID>
+						<Message>Transaction IB02500005 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="27">
+			<field name="ROWNUMBER">28</field>
+			<field name="LOGID">74112746</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8F8:243244</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:15:03</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="28">
+			<field name="ROWNUMBER">29</field>
+			<field name="LOGID">74112676</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB938:243213</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500004</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:11:17</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB93B:31</JMSMessageID>
+						<JMSTimestamp>1446459077828</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB938:243213</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500004</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500004</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_111036118</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:10:36</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:10:57</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500004 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500792</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="29">
+			<field name="ROWNUMBER">30</field>
+			<field name="LOGID">74112654</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB938:243213</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:10:36</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB93B:30</JMSMessageID>
+						<JMSTimestamp>1446459036103</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB938:243213</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500004</InitiatorTransactionID>
+						<Message>Transaction IB02500004 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="30">
+			<field name="ROWNUMBER">31</field>
+			<field name="LOGID">74112653</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB938:243213</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:10:35</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="31">
+			<field name="ROWNUMBER">32</field>
+			<field name="LOGID">74112640</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB924:243203</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500003</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:09:47</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB927:27</JMSMessageID>
+						<JMSTimestamp>1446458987116</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB924:243203</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500003</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500003</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_110927675</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:09:27</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:09:43</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500003 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500786</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="32">
+			<field name="ROWNUMBER">33</field>
+			<field name="LOGID">74112639</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB924:243203</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:09:27</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB927:26</JMSMessageID>
+						<JMSTimestamp>1446458967658</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB924:243203</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500003</InitiatorTransactionID>
+						<Message>Transaction IB02500003 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="33">
+			<field name="ROWNUMBER">34</field>
+			<field name="LOGID">74112638</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB924:243203</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:09:27</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="34">
+			<field name="ROWNUMBER">35</field>
+			<field name="LOGID">74112637</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB91F:243191</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500002</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:09:14</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB922:23</JMSMessageID>
+						<JMSTimestamp>1446458954162</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB91F:243191</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500002</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500002</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_110832006</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:08:32</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:08:56</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500002 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500785</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="35">
+			<field name="ROWNUMBER">36</field>
+			<field name="LOGID">74112636</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB90E:243180</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500001</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:09:10</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB911:22</JMSMessageID>
+						<JMSTimestamp>1446458949999</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB90E:243180</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500001</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500001</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_110714851</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:07:14</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:08:36</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500001 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500784</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="36">
+			<field name="ROWNUMBER">37</field>
+			<field name="LOGID">74112633</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB91F:243191</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:08:31</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB922:21</JMSMessageID>
+						<JMSTimestamp>1446458911984</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB91F:243191</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500002</InitiatorTransactionID>
+						<Message>Transaction IB02500002 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="37">
+			<field name="ROWNUMBER">38</field>
+			<field name="LOGID">74112632</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB91F:243191</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:08:31</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="38">
+			<field name="ROWNUMBER">39</field>
+			<field name="LOGID">74112631</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8FF:243171</field>
+			<field name="CPAID">B001ACC-NNA00309-Ibis4Publishing-IB02500000</field>
+			<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+			<field name="LOG_TS">2015-11-02 11:08:24</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB903:18</JMSMessageID>
+						<JMSTimestamp>1446458904501</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8FF:243171</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Transfer Complete</Status>
+						<ResponseType>TransferStatus</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500000</InitiatorTransactionID>
+						<Message/>
+						<NumRecords>1</NumRecords>
+					</OtherProperties>
+					<Body>
+						<Body>
+							<ResponseType>TransferStatus</ResponseType>
+							<ServerName>B001ACC</ServerName>
+							<HostName>10.93.78.2</HostName>
+							<NumRecords>1</NumRecords>
+							<AuditRecord>
+								<AuditType>PlatformServer</AuditType>
+								<AuditID/>
+								<CKPTInterval>00000</CKPTInterval>
+								<CKPTCount>00000000</CKPTCount>
+								<NodeName>SRAZZAPP</NodeName>
+								<InitiatorFileName>YY1M0W00.STRSERVE.L18ACAPD.WORK</InitiatorFileName>
+								<Delimiter>None</Delimiter>
+								<Conversion>EBCDIC</Conversion>
+								<Department/>
+								<Description>NNA00309-Ibis4Publishing</Description>
+								<Encryption>AES</Encryption>
+								<InitiatorTransactionID>IB02500000</InitiatorTransactionID>
+								<LocalCTFile>EBCDICXL</LocalCTFile>
+								<ServerName/>
+								<ZOSAllocationType>TRK</ZOSAllocationType>
+								<ZOSAllocationPrimary>09605</ZOSAllocationPrimary>
+								<ZOSAllocationSecondary>01601</ZOSAllocationSecondary>
+								<ZOSRecordFormat>FB</ZOSRecordFormat>
+								<ZOSRecordLength>32752</ZOSRecordLength>
+								<ZOSBlocksize>32752</ZOSBlocksize>
+								<ZOSUnitName/>
+								<ZOSVolumeName/>
+								<ZOSStorageClass/>
+								<ZOSDataClass/>
+								<ZOSManagementClass/>
+								<PPASource1/>
+								<PPAStatus1/>
+								<PPAType1/>
+								<PPAData1/>
+								<PPAReturnCode1/>
+								<PPASource2/>
+								<PPAStatus2/>
+								<PPAType2/>
+								<PPAData2/>
+								<PPAReturnCode2/>
+								<PPASource3/>
+								<PPAStatus3/>
+								<PPAType3/>
+								<PPAData3/>
+								<PPAReturnCode3/>
+								<PPASource4/>
+								<PPAStatus4/>
+								<PPAType4/>
+								<PPAData4/>
+								<PPAReturnCode4/>
+								<RemoteCTFile/>
+								<ResponderFileName>/opt/data/FXF/ibis4pub/NNX00309/in/YY1M0W00.STRSERVE.L18ACAPD.WORK_20151102_110600426</ResponderFileName>
+								<SendRecv>Send</SendRecv>
+								<EmailSuccess/>
+								<EmailFailure/>
+								<TransferByteCount>000000084991440</TransferByteCount>
+								<TransferCompressedByteCount>000000000000000</TransferCompressedByteCount>
+								<TransferStartDateTime>2015-11-02T11:06:00</TransferStartDateTime>
+								<TransferEndDateTime>2015-11-02T11:08:07</TransferEndDateTime>
+								<TransferType>File</TransferType>
+								<ProcessName>NNA00309</ProcessName>
+								<UserData>NNA00309-Ibis4Publishing</UserData>
+								<TransferStatus>Success</TransferStatus>
+								<TransferStatusMsg>PGTF3101I Activity IB02500000 successfully transferred 2595 records with node SRAZZAPP0097 84991440 BYTES</TransferStatusMsg>
+								<InitiatorUserId>WPRD0001</InitiatorUserId>
+								<FileWriteMode>CreateReplace</FileWriteMode>
+								<AS2MDNStatus/>
+								<ProxyStatusMsg/>
+								<CrlMsg/>
+								<MemberCount/>
+								<NodeClass>000</NodeClass>
+								<ZOSAllocationDirectory>00000</ZOSAllocationDirectory>
+								<Priority/>
+								<RecordCount>000002595</RecordCount>
+								<NodeType>Node</NodeType>
+								<NTDomain/>
+								<IPPort/>
+								<ResponderTransactionID>RB02500783</ResponderTransactionID>
+								<ResponderUserId>tibco</ResponderUserId>
+								<SSLFlag>No</SSLFlag>
+								<SSLPortNum/>
+								<TempError/>
+								<TransferCommand/>
+								<Compression>None</Compression>
+								<TransferScheduledStartDate>2015-11-02T00:00:00</TransferScheduledStartDate>
+								<TrDiagCode>0</TrDiagCode>
+								<TrReturnCode>000</TrReturnCode>
+								<TrSeverity>00</TrSeverity>
+								<TryCount>00001</TryCount>
+								<MaxTryCount>00001</MaxTryCount>
+								<UNIXFilePermissions>660</UNIXFilePermissions>
+								<VersionNum>710</VersionNum>
+							</AuditRecord>
+						</Body>
+					</Body>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="39">
+			<field name="ROWNUMBER">40</field>
+			<field name="LOGID">74112574</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB90E:243180</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:07:14</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB911:17</JMSMessageID>
+						<JMSTimestamp>1446458834805</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB90E:243180</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500001</InitiatorTransactionID>
+						<Message>Transaction IB02500001 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="40">
+			<field name="ROWNUMBER">41</field>
+			<field name="LOGID">74112573</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB90E:243180</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:07:14</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+		<row number="41">
+			<field name="ROWNUMBER">42</field>
+			<field name="LOGID">74112566</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8FF:243171</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+			<field name="LOG_TS">2015-11-02 11:06:00</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<ActivityOutput>
+					<JMSHeaders>
+						<JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</JMSDestination>
+						<JMSDeliveryMode>PERSISTENT</JMSDeliveryMode>
+						<JMSMessageID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB903:14</JMSMessageID>
+						<JMSTimestamp>1446458760402</JMSTimestamp>
+						<JMSExpiration>0</JMSExpiration>
+						<JMSRedelivered>false</JMSRedelivered>
+						<JMSPriority>4</JMSPriority>
+						<JMSCorrelationID>ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8FF:243171</JMSCorrelationID>
+						<JMSType>Platform-Response</JMSType>
+					</JMSHeaders>
+					<JMSProperties/>
+					<OtherProperties>
+						<Status>Submit Success</Status>
+						<ResponseType>TransferImmediate</ResponseType>
+						<ReturnCode>0</ReturnCode>
+						<InitiatorTransactionID>IB02500000</InitiatorTransactionID>
+						<Message>Transaction IB02500000 submitted successfully to Server B001ACC:
+</Message>
+						<NumRecords>0</NumRecords>
+					</OtherProperties>
+				</ActivityOutput>
+			</field>
+		</row>
+		<row number="42">
+			<field name="ROWNUMBER">43</field>
+			<field name="LOGID">74112565</field>
+			<field name="TYPE">A</field>
+			<field name="CONVERSATIONID">ID:EMS_ACC_P2P_LARGE.232B5602D8A38EB8FF:243171</field>
+			<field name="CPAID" null="true"/>
+			<field name="APPLICATIONFUNCTION">StartTransfer</field>
+			<field name="LOG_TS">2015-11-02 11:05:57</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">
+				<Envelope>
+					<Header>
+						<MessageHeader>
+							<From>
+								<Id>Y1M</Id>
+								<Location>MFT</Location>
+							</From>
+							<To>
+								<Location>ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action</Location>
+							</To>
+							<HeaderFields>
+								<CPAId>n/a</CPAId>
+								<ConversationId>CI</ConversationId>
+								<MessageId>12345</MessageId>
+								<Timestamp>12345</Timestamp>
+							</HeaderFields>
+							<Service>
+								<Name>Transfer</Name>
+								<Context>Filetransfer</Context>
+								<Action>
+									<Paradigm>Action</Paradigm>
+									<Name>StartTransfer</Name>
+									<Version>2</Version>
+								</Action>
+							</Service>
+						</MessageHeader>
+					</Header>
+					<Body>
+						<StartTransfer_Action>
+							<TransferDetails>
+								<SenderApplication>L18</SenderApplication>
+								<RecipientApplication>SETPOINT</RecipientApplication>
+								<Filename>YY1M0W00.STRSERVE.L18ACAPD.WORK</Filename>
+								<TransferFlowId>NNA00309</TransferFlowId>
+							</TransferDetails>
+						</StartTransfer_Action>
+					</Body>
+				</Envelope>
+			</field>
+		</row>
+	</rowset>
+	<rowset>
+		<row number="0">
+			<field name="ROWNUMBER">1</field>
+			<field name="LOGID">74112325</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">0cef2c75a6124bf8a4110f5d06973daa</field>
+			<field name="CPAID">3994442fd28344a2b1f78e5e8b617098</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:53:35</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="1">
+			<field name="ROWNUMBER">2</field>
+			<field name="LOGID">74112324</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">d423827d731846cc9cd0c71788a48e82</field>
+			<field name="CPAID">b97c43654d51438fafb962b89292972e</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:53:34</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="2">
+			<field name="ROWNUMBER">3</field>
+			<field name="LOGID">74112323</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">3a1cde06d3bc415a88ed6996f514daaa</field>
+			<field name="CPAID">393e4920016d4e4bbaf1e4b99df46ace</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:53:34</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="3">
+			<field name="ROWNUMBER">4</field>
+			<field name="LOGID">74112244</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">d61ff465bf5d4096bbbdc8ae0d96ae6c</field>
+			<field name="CPAID">de841eda739f4a02acc9c208128dddae</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:46:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="4">
+			<field name="ROWNUMBER">5</field>
+			<field name="LOGID">74112243</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">81b8e97f73884d5180938193de260c82</field>
+			<field name="CPAID">7c05de38127d4b10a768fa356c9778e6</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:46:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="5">
+			<field name="ROWNUMBER">6</field>
+			<field name="LOGID">74112241</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">5bf4ca398f564fe5a6b3cfd689e5e5f7</field>
+			<field name="CPAID">cd5411b37d5a4e33b91670be1d70e4a0</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:46:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="6">
+			<field name="ROWNUMBER">7</field>
+			<field name="LOGID">74112129</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">18698c66db634632b78e9ba056094cd9</field>
+			<field name="CPAID">79b5f6d0db42488db271907c26d46366</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="7">
+			<field name="ROWNUMBER">8</field>
+			<field name="LOGID">74112128</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">eac6348011f046d387653af984282c55</field>
+			<field name="CPAID">7203d780f5904ff29ffdc2ed08889b51</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="8">
+			<field name="ROWNUMBER">9</field>
+			<field name="LOGID">74112127</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">036203a8e55e47cfadec8eb39749aa60</field>
+			<field name="CPAID">fb567c40bce44ee28c73b984c8e48556</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:19</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="9">
+			<field name="ROWNUMBER">10</field>
+			<field name="LOGID">74112126</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">fdc05d7a72e3464e8661c77a8eff2953</field>
+			<field name="CPAID">1352f52504fc40c0a4445d83d95cec63</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:09</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="10">
+			<field name="ROWNUMBER">11</field>
+			<field name="LOGID">74112125</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">396b209fc21849b9883c24af77438018</field>
+			<field name="CPAID">802784abd8e64e62af1eeb6cb5e74a89</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:09</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="11">
+			<field name="ROWNUMBER">12</field>
+			<field name="LOGID">74112124</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">207b7aa9d6304627b39857ecc34f3867</field>
+			<field name="CPAID">24fb359aa8874038b9fe3e1ad532c5b5</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:40:09</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="12">
+			<field name="ROWNUMBER">13</field>
+			<field name="LOGID">74112071</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">ec1ea8f946304312a8d8e5e4bcdadf77</field>
+			<field name="CPAID">ccd7b1dc714543bcbc854a567a5045b9</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:38:08</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="13">
+			<field name="ROWNUMBER">14</field>
+			<field name="LOGID">74112070</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">bbeb9fe767644885968e233061e50a71</field>
+			<field name="CPAID">bdf77049e5fc45e4af2f5a229185658c</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:38:08</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="14">
+			<field name="ROWNUMBER">15</field>
+			<field name="LOGID">74112069</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">48f68fa9261548e5abdfedbf027322f7</field>
+			<field name="CPAID">efc6cea856934ff993fe99e1dde729dc</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:38:07</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="15">
+			<field name="ROWNUMBER">16</field>
+			<field name="LOGID">74111934</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">5c1791e58c8946daaefece3aab6981f5</field>
+			<field name="CPAID">692260764f6d40d58eb2435daf5a638e</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:24:05</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="16">
+			<field name="ROWNUMBER">17</field>
+			<field name="LOGID">74111933</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">d9c68963fc01481fadc19637d5aed315</field>
+			<field name="CPAID">2fd6b0452f464930a2562eafac6f3bb2</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:24:05</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="17">
+			<field name="ROWNUMBER">18</field>
+			<field name="LOGID">74111932</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">f04dd1f36a68489eb38ab5283e435833</field>
+			<field name="CPAID">35a8f2b9a5f049f1a0f98e7ebbca54ba</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:24:05</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+		<row number="18">
+			<field name="ROWNUMBER">19</field>
+			<field name="LOGID">74111912</field>
+			<field name="TYPE">E</field>
+			<field name="CONVERSATIONID">d4c85c4571ae4c7188fc4dbc83e58a14</field>
+			<field name="CPAID">ed2576c18ae34b7cb4ad64d6be0c6b5e</field>
+			<field name="APPLICATIONFUNCTION">StartTransfer.2</field>
+			<field name="LOG_TS">2015-11-02 10:19:25</field>
+			<field name="SENDERID" null="true"/>
+			<field name="MESSAGE">ERROR</field>
+		</row>
+	</rowset>
+</result>

@@ -1,0 +1,234 @@
+<queues>
+      <queue>
+                  <name>P2P.Mortgages.MortgageLoanServices.SubmitDeclaration.Action</name>
+                  <msgCount since="18d">10/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPATZZAPP0929 (NPA NPA KZ Close Springboot TST- TIBCO EMS)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+                  <bridgeTargets>
+                        <bridgeTarget>
+                              <name>P2P.Mortgages.MortgageLoanServices.DeclarationCreated.Action</name>
+                        </bridgeTarget>
+                        <bridgeTarget>
+                              <name>P2P.Mortgages.MortgageLoanServices.History.Action</name>
+                        </bridgeTarget>
+                  </bridgeTargets>
+            </queue>      
+      
+      <queue>
+                  <name>P2P.PSM.L05.CRLM10.ErrorQueue</name>
+                  <msgCount since="18d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPATZZAPP0177 (NPA TibcoSubstation)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>P2P.ConsumerCredit.EventService.SAPBPEvent.EventSubscriber.Action</name>
+                  <msgCount since="18d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPATZZAPP0177 (NPA TibcoSubstation)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+            <queue>
+                  <name>P2P.Infrastructure.nJams.command</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0421 (NPA SRPZZAPP0317 nJAMS - PT57KF - EMS Client PROD)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                                    <permission>view</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+                  <bridgeTargets>
+                        <bridgeTarget>
+                              <name>P2P.AWS.Infrastructure.nJams.command</name>
+                        </bridgeTarget>
+                  </bridgeTargets>
+            </queue>
+      
+            <queue>
+                  <name>P2P.Infrastructure.WSO2APIM.TP0021.EasyAdoption.Sushi.Request</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPCBAPP0018</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPCBAPP0007</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPCBAPP0002</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>P2P.Infrastructure.WSO2APIM.TP0020a.ExistingSOAP.RR.Desert.Request</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPCBAPP0018</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPCBAPP0007</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPCBAPP0002</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.BE.BS.Document.BEIDS_Document_BUS.1.ComposeDocument.1.Action</name>
+                  <msgCount since="2d">94/94/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0524 (NPA Tibco API Exchange )</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.Archiving.BS.CustomerDocument.1.NotifyDocumentEvent.1.Action</name>
+                  <msgCount since="2d">121732/122942/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0819 (NPA NPA IBIS4OMA)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPZZAPP0857 (NPA NPA Ibis4Notify)</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPZZAPP0711 (NPA SRPZZAPP0488 NPA ibis4Archive)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.CollectionAndDisbursement.BS.CollectionsDisbursements.1.GetDetailsOnCurrentAccount.1</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0662 (NPA SRPZZAPP0402,SRPZZAPP0403 NPA ibis4saphana PRD)</principal>
+                              <permissions>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.Infrastructure.TS.PreconnectCheck.1.Browse</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>GRAPAB-EMS_Client_Application</principal>
+                              <permissions>
+                                    <permission>browse</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.Infrastructure.MFTConfigurationTool.1.Action</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0094 (NPA TibcoAmxNode)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPCBAPP0002</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPZZAPP0607 (NPA Tibco MFT - CG57QV - NPA EMS connection NPA for java class FXF3 alerting)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+            <queue>
+                  <name>ESB.njams.configManager.configWriter</name>
+                  <msgCount since="2d">0/0/0</msgCount>
+                  <acls>
+                        <acl>
+                              <principal>NPAPZZAPP0421 (NPA SRPZZAPP0317 nJAMS - PT57KF - EMS Client PROD)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                        <acl>
+                              <principal>NPAPZZAPP0094 (NPA TibcoAmxNode)</principal>
+                              <permissions>
+                                    <permission>send</permission>
+                                    <permission>receive</permission>
+                              </permissions>
+                        </acl>
+                  </acls>
+            </queue>
+      
+        
+      </queues>

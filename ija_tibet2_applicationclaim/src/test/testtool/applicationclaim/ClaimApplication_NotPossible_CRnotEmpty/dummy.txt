@@ -1,0 +1,1 @@
+The queue can not be claimed because the management role is already claimed by GRAPAB-TIBET2_CNC-RW. Please contact this business unit if you suppose this queue belongs to you. They have to unclaim the application before you can claim it.

@@ -1,0 +1,191 @@
+<module>
+	<adapter
+		name="GetAllTibcoQueues"
+		description="Returns all available Tibco Queues"
+	>
+		<receiver
+			name="GetAllTibcoQueues"
+			
+		>
+			<listener
+				name="GetAllTibcoQueues"
+				className="nl.nn.adapterframework.http.rest.ApiListener"
+				uriPattern="getalltibcoqueues"/>
+		</receiver>
+		<receiver
+			name="GetAllTibcoQueues"
+			
+		>
+			<listener
+				name="GetAllTibcoQueues"
+				className="nl.nn.adapterframework.receivers.JavaListener" />
+		</receiver>
+		<pipeline firstPipe="getAllTibcoQueuesFile">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<LocalFileSystemPipe 
+				name="getAllTibcoQueuesFile"
+				action="read"
+				filename="${log.dir}/allTibcoQueues.xml"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</LocalFileSystemPipe >
+		</pipeline>
+	</adapter>
+	<adapter name="GetTibcoQueues_OneType">
+		<receiver
+			
+			name="GetTibcoQueues_OneType"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="GetTibcoQueues_OneType" />
+		</receiver>
+		<pipeline firstPipe="getEsbInfo">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): uri, provUrl, queueName, queueItem, showAge, countOnly, timeout , infoOnly -->
+			<SenderPipe
+				name="getEsbInfo"
+			>
+				<IbisLocalSender
+					javaListener="GetEsbInfo"
+				>
+					<param
+						name="uri"
+						sessionKey="uri" />
+					<param
+						name="provUrl"
+						sessionKey="provUrl" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="switchEsbInfo" />
+			</SenderPipe>
+			<pipe
+				name="switchEsbInfo"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(esbInfo/error)=0"
+			>
+				<forward
+					name="true"
+					path="getAllTheTibcoQueues" />
+				<forward
+					name="false"
+					path="error" />
+			</pipe>
+			<!-- For testing purposes, loading local files -->
+			<pipe
+				name="getAllTheTibcoQueues"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				styleSheetName="xml/xsl/GetUrl.xsl"
+			>
+				<forward
+					name="ESB_RR"
+					path="ESB_RR_" />
+				<forward
+					name="ESB_FF"
+					path="ESB_FF_" />
+				<forward
+					name="ESB_RR_LARGE"
+					path="ESB_RR_LARGE_" />
+				<forward
+					name="ESB_FF_LOG"
+					path="ESB_FF_LOG_" />
+				<forward
+					name="P2P_RR"
+					path="P2P_RR_" />
+				<forward
+					name="P2P_FF"
+					path="P2P_FF_" />
+				<forward
+					name="P2P_RR_LARGE"
+					path="P2P_RR_LARGE_" />
+			</pipe>
+			<FixedResultPipe
+				name="ESB_RR_"
+				filename="xml/tibcostub_write1.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="ESB_FF_"
+				filename="xml/tibcostub_write2.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="ESB_RR_LARGE_"
+				filename="xml/tibcostub_write3.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="ESB_FF_LOG_"
+				filename="xml/tibcostub_write4.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="P2P_RR_"
+				filename="xml/tibcostub_write5.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="P2P_FF_"
+				filename="xml/tibcostub_write6.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="P2P_RR_LARGE_"
+				filename="xml/tibcostub_write7.xml"
+			>
+				<forward
+					name="success"
+					path="getQueues" />
+			</FixedResultPipe>
+			<pipe
+				name="getQueues"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="xml/xsl/GetQueues.xsl"
+				xsltVersion="2"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+			<pipe
+				name="error"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="xml/xsl/GetError.xsl"
+				xsltVersion="2"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

@@ -1,0 +1,5 @@
+<Request>
+    <QueueConnectionFactory>qcf_tibco_esb_ff</QueueConnectionFactory>
+    <QueueDestination>ESB.CustomerAdministration.TS.Customer.CustomerProcessData.1.ManageCase.1.Request</QueueDestination>
+    <Text>&lt;test/&gt;</Text>
+</Request>

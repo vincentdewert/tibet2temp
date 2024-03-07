@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/ExceptionLog/1" targetNamespace="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/ExceptionLog/1" elementFormDefault="qualified">
+	<!-- 2012-11-23 # Peter Leeuwenburgh # initial version -->
+	<!-- 2012-11-27 # Peter Leeuwenburgh # changed child elements of the Resend Element -->
+	<!-- 2012-11-29 # Peter Leeuwenburgh # changed service context version from 1 to 2 -->
+	<!-- 2012-12-03 # Peter Leeuwenburgh # typo in namespace -->
+	<!-- 2012-12-20 # Peter Leeuwenburgh # moved ExceptionType to Header XSD -->
+	<!-- 2014-05-14 # Peter Leeuwenburgh # typo in documentation -->
+	<xs:include schemaLocation="../../xsd/Header.xsd"/>
+	<xs:complexType name="ResendType">
+		<xs:sequence>
+			<xs:element name="ConnectionFactory" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>(e.g. SXXFP_Queue_ConnectionFactory)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ProviderUrl" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>(e.g. tcp://r1pzzapp0003.insim.biz:37222)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Destination" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>(e.g. ESB.Publishing.TS.Document.DocumentSPPV1.1.ComposeAndProduceDocument.2.Action)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MessageType">
+		<xs:sequence>
+			<xs:element name="Text" type="xs:string"/>
+			<xs:element name="Resend" type="ResendType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExceptionLog_Action">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="HeaderType"/>
+				<xs:element name="Exception" type="ExceptionType"/>
+				<xs:element name="Message" type="MessageType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

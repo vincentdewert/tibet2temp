@@ -1,0 +1,16 @@
+<project default="create.user">
+	<target name="create.user">
+		<exec executable="docker" failonerror="true">
+			<arg value="cp"/>
+			<arg value="create_user.sql"/>
+			<arg value="OracleDatabase:/mnt/create_user.sql"/>
+		</exec>
+		<exec executable="docker" failonerror="true">
+			<arg value="exec"/>
+			<arg value="OracleDatabase"/>
+			<arg value="sqlplus"/>
+			<arg value="sys/system as SYSDBA"/>
+			<arg value="@/mnt/create_user.sql"/>
+		</exec>
+	</target>
+</project> 

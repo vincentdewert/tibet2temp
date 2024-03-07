@@ -1,0 +1,139 @@
+<module>
+	<adapter name="GenerateTibcoQueuesOverview-get" active="${generateTibcoQueuesOverview.active}">
+		<receiver 
+			name="GenerateTibcoQueuesOverview-get">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="GenerateTibcoQueuesOverview-get" uriPattern="overview" method="GET" />
+		</receiver>
+		<pipeline firstPipe="readTibcoQueuesFile">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<pipe name="readTibcoQueuesFile" className="nl.nn.adapterframework.pipes.FilePipe"
+				actions="read" directory="${log.dir}"
+				getInputFromFixedValue="${storeShowTibcoQueuesToFileSystem.fileName}">
+				<forward name="success" path="generateTibcoQueuesOverview" />
+			</pipe>
+
+			<pipe name="generateTibcoQueuesOverview" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="GenerateTibcoQueuesOverview/xsl/GenerateTibcoQueuesOverview.xsl"
+				xsltVersion="2">
+				<param name="tibcoPrincipal" value="${tibco.principal}" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="GenerateTibcoQueuesOverview-post" active="${generateTibcoQueuesOverview.active}">
+		<receiver 
+			name="GenerateTibcoQueuesOverview-post">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="GenerateTibcoQueuesOverview-post" uriPattern="overview"
+				method="POST" />
+		</receiver>
+		<pipeline firstPipe="readTibcoQueuesFile">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<pipe name="readTibcoQueuesFile" className="nl.nn.adapterframework.pipes.FilePipe"
+				actions="read" directory="${log.dir}"
+				getInputFromFixedValue="${storeShowTibcoQueuesToFileSystem.fileName}"
+				storeResultInSessionKey="tibcoQueues">
+				<forward name="success" path="createFromToLines" />
+			</pipe>
+
+			<pipe name="createFromToLines" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="GenerateTibcoQueuesOverview/xsl/CreateFromToLines.xsl"
+				xsltVersion="2" storeResultInSessionKey="fromToLines">
+				<param name="searchString" sessionKey="searchValue" />
+				<forward name="success" path="switchLines" />
+			</pipe>
+
+			<pipe name="switchLines" className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(lines/line)=0">
+				<forward name="true" path="noResult" />
+				<forward name="false" path="switchExpandTP" />
+			</pipe>
+
+			<FixedResultPipe name="noResult" 
+				returnString="&lt;error&gt;no results found&lt;/error&gt;"
+				storeResultInSessionKey="executeResult">
+				<forward name="success" path="showGeneratedTibcoQueuesOverview" />
+			</FixedResultPipe>
+
+			<pipe name="switchExpandTP" className="nl.nn.adapterframework.pipes.XmlSwitch"
+				sessionKey="expandTP" notFoundForwardName="createDotLines">
+				<forward name="on" path="readTibcoSolutionQueuesFile" />
+			</pipe>
+
+			<pipe name="readTibcoSolutionQueuesFile" className="nl.nn.adapterframework.pipes.FilePipe"
+				actions="read" directory="${log.dir}"
+				getInputFromFixedValue="${retrieveTibcoSolutionFile.queues.fileName}"
+				storeResultInSessionKey="tibcoSolutionQueues">
+				<forward name="success" path="expandFromToLines" />
+			</pipe>
+
+			<pipe name="expandFromToLines" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="GenerateTibcoQueuesOverview/xsl/ExpandFromToLines.xsl"
+				xsltVersion="2" getInputFromSessionKey="fromToLines">
+				<param name="principal" sessionKey="tibcoPrincipal" />
+				<param name="tibcoSolutionQueues" sessionKey="tibcoSolutionQueues"
+					type="domdoc" />
+				<forward name="success" path="createDotLines" />
+			</pipe>
+
+			<pipe name="createDotLines" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="GenerateTibcoQueuesOverview/xsl/CreateDotLines.xsl"
+				xsltVersion="2" storeResultInSessionKey="dotLines">
+				<param name="searchString" sessionKey="searchValue" />
+				<param name="legend" sessionKey="legend" />
+				<param name="expand" sessionKey="expandTP" />
+				<param name="eol" value="${eol}" />
+				<param name="msgCount" sessionKey="msgCount" />
+				<param name="tibcoQueues" sessionKey="tibcoQueues" type="domdoc" />
+				<forward name="success" path="createTempOutputFile" />
+			</pipe>
+
+			<pipe name="createTempOutputFile" className="nl.nn.adapterframework.pipes.FilePipe"
+				actions="create" directory="${ibis.tmpdir}" storeResultInSessionKey="tempOutputFileName">
+				<param name="writeSuffix" pattern=".{outputFormat}" />
+				<forward name="success" path="executeCommand" />
+			</pipe>
+
+			<SenderPipe name="executeCommand"
+				storeResultInSessionKey="executeResult">
+				<sender className="nl.nn.adapterframework.http.HttpSender"
+					methodType="POST" url="${gv.url}" truststore="${gv.trusstore}"
+					truststorePassword="${gv.truststorePassword}" 
+					postType="formdata" ignoreRedirects="true" verifyHostname="false"
+					streamResultToFileNameSessionKey="tempOutputFileName" active="${gv.trust.active}">
+					<param name="outputFormat" sessionKey="outputFormat" />
+					<param name="input" sessionKey="dotLines" />
+				</sender>
+				<sender className="nl.nn.adapterframework.http.HttpSender"
+					methodType="POST" url="${gv.url}"  postType="formdata"
+					ignoreRedirects="true" verifyHostname="false" 
+					streamResultToFileNameSessionKey="tempOutputFileName"
+					active="${gv.trust.inactive}">
+					<param name="outputFormat" sessionKey="outputFormat" />
+					<param name="input" sessionKey="dotLines" />
+				</sender>
+				<forward name="success" path="getOutputFileInfo" />
+			</SenderPipe>
+
+			<pipe name="getOutputFileInfo" className="nl.nn.adapterframework.pipes.FilePipe"
+				actions="info" getInputFromSessionKey="tempOutputFileName"
+				storeResultInSessionKey="outputFileInfo">
+				<forward name="success" path="showGeneratedTibcoQueuesOverview" />
+			</pipe>
+
+			<pipe name="showGeneratedTibcoQueuesOverview" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="GenerateTibcoQueuesOverview/xsl/ShowGeneratedTibcoQueuesOverview.xsl"
+				xsltVersion="2" getInputFromSessionKey="executeResult">
+				<param name="outputFileInfo" sessionKey="outputFileInfo" type="domdoc" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

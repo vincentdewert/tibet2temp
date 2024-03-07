@@ -1,0 +1,12 @@
+#IDE excludes
+.settings
+.classpath
+.vscode
+.idea
+*.eml
+overlays
+#Mvn build excludes
+target
+bin
+cvs
+FrankConfig.xsd

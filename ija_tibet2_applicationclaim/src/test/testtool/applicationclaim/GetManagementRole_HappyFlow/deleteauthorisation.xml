@@ -1,0 +1,5 @@
+<manageDatabaseREQ>
+	<delete>
+		<tableName>AUTHORISATION</tableName>
+	</delete>
+</manageDatabaseREQ>

@@ -1,0 +1,19 @@
+<!DOCTYPE configuration [
+	<!ENTITY applicationclaim SYSTEM "ConfigurationApplicationClaim.xml">
+	<!ENTITY GetManagementRole SYSTEM "ConfigurationGetManagementRole.xml">
+	<!ENTITY UnclaimApplication SYSTEM "ConfigurationUnclaimApplication.xml">
+	<!ENTITY GetClaimedRecords SYSTEM "ConfigurationGetClaimedRecords.xml">
+	<!ENTITY UnclaimDeleteRecords SYSTEM "ConfigurationUnclaimDeleteRecords.xml">
+	<!ENTITY GetAllTibcoQs SYSTEM "ConfigurationGetAllTibcoQueues.xml">
+	<!ENTITY ClaimAppFrontend SYSTEM "ConfigurationClaimAppFrontend.xml">
+	]>
+<configuration name="applicationclaim">
+
+	&GetAllTibcoQs;
+	&applicationclaim;
+	&GetManagementRole;
+	&UnclaimApplication;
+	&GetClaimedRecords;
+	&UnclaimDeleteRecords;
+	&ClaimAppFrontend;
+</configuration>

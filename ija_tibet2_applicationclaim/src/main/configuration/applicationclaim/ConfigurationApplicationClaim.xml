@@ -1,0 +1,347 @@
+<module>
+	<adapter
+		name="applicationclaim"
+		description="Claim roles"
+	>
+		<receiver
+			name="applicationclaim"
+			
+		>
+			<listener
+				name="applicationclaim"
+				className="nl.nn.adapterframework.http.rest.ApiListener"
+				uriPattern="claimqueue"
+				method="POST" />
+		</receiver>
+		<pipeline firstPipe="FindPrincipal">
+			<exits>
+				<exit
+					name="Exit"
+					state="success"
+					code="201" />
+				<exit
+					name="ERROR"
+					state="error"
+					code="500" />
+			</exits>
+			<pipe
+				name="FindPrincipal"
+				className="nl.nn.adapterframework.pipes.GetPrincipalPipe"
+				storeResultInSessionKey="principal"
+				preserveInput="true"
+			>
+				<forward
+					name="success"
+					path="StoreInputInfoInSession" />
+			</pipe>
+			<pipe
+				name="StoreInputInfoInSession"
+				className="nl.nn.adapterframework.pipes.PutInSession"
+			>
+				<param
+					name="ServApplName"
+					xpathExpression="input/servapplname"
+					defaultValue="null" />
+				<param
+					name="BusinessDomain"
+					xpathExpression="input/businessdomain"
+					defaultValue="null" />
+				<param
+					name="PreferredClaimRole"
+					xpathExpression="input/claimrole"
+					defaultValue="null" />
+				<param
+					name="Role"
+					xpathExpression="input/role"
+					defaultValue="null" />
+				<forward
+					name="success"
+					path="GetEsbInfo" />
+				<forward
+					name="error"
+					path="ERROR" />
+			</pipe>
+			<SenderPipe
+				name="GetEsbInfo"
+				getInputFromSessionKey="ServApplName"
+				storeResultInSessionKey="EsbInfo"
+			>
+				<FixedQuerySender
+					name="SelectQuery"
+					queryType="select"
+					query="SELECT * FROM AUTHORISATION WHERE (BUSINESSDOMAIN=? and SERV_APPL_NAME=?)"
+				>
+					<param
+						name="BusinessDomain"
+						sessionKey="BusinessDomain" />
+					<param
+						name="ServApplName"
+						sessionKey="ServApplName" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="IsRoleClaimRole" />
+			</SenderPipe>
+			<SenderPipe
+				name="IsRoleClaimRole"
+			>
+				<IbisLocalSender
+					javaListener="checkForStubAndReturnRoles"
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+				>
+					<param
+						name="principal"
+						sessionKey="principal" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="MatchLdapClaimRoleAndPreferredClaimRole" />
+			</SenderPipe>
+			<!--The xsl checks if the PreferredClaimRole is matching the ClaimRoles verified by Ldap -->
+			<pipe
+				name="MatchLdapClaimRoleAndPreferredClaimRole"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				styleSheetName="xml/xsl/MatchClaimRoles.xsl"
+			>
+				<param
+					name="PreferredClaimRole"
+					sessionKey="PreferredClaimRole" />
+				<forward
+					name="IfServApplNameExist" path="IfServApplNameExists" />
+				<forward
+					name="NoClaimRoles" path="NoClaimRolesFound" />
+			</pipe>
+			<FixedResultPipe
+				name="NoClaimRolesFound"
+				returnString="&#10060;  Error. You don't have the right permissions to claim or unclaim an application."
+			>
+				<forward
+					name="success"
+					path="Exit" />
+			</FixedResultPipe>
+			<pipe
+				name="IfServApplNameExists"
+				className="nl.nn.adapterframework.pipes.XmlIf"
+				xpathExpression="count(result/rowset/row)>0"
+				getInputFromSessionKey="EsbInfo"
+			>
+				<forward
+					name="then"
+					path="IfLengthClaimRoleGreaterThanZero" />
+				<forward
+					name="else"
+					path="DoesNotExist" />
+			</pipe>
+			<SenderPipe
+				name="DoesNotExist"
+			>
+				<IbisLocalSender
+					javaListener="AddInfoToDb"
+				>
+					<param
+						name="ServApplName"
+						sessionKey="ServApplName" />
+					<param
+						name="BusinessDomain"
+						sessionKey="BusinessDomain" />
+					<param
+						name="PreferredClaimRole"
+						sessionKey="PreferredClaimRole" />
+					<param
+						name="Role"
+						sessionKey="Role" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="Exit" />
+			</SenderPipe>
+			<pipe
+				name="IfLengthClaimRoleGreaterThanZero"
+				className="nl.nn.adapterframework.pipes.XmlIf"
+				xpathExpression="string-length(result/rowset/row/field[@name='CLAIM_ROLE'])>0"
+			>
+				<forward
+					name="then"
+					path="ClaimRoleNotEmpty" />
+				<forward
+					name="else"
+					path="ClaimRoleEmpty" />
+			</pipe>
+			<SenderPipe
+				name="ClaimRoleNotEmpty"
+				storeResultInSessionKey="AlreadyClaimedBy"
+			>
+				<FixedQuerySender
+					name="SelectClaimRoleNotEmpty"
+					queryType="select"
+					query="SELECT CLAIM_ROLE FROM AUTHORISATION WHERE (BUSINESSDOMAIN=? and SERV_APPL_NAME=?)"
+				>
+					<param
+						name="BusinessDomain"
+						sessionKey="BusinessDomain" />
+					<param
+						name="ServApplName"
+						sessionKey="ServApplName" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="ClaimedByInSession" />
+			</SenderPipe>
+			<pipe
+				name="ClaimedByInSession"
+				className="nl.nn.adapterframework.pipes.PutInSession"
+			>
+				<param
+					name="AlreadyClaimedBy"
+					sessionKey="AlreadyClaimedBy"
+					xpathExpression="result/rowset/row/field/text()"
+					defaultValue="null" />
+				<forward
+					name="success"
+					path="WhoClaimedApplication" />
+				<forward
+					name="error"
+					path="ERROR" />
+			</pipe>
+			<pipe
+				name="WhoClaimedApplication"
+				className="nl.nn.adapterframework.pipes.CompareStringPipe"
+			>
+				<param
+					name="operand1"
+					sessionKey="PreferredClaimRole" />
+				<param
+					name="operand2"
+					sessionKey="AlreadyClaimedBy" />
+				<forward
+					name="lessthan"
+					path="MessageClaimedByBU" />
+				<forward
+					name="equals"
+					path="MessageClaimedByYou" />
+				<forward
+					name="greaterthan"
+					path="MessageClaimedByBU" />
+			</pipe>
+			<pipe
+				name="MessageClaimedByBU"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="concat('&#10069;  ','The queue can not be claimed because the management role is already claimed by ',result/rowset/row/field/text(),'. Please contact this business unit if you suppose this queue belongs to you. They have to unclaim the application before you can claim it.')"
+			>
+				<param
+					name="ServApplName"
+					sessionKey="ServApplName" />
+				<forward
+					name="success"
+					path="Exit" />
+			</pipe>
+			<pipe
+				name="MessageClaimedByYou"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="concat('&#10069;  ','This application is already claimed by your business unit (',result/rowset/row/field/text(),'). You can find an overview of your claimed applications below.')"
+			>
+				<forward
+					name="success"
+					path="Exit" />
+			</pipe>
+			<FixedResultPipe
+				name="ClaimRoleEmpty"
+				returnString="&#10060;  Sorry, you don't have management roles. So you're not able to claim an application."
+			>
+				<forward
+					name="success"
+					path="UpdateDatabaseWithClaimRole" />
+			</FixedResultPipe>
+			<SenderPipe
+				name="UpdateDatabaseWithClaimRole"
+				storeResultInSessionKey="SessionUpdateDatabaseWithClaimRole"
+			>
+				<FixedQuerySender
+					query="UPDATE authorisation 
+						SET CLAIM_ROLE = ?
+						WHERE SERV_APPL_NAME =?"
+					queryType="other"
+				>
+					<param
+						name="PreferredClaimRole"
+						sessionKey="PreferredClaimRole" />
+					<param
+						name="ServApplName"
+						sessionKey="ServApplName" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="UpdateSuccesMessage" />
+				<forward
+					name="error"
+					path="ERROR" />
+			</SenderPipe>
+			<FixedResultPipe
+				name="UpdateSuccesMessage"
+				returnString="&#9989;  The application has been claimed successfully. You can find your claimed applications below."
+			>
+				<forward
+					name="success"
+					path="Exit" />
+			</FixedResultPipe>
+			<pipe
+				name="ERROR"
+				className="nl.nn.adapterframework.pipes.ExceptionPipe" />
+		</pipeline>
+	</adapter>
+	<adapter name="AddInfoToDb">
+		<receiver
+			
+			name="AddInfoToDb"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="AddInfoToDb" />
+		</receiver>
+		<pipeline firstPipe="InsertAdapter">
+			<exits>
+				<exit
+					name="Exit"
+					state="success"
+					code="201" />
+				<exit
+					name="ServerError"
+					state="error"
+					code="500" />
+			</exits>
+			<SenderPipe
+				name="InsertAdapter"
+			>
+				<FixedQuerySender
+					query="INSERT INTO authorisation (BUSINESSDOMAIN,SERV_APPL_NAME,ROLE,CLAIM_ROLE)
+							VALUES (?,?,?,?)"
+					queryType="other"
+				>
+					<param
+						name="BusinessDomain"
+						sessionKey="BusinessDomain" />
+					<param
+						name="ServApplName"
+						sessionKey="ServApplName" />
+					<param
+						name="Role"
+						sessionKey="Role" />
+					<param
+						name="PreferredClaimRole"
+						sessionKey="PreferredClaimRole" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="InsertSuccesMessage" />
+			</SenderPipe>
+			<FixedResultPipe
+				name="InsertSuccesMessage"
+				returnString="&#9989;  The application has been claimed successfully. You can find your claimed applications below."
+			>
+				<forward
+					name="success"
+					path="Exit" />
+			</FixedResultPipe>
+		</pipeline>
+	</adapter>
+</module>

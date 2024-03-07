@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header><ns:MessageHeader xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://nn.nl/XSD/Generic/MessageHeader/1" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"><ns:From><ns:Id>TIBET2</ns:Id><ns:Location>ESB.Infrastructure.US.Log.BusinessLog.2.ExceptionLog.1.Action</ns:Location></ns:From><ns:To><ns:Id>Ibis4WGP</ns:Id><ns:Location/></ns:To><ns:HeaderFields><ns:CPAId>n/a</ns:CPAId><ns:ConversationId>srtzzapp0020_be86b8f4-20a7-45cd-ba8f-4a476609e5e4</ns:ConversationId><ns:MessageId>srtzzapp0020_2682d588-3b4c-4c7b-a196-5e77eadec1a5</ns:MessageId><ns:CorrelationId/><ns:Timestamp>2014-05-15T08:46:29.338+02:00</ns:Timestamp></ns:HeaderFields><ns:ConnectionInfo/><ns:Service><ns:Name>Log</ns:Name><ns:Context>BusinessLog</ns:Context><ns:Action><ns:Paradigm>Action</ns:Paradigm><ns:Name>ExceptionLog</ns:Name><ns:Version>1</ns:Version></ns:Action></ns:Service></ns:MessageHeader></SOAP-ENV:Header><SOAP-ENV:Body><ns0:ExceptionLog_Action xmlns:ns0="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/ExceptionLog/1"><ns0:Header><ns0:MessageId>srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9c</ns0:MessageId><ns0:ConversationId>srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9d</ns0:ConversationId><ns0:CPAId>n/a</ns0:CPAId><ns0:BusinessDomain>CustomerAdministration</ns0:BusinessDomain><ns0:ServiceName>Party</ns0:ServiceName><ns0:ServiceContext>Party</ns0:ServiceContext><ns0:ServiceContextVersion>2</ns0:ServiceContextVersion><ns0:OperationName>FindBusinessPartner</ns0:OperationName><ns0:OperationVersion>3</ns0:OperationVersion><ns0:ApplicationName>SAPBP</ns0:ApplicationName><ns0:ApplicationFunction>Z_TIBCO_FIND_BUSINESS_PARTNER</ns0:ApplicationFunction><ns0:Timestamp>2014-05-15T08:45:59</ns0:Timestamp><ns0:SenderId>Ibis4WGP</ns0:SenderId></ns0:Header><ns0:Exception><ns0:Code>BW-AE-100014</ns0:Code><ns0:Reason>Timeout waiting for reply.</ns0:Reason><ns0:Text>STACKTRACE:
+
+Job-44281 Error in [Business Process/FindBusinessPartner_3/Workers/FindBusinessPartner_worker.process/Invoke an Adapter Request-Response Service]
+Timeout waiting for reply.
+	at com.tibco.plugin.ae.AERPCRequestReplyActivity.cancelled(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+
+
+PROCESS-STACK:
+
+Business Process/FindBusinessPartner_3/Starters/FindBusinessPartner_SOAP.process/Call service&gt;Business Process/FindBusinessPartner_3/Starters/FindBusinessPartner_AMX.process/Group/Call worker&gt;Business Process/FindBusinessPartner_3/Workers/FindBusinessPartner_worker.process/Invoke an Adapter Request-Response Service
+
+CLASS:
+
+com.tibco.plugin.ae.exception.TimeoutException
+
+EXCEPTION-DATA:
+
+&lt;Data&gt;
+    &lt;ns0:TimeoutException xmlns:ns0="http://schemas.tibco.com/bw/plugins/ae/5.0/aeExceptions"&gt;
+        &lt;msg&gt;Timeout waiting for reply.&lt;/msg&gt;
+        &lt;msgCode&gt;BW-AE-100014&lt;/msgCode&gt;
+        &lt;errorMessage&gt;Timeout waiting for the reply&lt;/errorMessage&gt;
+    &lt;/ns0:TimeoutException&gt;
+&lt;/Data&gt;
+
+CONTEXT:
+
+</ns0:Text></ns0:Exception><ns0:Message><ns0:Text>&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    &lt;SOAP-ENV:Header&gt;
+        &lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/1" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+            &lt;From&gt;
+                &lt;Id&gt;Ibis4WGP&lt;/Id&gt;
+            &lt;/From&gt;
+            &lt;To&gt;
+                &lt;Location&gt;ESB.CustomerAdministration.BS.Party.Party.2.FindBusinessPartner.3.Request&lt;/Location&gt;
+            &lt;/To&gt;
+            &lt;HeaderFields&gt;
+                &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+                &lt;ConversationId&gt;srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9d&lt;/ConversationId&gt;
+                &lt;MessageId&gt;srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9c&lt;/MessageId&gt;
+                &lt;Timestamp&gt;2014-05-15T08:45:59&lt;/Timestamp&gt;
+            &lt;/HeaderFields&gt;
+            &lt;Service&gt;
+                &lt;Name&gt;Party&lt;/Name&gt;
+                &lt;Context&gt;Party&lt;/Context&gt;
+                &lt;Action&gt;
+                    &lt;Paradigm&gt;Request&lt;/Paradigm&gt;
+                    &lt;Name&gt;FindBusinessPartner&lt;/Name&gt;
+                    &lt;Version&gt;3&lt;/Version&gt;
+                &lt;/Action&gt;
+            &lt;/Service&gt;
+        &lt;/MessageHeader&gt;
+    &lt;/SOAP-ENV:Header&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;FindBusinessPartnerREQ xmlns="http://nn.nl/XSD/CustomerAdministration/Party/Party/2/FindBusinessPartner/3" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+            &lt;Role&gt;ZEXT&lt;/Role&gt;
+            &lt;BusinessPartner&gt;
+                &lt;OrganizationSearch&gt;
+                    &lt;Name&gt;*metal*&lt;/Name&gt;
+                &lt;/OrganizationSearch&gt;
+            &lt;/BusinessPartner&gt;
+        &lt;/FindBusinessPartnerREQ&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;</ns0:Text><ns0:Resend><ns0:ConnectionFactory>TLNHN_Queue_ConnectionFactory</ns0:ConnectionFactory><ns0:ProviderUrl>tcp://srdzzapp0009.insim.biz:37222,tcp://srdzzapp0009.insim.biz:37222</ns0:ProviderUrl><ns0:Destination>P2P.CustomerAdministration.AMX_SAPBP.FindBusinessPartner.Request</ns0:Destination></ns0:Resend></ns0:Message></ns0:ExceptionLog_Action></SOAP-ENV:Body></SOAP-ENV:Envelope>

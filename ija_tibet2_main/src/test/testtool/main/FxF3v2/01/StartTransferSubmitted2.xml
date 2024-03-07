@@ -1,0 +1,72 @@
+<Envelope>
+	<Header>
+		<MessageHeader>
+			<From>
+				<Id>SubmitTransfer_StartTransfer</Id>
+			</From>
+			<To>
+				<Location>ESB.Infrastructure.US.Log.BusinessLog.2.ExceptionLog.1.Action</Location>
+			</To>
+			<HeaderFields>
+				<CPAId>8d95131dadd249cdac46f740530598b8</CPAId>
+				<ConversationId>c4f12ca7de7549f1ad76c3ea2a949606</ConversationId>
+				<MessageId>9bf26ee482574880b2c26d0c0956970a</MessageId>
+				<Timestamp>2015-09-11T14:12:36.735+02:00</Timestamp>
+			</HeaderFields>
+			<Service>
+				<Name>FxF3</Name>
+				<Context>SubmitTransfer</Context>
+				<Action>
+					<Paradigm>Request</Paradigm>
+					<Name>StartTransfer</Name>
+					<Version>2</Version>
+				</Action>
+			</Service>
+		</MessageHeader>
+	</Header>
+	<Body>
+		<AuditLog_Action>
+			<Header>
+				<MessageId>5277038a487e4aec8175b7e643bcd24e</MessageId>
+				<ConversationId>ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973</ConversationId>
+				<CPAId>I911500017</CPAId>
+				<BusinessDomain>Infrastructure</BusinessDomain>
+				<ServiceName>FxF3</ServiceName>
+				<ServiceContext>SubmitTransfer</ServiceContext>
+				<ServiceContextVersion>2</ServiceContextVersion>
+				<OperationName>StartTransfer</OperationName>
+				<OperationVersion>2</OperationVersion>
+				<ApplicationName>FxF3.2</ApplicationName>
+				<ApplicationFunction>StartTransferSubmitted</ApplicationFunction>
+				<Timestamp>2015-09-12T06:04:28.727+02:00</Timestamp>
+			</Header>
+			<Message>
+				<Text><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms">
+    <JMSHeaders>
+        <jms1:JMSDestination>P2P.Infrastructure.TIBCOMFT.Transfer.Request</jms1:JMSDestination>
+        <jms1:JMSDeliveryMode>PERSISTENT</jms1:JMSDeliveryMode>
+        <jms1:JMSMessageID>ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884366:114</jms1:JMSMessageID>
+        <jms1:JMSTimestamp>1441973556699</jms1:JMSTimestamp>
+        <jms1:JMSExpiration>0</jms1:JMSExpiration>
+        <jms1:JMSRedelivered>false</jms1:JMSRedelivered>
+        <jms1:JMSPriority>4</jms1:JMSPriority>
+        <jms1:JMSCorrelationID>ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973</jms1:JMSCorrelationID>
+        <jms1:JMSType>Platform-Response</jms1:JMSType>
+    </JMSHeaders>
+    <JMSProperties/>
+    <OtherProperties>
+        <Status>Submit Success</Status>
+        <ResponseType>TransferImmediate</ResponseType>
+        <ReturnCode>0</ReturnCode>
+        <InitiatorTransactionID>I911500017</InitiatorTransactionID>
+        <Message>Transaction I911500017 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully </Message>
+        <NumRecords>0</NumRecords>
+    </OtherProperties>
+</jms1:ActivityOutput>]]></Text>
+				<Type>received</Type>
+			</Message>
+		</AuditLog_Action>
+	</Body>
+</Envelope>

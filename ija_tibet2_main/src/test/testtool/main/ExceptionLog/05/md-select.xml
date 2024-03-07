@@ -1,0 +1,174 @@
+<manageDatabaseRLY>
+	<completionInformation>
+		<returnCode>OK</returnCode>
+	</completionInformation>
+	<results>
+		<result item="1">
+			<result>
+				<fielddefinition>
+					<field name="MESSAGEKEY" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="TYPE" type="CHAR" columnDisplaySize="1" precision="1" scale="0" isCurrency="false" columnTypeName="CHAR" columnClassName="java.lang.String"/>
+					<field name="SLOTID" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="HOST" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CORRELATIONID" type="VARCHAR" columnDisplaySize="256" precision="256" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGEDATE" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="COMMENTS" type="VARCHAR" columnDisplaySize="1000" precision="1000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="EXPIRYDATE" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="LABEL" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset/>
+			</result>
+		</result>
+		<result item="2">
+			<result>
+				<fielddefinition>
+					<field name="LOGID" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CONVERSATIONID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CPAID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXTVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="OPERATIONVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="APPLICATIONFUNCTION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LOG_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="SENDERID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CRE_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="TYPE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_CALLID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LABEL" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_CODE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_REASON" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_TEXT" type="VARCHAR" columnDisplaySize="4000" precision="4000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset/>
+			</result>
+		</result>
+		<result item="3">
+			<result>
+				<fielddefinition>
+					<field name="LOGID" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CONVERSATIONID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CPAID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXTVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="OPERATIONVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="APPLICATIONFUNCTION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LOG_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="SENDERID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CRE_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="ERROR_CODE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="ERROR_REASON" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="ERROR_TEXT" type="VARCHAR" columnDisplaySize="4000" precision="4000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="RESEND_CONN_FACT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="RESEND_PROV_URL" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="RESEND_DESTINATION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset>
+					<row number="0">
+						<field name="LOGID">135790</field>
+						<field name="MESSAGEID">srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9c</field>
+						<field name="CONVERSATIONID">srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9d</field>
+						<field name="CPAID">n/a</field>
+						<field name="BUSINESSDOMAIN">CustomerAdministration</field>
+						<field name="SERVICENAME">Party</field>
+						<field name="SERVICECONTEXT">Party</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">FindBusinessPartner</field>
+						<field name="OPERATIONVERSION">3</field>
+						<field name="APPLICATIONNAME">SAPBP</field>
+						<field name="APPLICATIONFUNCTION">Z_TIBCO_FIND_BUSINESS_PARTNER</field>
+						<field name="LOG_TIMESTAMP">2014-05-15 08:45:59</field>
+						<field name="SENDERID">Ibis4WGP</field>
+						<field name="CRE_TIMESTAMP">2020-08-27 13:02:40</field>
+						<field name="ERROR_CODE">BW-AE-100014</field>
+						<field name="ERROR_REASON">Timeout waiting for reply.</field>
+						<field name="ERROR_TEXT">STACKTRACE:
+
+Job-44281 Error in [Business Process/FindBusinessPartner_3/Workers/FindBusinessPartner_worker.process/Invoke an Adapter Request-Response Service]
+Timeout waiting for reply.
+	at com.tibco.plugin.ae.AERPCRequestReplyActivity.cancelled(Unknown Source)
+	at com.tibco.pe.core.TaskImpl.eval(Unknown Source)
+	at com.tibco.pe.core.Job.a(Unknown Source)
+	at com.tibco.pe.core.Job.k(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.a(Unknown Source)
+	at com.tibco.pe.core.JobDispatcher$JobCourier.run(Unknown Source)
+
+
+PROCESS-STACK:
+
+Business Process/FindBusinessPartner_3/Starters/FindBusinessPartner_SOAP.process/Call service&gt;Business Process/FindBusinessPartner_3/Starters/FindBusinessPartner_AMX.process/Group/Call worker&gt;Business Process/FindBusinessPartner_3/Workers/FindBusinessPartner_worker.process/Invoke an Adapter Request-Response Service
+
+CLASS:
+
+com.tibco.plugin.ae.exception.TimeoutException
+
+EXCEPTION-DATA:
+
+&lt;Data&gt;
+    &lt;ns0:TimeoutException xmlns:ns0="http://schemas.tibco.com/bw/plugins/ae/5.0/aeExceptions"&gt;
+        &lt;msg&gt;Timeout waiting for reply.&lt;/msg&gt;
+        &lt;msgCode&gt;BW-AE-100014&lt;/msgCode&gt;
+        &lt;errorMessage&gt;Timeout waiting for the reply&lt;/errorMessage&gt;
+    &lt;/ns0:TimeoutException&gt;
+&lt;/Data&gt;
+
+CONTEXT:</field>
+						<field name="MESSAGE">&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+    &lt;SOAP-ENV:Header&gt;
+        &lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/1" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+            &lt;From&gt;
+                &lt;Id&gt;Ibis4WGP&lt;/Id&gt;
+            &lt;/From&gt;
+            &lt;To&gt;
+                &lt;Location&gt;ESB.CustomerAdministration.BS.Party.Party.2.FindBusinessPartner.3.Request&lt;/Location&gt;
+            &lt;/To&gt;
+            &lt;HeaderFields&gt;
+                &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+                &lt;ConversationId&gt;srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9d&lt;/ConversationId&gt;
+                &lt;MessageId&gt;srtzzapp0103_0ace0856--7a8d663e_145fc82da51_-7f9c&lt;/MessageId&gt;
+                &lt;Timestamp&gt;2014-05-15T08:45:59&lt;/Timestamp&gt;
+            &lt;/HeaderFields&gt;
+            &lt;Service&gt;
+                &lt;Name&gt;Party&lt;/Name&gt;
+                &lt;Context&gt;Party&lt;/Context&gt;
+                &lt;Action&gt;
+                    &lt;Paradigm&gt;Request&lt;/Paradigm&gt;
+                    &lt;Name&gt;FindBusinessPartner&lt;/Name&gt;
+                    &lt;Version&gt;3&lt;/Version&gt;
+                &lt;/Action&gt;
+            &lt;/Service&gt;
+        &lt;/MessageHeader&gt;
+    &lt;/SOAP-ENV:Header&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;FindBusinessPartnerREQ xmlns="http://nn.nl/XSD/CustomerAdministration/Party/Party/2/FindBusinessPartner/3" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+            &lt;Role&gt;ZEXT&lt;/Role&gt;
+            &lt;BusinessPartner&gt;
+                &lt;OrganizationSearch&gt;
+                    &lt;Name&gt;*metal*&lt;/Name&gt;
+                &lt;/OrganizationSearch&gt;
+            &lt;/BusinessPartner&gt;
+        &lt;/FindBusinessPartnerREQ&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;</field>
+						<field name="RESEND_CONN_FACT">TLNHN_Queue_ConnectionFactory</field>
+						<field name="RESEND_PROV_URL">tcp://srdzzapp0009.insim.biz:37222,tcp://srdzzapp0009.insim.biz:37222</field>
+						<field name="RESEND_DESTINATION">P2P.CustomerAdministration.AMX_SAPBP.FindBusinessPartner.Request</field>
+					</row>
+				</rowset>
+			</result>
+		</result>
+	</results>
+</manageDatabaseRLY>

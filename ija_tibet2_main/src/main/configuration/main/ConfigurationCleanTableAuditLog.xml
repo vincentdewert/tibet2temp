@@ -1,0 +1,29 @@
+<module>
+    <adapter name="CleanTableAuditLog" description="Clean table AUDITLOG">
+        <receiver
+                name="CleanTableAuditLog">
+            <listener className="nl.nn.adapterframework.receivers.JavaListener"
+                      name="CleanTableAuditLog"/>
+        </receiver>
+        <pipeline firstPipe="Delete" transactionAttribute="NotSupported">
+            <exits>
+                <exit name="EXIT" state="success"/>
+            </exits>
+            <SenderPipe name="Delete"
+            >
+                <sender className="nl.nn.adapterframework.jdbc.FixedQuerySender"
+                        query="DELETE FROM AUDITLOG WHERE CRE_TIMESTAMP &lt; SYSDATE - ?"
+                        queryType="delete">
+                    <param name="subtractDays" sessionKey="dummy"
+                           defaultValue="${auditLog.clean.days}"/>
+                </sender>
+                <forward name="success" path="EXIT"/>
+            </SenderPipe>
+        </pipeline>
+    </adapter>
+    <scheduler>
+        <SendMessageJob name="jobCleanTableAuditLog"
+                        javaListener="CleanTableAuditLog"
+                        cronExpression="${cleanTableAuditLog.schedule.cron}" description="Clean table AUDITLOG"/>
+    </scheduler>
+</module>

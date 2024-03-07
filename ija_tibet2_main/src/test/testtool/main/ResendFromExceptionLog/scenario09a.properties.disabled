@@ -1,0 +1,14 @@
+scenario.description = OK - (via getRoleEsbOld) and
+
+include = common.properties
+
+step1.manage.db.write = ../ManageDatabase/init09a.xml
+step2.manage.db.read = 09a/md-init.xml
+step3.ibis.in2.write = 09a/in.txt
+step4.ibis.in3.write = 09a/ldap-out.txt
+step5.ibis.in3.read = 09a/ldap-in.txt
+#step4.tibco.out.read = 09a/tibco-out.xml
+#step5.tibco.out.write = 09a/tibco-in.txt
+#step6.ibis.in.read = 09a/out.xml
+step6.manage.db.write = ../ManageDatabase/select.xml
+step7.manage.db.read = 09a/md-select.xml

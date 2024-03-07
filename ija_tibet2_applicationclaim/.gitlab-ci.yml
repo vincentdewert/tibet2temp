@@ -1,0 +1,10 @@
+## Include the config pipeline from the DM Pipeline Project
+## (See https://vcs.aws.insim.biz/ibissource/dm/pipeline/blob/master/config/.gitlab-ci.yml)
+include:
+  project: 'ibissource/cicd/ibis-gitlab-pipelines'
+  file: '/old/yml/ibis_pipeline_oldrepo.yml'
+
+## Config specific variables
+variables:
+  IBIS: "ija_tibet2"
+  CONFIG: "applicationclaim"

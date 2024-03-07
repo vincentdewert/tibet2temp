@@ -1,0 +1,34 @@
+<module>
+	<adapter
+		name="ClaimAppFrontend"
+		active="true"
+	>
+		<receiver
+			
+			name="Claim_Application"
+		>
+			<listener
+				className="nl.nn.adapterframework.http.RestListener"
+				name="ClaimAppFrontend"
+				uriPattern="claimapp"
+				authRoles="IbisDataAdmin,IbisAdmin,IbisTester,IbisObserver" />
+		</receiver>
+		<pipeline firstPipe="createRestView">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<pipe
+				name="createRestView"
+				className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+				styleSheetName="ClaimAppFrontend/xsl/claimapp.xsl"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

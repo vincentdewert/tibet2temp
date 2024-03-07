@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%t] %x %c{1} %m%n"/>
+		</layout>
+	</appender>
+	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}.log"/>
+		<param name="MaxBackupIndex" value="${log.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.maxFileSize}"/>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p [%t] %x %c{2} - %m%n"/>
+		</layout>
+		<filter class="nl.nn.adapterframework.extensions.log4j.IbisThreadFilter">
+			<param name="AcceptOnMatch" value="false"/>
+			<param name="Regex" value="(WebControl.*)|(AuditLog.*)|(ExceptionLog.*)|(ApplicationLog.*)|(ShowTibcoQueues.*)|(jobStoreShowTibcoQueuesToFileSystem.*)|(GenerateWsdl.*)|(SendTibcoMessage.*)|(GenerateTibcoQueuesOverview.*)|(ShowFxF3v2Log.*)"/>
+		</filter>
+	</appender>
+	<appender name="XML" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}_xml.log"/>
+		<param name="MaxBackupIndex" value="${log.xml.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.xml.maxFileSize}"/>
+		<param name="Append" value="true"/>
+		<layout class="org.apache.log4j.xml.XMLLayout"/>
+		<filter class="nl.nn.adapterframework.extensions.log4j.IbisThreadFilter">
+			<param name="AcceptOnMatch" value="false"/>
+			<param name="Regex" value="(WebControl.*)|(AuditLog.*)|(ExceptionLog.*)|(ApplicationLog.*)|(ShowTibcoQueues.*)|(jobStoreShowTibcoQueuesToFileSystem.*)|(GenerateWsdl.*)|(SendTibcoMessage.*)|(GenerateTibcoQueuesOverview.*)|(ShowFxF3v2Log.*)"/>
+		</filter>
+	</appender>
+	<appender name="galm" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-galm.log"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="MaxFileSize" value="100KB"/>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="msg" class="nl.nn.adapterframework.extensions.log4j.IbisDailyRollingFileAppender">
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<param name="File" value="${log.dir}/${instance.name.lc}-messages.log"/>
+		<param name="MaxFileSize" value="${log.maxFileSize}"/>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %m%n"/>
+		</layout>
+	</appender>
+<!-- 	<appender name="msg" class="nl.nn.adapterframework.extensions.log4j.IbisDailyRollingFileAppender"> -->
+<!-- 		<param name="Append" value="true"/> -->
+<!-- 		<param name="DatePattern" value="'.'yyyy-MM-dd"/> -->
+<!-- 		<param name="File" value="${log.dir}/${instance.name.lc}-messages.log"/> -->
+<!-- 		<param name="RetentionDays" value="7"/> -->
+<!-- 		<layout class="org.apache.log4j.EnhancedPatternLayout"> -->
+<!-- 			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %m%n"/> -->
+<!-- 		</layout> -->
+<!-- 	</appender> -->
+	<appender name="security" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-security.log"/>
+		<param name="MaxBackupIndex" value="${log.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.maxFileSize}"/>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} [%t] %m%n"/>
+		</layout>
+	</appender>
+	<appender name="heartbeat" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-heartbeat.log"/>
+		<param name="MaxBackupIndex" value="${log.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.maxFileSize}"/>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %m%n"/>
+		</layout>
+	</appender>
+	<appender name="appwrap" class="nl.nn.adapterframework.extensions.log4j.IbisAppenderWrapper">
+		<param name="maxMessageLength" value="${log.lengthLogRecords}"/>
+		<param name="hideRegex" value="${log.hideRegex}"/>
+		<appender-ref ref="file"/>
+		<appender-ref ref="XML"/>
+	</appender>
+	<appender name="tibco" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="tibco_cfo_cro" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO_CFO_CRO.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco_cfo_cro.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco_cfo_cro.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="tibco_fm_hr_groupapps" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO_FM_HR_GroupApps.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco_fm_hr_groupapps.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco_fm_hr_groupapps.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="tibco_nnc" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO_NNC.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco_nnc.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco_nnc.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="tibco_nnp" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO_NNP.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco_nnp.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco_nnp.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<appender name="tibco_nnz" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="${log.dir}/${instance.name.lc}-TIBCO_NNZ.log"/>
+		<param name="MaxBackupIndex" value="${log.tibco_nnz.maxBackupIndex}"/>
+		<param name="MaxFileSize" value="${log.tibco_nnz.maxFileSize}"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+	<logger name="nl.nn.adapterframework.testtool">
+		<level value="WARN"/>
+	</logger>
+	<logger name="org.apache">
+		<level value="INFO"/>
+	</logger>
+	<logger name="org.apache.commons">
+		<level value="WARN"/>
+	</logger>
+	<logger name="GALM" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="galm"/>
+	</logger>
+	<logger name="MSG" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="msg"/>
+	</logger>
+	<logger name="SEC" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="security"/>
+	</logger>
+	<logger name="HEARTBEAT" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="heartbeat"/>
+	</logger>
+	<logger name="TIBCOLOG">
+		<level value="INFO"/>
+		<appender-ref ref="tibco"/>
+	</logger>
+	<logger name="TIBCOLOG_CFO_CRO">
+		<level value="INFO"/>
+		<appender-ref ref="tibco_cfo_cro"/>
+	</logger>
+	<logger name="TIBCOLOG_FM_HR_GroupApps">
+		<level value="INFO"/>
+		<appender-ref ref="tibco_fm_hr_groupapps"/>
+	</logger>
+	<logger name="TIBCOLOG_NNC">
+		<level value="INFO"/>
+		<appender-ref ref="tibco_nnc"/>
+	</logger>
+	<logger name="TIBCOLOG_NNP">
+		<level value="INFO"/>
+		<appender-ref ref="tibco_nnp"/>
+	</logger>
+	<logger name="TIBCOLOG_NNZ">
+		<level value="INFO"/>
+		<appender-ref ref="tibco_nnz"/>
+	</logger>
+	<root>
+		<level value="${log.level}"/>
+		<appender-ref ref="appwrap"/>
+	</root>
+</log4j:configuration>

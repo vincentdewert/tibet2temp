@@ -1,0 +1,76 @@
+<module>
+	<adapter name="ShowFxF3v2Log">
+		<receiver 
+			name="ShowFxF3v2Log">
+			<listener className="nl.nn.adapterframework.http.RestListener"
+				name="ShowFxF3v2Log" uriPattern="fxf3v2" method="GET" />
+		</receiver>
+		<pipeline firstPipe="selectSummary">
+			<exits>
+				<exit state="success" name="EXIT" />
+			</exits>
+
+			<SenderPipe name="selectSummary"
+				storeResultInSessionKey="summary">
+				<FixedQuerySender 
+					query="SELECT APPLICATIONFUNCTION, 'A' AS TYPE, COUNT(*) AS COUNTER FROM AUDITLOG WHERE APPLICATIONNAME='FxF3.2' GROUP BY APPLICATIONFUNCTION
+							UNION ALL
+							SELECT APPLICATIONFUNCTION, 'E' AS TYPE, COUNT(*) AS COUNTER FROM EXCEPTIONLOG WHERE APPLICATIONNAME='FxF3.2' GROUP BY APPLICATIONFUNCTION"
+					queryType="select" />
+				<forward name="success" path="selectLogRecords" />
+			</SenderPipe>
+
+			<SenderPipe name="selectLogRecords"
+				>
+				<sender className="nl.nn.adapterframework.jdbc.FixedQuerySender"
+					query="SELECT * FROM (
+							SELECT ROW_NUMBER() OVER (ORDER BY LOGID DESC) AS ROWNUMBER, LOGID, TYPE, CONVERSATIONID, CPAID, APPLICATIONFUNCTION, LOG_TS, SENDERID, MESSAGE FROM (
+							 SELECT LOGID, 'A' AS TYPE, CONVERSATIONID, CPAID, APPLICATIONFUNCTION, TO_CHAR(LOG_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS') AS LOG_TS, SENDERID, MESSAGE FROM AUDITLOG WHERE APPLICATIONNAME='FxF3.2'
+							 UNION ALL
+							 SELECT LOGID, 'E' AS TYPE, CONVERSATIONID, CPAID, APPLICATIONFUNCTION, TO_CHAR(LOG_TIMESTAMP, 'YYYY-MM-DD HH24:MI:SS') AS LOG_TS, SENDERID, MESSAGE FROM EXCEPTIONLOG WHERE APPLICATIONNAME='FxF3.2'
+							)) WHERE ROWNUMBER BETWEEN ? AND ?"
+					queryType="select" blobSmartGet="true" />
+				<param name="minItem" sessionKey="minItem" defaultValue="${sfl.minItem}" />
+				<param name="maxItem" sessionKey="maxItem" defaultValue="${sfl.maxItem}" />
+				<forward name="success" path="xmlBuild" />
+			</SenderPipe>
+
+			<pipe name="xmlBuild" className="nl.nn.adapterframework.pipes.XmlBuilderPipe"
+				substringStart="&lt;field name=&quot;MESSAGE&quot;&gt;"
+				substringEnd="&lt;/field&gt;" storeResultInSessionKey="xmlLogs">
+				<forward name="success" path="getFixedExecutes" />
+			</pipe>
+
+			<pipe name="getFixedExecutes" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetFixedExecutes.xsl"
+				storeResultInSessionKey="fixedExecutes">
+				<forward name="success" path="getTransfers" />
+			</pipe>
+
+			<pipe name="getTransfers" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetTransfers.xsl" xsltVersion="2"
+				getInputFromSessionKey="xmlLogs" storeResultInSessionKey="transfers">
+				<param name="fixedExecutes" sessionKey="fixedExecutes" type="domdoc" />
+				<forward name="success" path="getJunk" />
+			</pipe>
+
+			<pipe name="getJunk" className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/GetJunk.xsl" xsltVersion="2"
+				getInputFromSessionKey="xmlLogs" storeResultInSessionKey="junk">
+				<param name="transfers" sessionKey="transfers" type="domdoc" />
+				<forward name="success" path="showFxF3v2Log" />
+			</pipe>
+
+			<pipe name="showFxF3v2Log" className="nl.nn.adapterframework.pipes.CreateRestViewPipe"
+				styleSheetName="ShowFxF3v2Log/xsl/ShowFxF3v2Log.xsl" xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;">
+				<param name="summary" sessionKey="summary" type="domdoc" />
+				<param name="minItem" sessionKey="minItem" defaultValue="${sfl.minItem}" />
+				<param name="maxItem" sessionKey="maxItem" defaultValue="${sfl.maxItem}" />
+				<param name="transfers" sessionKey="transfers" type="domdoc" />
+				<param name="junk" sessionKey="junk" type="domdoc" />
+				<forward name="success" path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+</module>

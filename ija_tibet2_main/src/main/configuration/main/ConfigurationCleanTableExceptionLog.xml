@@ -1,0 +1,29 @@
+<module>
+	<adapter name="CleanTableExceptionLog" description="Clean table EXCEPTIONLOG">
+		<receiver 
+			name="CleanTableExceptionLog">
+			<listener className="nl.nn.adapterframework.receivers.JavaListener"
+				name="CleanTableExceptionLog" />
+		</receiver>
+		<pipeline firstPipe="Delete" transactionAttribute="NotSupported">
+			<exits>
+				<exit name="EXIT" state="success" />
+			</exits>
+			<SenderPipe name="Delete"
+				>
+				<FixedQuerySender 
+					query="DELETE FROM EXCEPTIONLOG WHERE CRE_TIMESTAMP &lt; SYSDATE - ?"
+					queryType="other">
+					<param name="subtractDays" sessionKey="dummy"
+						defaultValue="${exceptionLog.clean.days}" />
+				</FixedQuerySender>
+				<forward name="success" path="EXIT" />
+			</SenderPipe>
+		</pipeline>
+	</adapter>
+	<scheduler>
+		<SendMessageJob name="jobCleanTableExceptionLog"
+			javaListener="CleanTableExceptionLog"
+			cronExpression="${cleanTableExceptionLog.schedule.cron}" description="Clean table EXCEPTIONLOG" />
+	</scheduler>
+</module>

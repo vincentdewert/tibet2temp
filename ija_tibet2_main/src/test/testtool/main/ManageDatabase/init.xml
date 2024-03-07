@@ -1,0 +1,21 @@
+<manageDatabaseREQ>
+	<!-- DELETE -->
+	<delete>
+		<tableName>IBISSTORE</tableName>
+	</delete>
+	<delete>
+		<tableName>AUDITLOG</tableName>
+	</delete>
+	<delete>
+		<tableName>EXCEPTIONLOG</tableName>
+	</delete>
+	<!-- ALTER SEQUENCES -->
+	<alter>
+		<sequenceName>SEQ_IBISSTORE</sequenceName>
+		<startWith>24680</startWith>
+	</alter>
+	<alter>
+		<sequenceName>SEQ_LOG</sequenceName>
+		<startWith>135790</startWith>
+	</alter>
+</manageDatabaseREQ>

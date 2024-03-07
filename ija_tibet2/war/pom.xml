@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.ibissource.csh.ija_tibet2</groupId>
+		<artifactId>ija_tibet2</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>ija_tibet2-war</artifactId>
+	<packaging>war</packaging>
+	<name>ija_tibet2 WAR module</name>
+
+
+	<properties>
+		<m2eclipse.wtp.contextRoot>ija_tibet2</m2eclipse.wtp.contextRoot>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<iaf.version>7.8.3</iaf.version>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-core</artifactId>
+			<version>${iaf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-larva</artifactId>
+			<version>${iaf.version}</version>
+		</dependency>
+		<!-- dependency for ladybug -->
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-ladybug</artifactId>
+			<version>${iaf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-webapp</artifactId>
+			<version>${iaf.version}</version>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-tibco</artifactId>
+			<version>${iaf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-ibm</artifactId>
+			<version>${iaf.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>javax.servlet-api</artifactId>
+			<groupId>javax.servlet</groupId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- runtime dependencies for tibco -->
+		<dependency>
+			<groupId>com.tibco</groupId>
+			<artifactId>tibjmsadmin</artifactId>
+			<scope>provided</scope>
+			<version>5.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.tibco</groupId>
+			<artifactId>tibjms</artifactId>
+			<scope>provided</scope>
+			<version>4.4.0</version>
+		</dependency>
+
+		<!-- runtime dependencies for testtool.java -->
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-jms_1.1_spec</artifactId>
+			<scope>provided</scope>
+			<version>1.1</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.ibissource</groupId>
+				<artifactId>ibis-war-plugin</artifactId>
+				<version>0.2</version>
+				<extensions>true</extensions>
+				<configuration>
+					<packagingExcludes>**/Test.properties</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>ija_tibet2</finalName>
+	</build>
+</project>

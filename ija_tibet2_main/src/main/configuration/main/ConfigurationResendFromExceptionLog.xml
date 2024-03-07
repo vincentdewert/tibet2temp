@@ -1,0 +1,572 @@
+<module>
+	<adapter name="ResendFromExceptionLog">
+		<Receiver
+			name="ResendFromExceptionLog"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				serviceName="ijatibet2_ResendFromExceptionLog" />
+		</Receiver>
+		<pipeline
+			firstPipe="SelectRecord"
+			transactionAttribute="Required"
+		>
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): principal -->
+			<SenderPipe
+				name="SelectRecord"
+			>
+				<FixedQuerySender
+					query="SELECT BUSINESSDOMAIN, SERVICENAME, SERVICECONTEXT, APPLICATIONNAME, OPERATIONNAME, MESSAGE, RESEND_CONN_FACT, RESEND_PROV_URL, RESEND_DESTINATION FROM EXCEPTIONLOG WHERE LOGID=?"
+					queryType="select"
+					lockRows="true"
+					blobSmartGet="true"
+				>
+					<param name="LOGID" sessionKey="originalMessage" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="PutResultInSession" />
+			</SenderPipe>
+			<pipe
+				name="PutResultInSession"
+				className="nl.nn.adapterframework.pipes.PutInSession"
+			>
+				<param name="BUSINESSDOMAIN" xpathExpression="//field[@name='BUSINESSDOMAIN']/text()" />
+				<param name="SERVICENAME" xpathExpression="//field[@name='SERVICENAME']/text()" />
+				<param name="SERVICECONTEXT" xpathExpression="//field[@name='SERVICECONTEXT']/text()" />
+				<param name="APPLICATIONNAME" xpathExpression="//field[@name='APPLICATIONNAME']/text()" />
+				<param name="OPERATIONNAME" xpathExpression="//field[@name='OPERATIONNAME']/text()" />
+				<forward
+					name="success"
+					path="CreateTibcoMessageRequest" />
+			</pipe>
+			<pipe
+				name="CreateTibcoMessageRequest"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="ResendFromExceptionLog/xsl/CreateTibcoMessageRequest.xsl"
+				xsltVersion="2"
+			>
+				<param name="esb_rr_url" value="${esb.rr.url}" />
+				<param name="esb_ff_url" value="${esb.ff.url}" />
+				<param name="esb_rr_large_url" value="${esb.rr.large.url}" />
+				<param name="p2p_rr_url" value="${p2p.rr.url}" />
+				<param name="p2p_ff_url" value="${p2p.ff.url}" />
+				<param name="p2p_rr_large_url" value="${p2p.rr.large.url}" />
+				
+				<param name="esb_rr_url_ssl" value="${esb_rr_url_ssl}" />
+				<param name="esb_ff_url_ssl" value="${esb_ff_url_ssl}" />
+				<param name="esb_rr_large_url_ssl" value="${esb_rr_large_url_ssl}" />
+				<param name="p2p_rr_url_ssl" value="${p2p_rr_url_ssl}" />
+				<param name="p2p_ff_url_ssl" value="${p2p_ff_url_ssl}" />
+				<param name="p2p_rr_large_url_ssl" value="${p2p_rr_large_url_ssl}" />
+				<forward
+					name="success"
+					path="SwitchRequest" />
+			</pipe>
+			<pipe
+				name="SwitchRequest"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+			>
+				<forward name="Request" path="ResendFromExceptionLog_Check" />
+				<forward name="error" path="EXIT" />
+			</pipe>
+			<SenderPipe
+				name="ResendFromExceptionLog_Check"
+				active="${resend.check.active}"
+			>
+				<IbisLocalSender
+					javaListener="ResendFromExceptionLog_Check"
+>
+					<param name="principal" sessionKey="principal" />
+					<param name="queue" xpathExpression="Request/QueueDestination" />
+					<param name="BUSINESSDOMAIN" sessionKey="BUSINESSDOMAIN" />
+					<param name="SERVICENAME" sessionKey="SERVICENAME" />
+					<param name="APPLICATIONNAME" sessionKey="APPLICATIONNAME" />
+					<param name="OPERATIONNAME" sessionKey="OPERATIONNAME" />
+					<param name="SERVICECONTEXT" sessionKey="SERVICECONTEXT" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="SwitchCheck" />
+			</SenderPipe>
+			<pipe
+				name="ResendFromExceptionLog_Check"
+				className="nl.nn.adapterframework.pipes.EchoPipe"
+				active="!${resend.check.active}"
+			>
+				<forward name="success" path="SwitchCheck" />
+			</pipe>
+			<pipe
+				name="SwitchCheck"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+			>
+				<forward name="Request" path="SendTibcoMessage" />
+				<forward name="error" path="EXIT" />
+			</pipe>
+			<SenderPipe
+				name="SendTibcoMessage"
+			>
+				<IbisLocalSender javaListener="SendTibcoMessage" />
+				<forward name="success" path="DeleteRecord" />
+			</SenderPipe>
+			
+			<SenderPipe
+				name="DeleteRecord"
+			>
+				<FixedQuerySender
+					query="DELETE FROM EXCEPTIONLOG WHERE LOGID=?"
+					queryType="other"
+				>
+					<param
+						name="LOGID"
+						sessionKey="originalMessage" />
+				</FixedQuerySender>
+				<forward
+					name="success"
+					path="okay" />
+			</SenderPipe>
+			<FixedResultPipe
+				name="okay"
+				returnString="&lt;ok/&gt;"
+				writeToSecLog="true"
+				secLogSessionKeys="originalMessage,principal"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+		</pipeline>
+	</adapter>
+	<adapter name="ResendFromExceptionLog_Check">
+		<Receiver
+			name="ResendFromExceptionLog_Check"
+		>
+			<JavaListener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="ResendFromExceptionLog_Check" />
+		</Receiver>
+		<pipeline firstPipe="switchPrincipal">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<!-- INPUT (sessionKeys): principal, queue -->
+			<pipe
+				name="switchPrincipal"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length($principal)=0"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param
+					name="principal"
+					sessionKey="principal" />
+				<forward
+					name="true"
+					path="emptyPrincipalError" />
+				<forward
+					name="false"
+					path="switchBusinessDomain" />
+			</pipe>
+			<FixedResultPipe
+				name="emptyPrincipalError"
+				returnString="&lt;error&gt;EMPTY_PRINCIPAL&lt;/error&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<pipe
+				name="switchBusinessDomain"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length($BUSINESSDOMAIN)=0"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param
+					name="BUSINESSDOMAIN"
+					sessionKey="BUSINESSDOMAIN" />
+				<forward
+					name="true"
+					path="emptyBusinessDomainError" />
+				<forward
+					name="false"
+					path="switchOperationName" />
+			</pipe>
+			<FixedResultPipe
+				name="emptyBusinessDomainError"
+				returnString="&lt;error&gt;EMPTY_BUSINESSDOMAIN&lt;/error&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<!-- P2P of ESB -->
+			<pipe
+				name="switchOperationName"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length($OPERATIONNAME)=0"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param
+					name="OPERATIONNAME"
+					sessionKey="OPERATIONNAME" />
+				<forward
+					name="true"
+					path="switchApplicationName" />
+				<forward
+					name="false"
+					path="switchServiceContext" />
+			</pipe>
+			<!-- Old or new naming standard -->
+			<pipe
+				name="switchServiceContext"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length($SERVICECONTEXT)=0"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param
+					name="SERVICECONTEXT"
+					sessionKey="SERVICECONTEXT" />
+				<forward
+					name="true"
+					path="getRole_esb_new" />
+				<forward
+					name="false"
+					path="getRole_esb_old" />
+			</pipe>
+			<pipe
+				name="switchApplicationName"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length($APPLICATIONNAME)=0"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+			>
+				<param
+					name="APPLICATIONNAME"
+					sessionKey="APPLICATIONNAME" />
+				<forward
+					name="true"
+					path="emptyServApplNameError" />
+				<forward
+					name="false"
+					path="getRole_p2p" />
+			</pipe>
+			<FixedResultPipe
+				name="emptyServApplNameError"
+				returnString="&lt;error&gt;EMPTY_SERV_APPL_NAME&lt;/error&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<pipe
+				name="getRole_esb_old"
+				className="nl.nn.adapterframework.jdbc.ResultSetIteratingPipe"
+				query="SELECT ROLE FROM AUTHORISATION WHERE BUSINESSDOMAIN=? AND SERV_APPL_NAME=?"
+				active="${ldap.check.active}"
+			>
+				<sender className="nl.nn.adapterframework.senders.SenderSeries">
+					<sender 
+						className="nl.nn.adapterframework.senders.XsltSender"
+						styleSheetName="ResendFromExceptionLog/xsl/CreateCheckRoleRequest.xsl"
+					>
+						<param
+							name="principal"
+							sessionKey="principal" />
+					</sender>
+					<sender
+						className="nl.nn.adapterframework.senders.IbisLocalSender"
+						javaListener="ResendFromExceptionLog_Check_Role"
+					>
+					</sender>
+				</sender>
+				<param
+					name="BUSINESSDOMAIN"
+					sessionKey="BUSINESSDOMAIN" />
+				<param
+					name="serviceContext"
+					sessionKey="SERVICECONTEXT" />
+				<forward
+					name="success"
+					path="check_if_result" />
+			</pipe>
+
+
+			<pipe
+			name="check_if_result"
+			className="nl.nn.adapterframework.pipes.XmlSwitch"
+			xpathExpression="boolean(/results[node()])"
+			>
+			<forward
+				name="true"
+				path="switchResultFound" />
+			<forward
+				name="false"
+				path="check_for_servicename" />
+			</pipe>
+
+			<pipe
+			name="check_for_servicename"
+			className="nl.nn.adapterframework.jdbc.ResultSetIteratingPipe"
+			query="SELECT ROLE FROM AUTHORISATION WHERE BUSINESSDOMAIN=? AND SERV_APPL_NAME=?"
+			active="${ldap.check.active}"
+		>
+			<sender
+				className="nl.nn.adapterframework.senders.IbisLocalSender"
+				javaListener="AuthorisationCheck_Check_Role"
+			>
+				<param
+					name="principal"
+					sessionKey="principal" />
+			</sender>
+			<param
+				name="BUSINESSDOMAIN"
+				sessionKey="BUSINESSDOMAIN" />
+			<param
+				name="SERVICENAME"
+				sessionKey="SERVICENAME" />
+			<forward
+				name="success"
+				path="switchResultFound" />
+			</pipe>
+
+
+
+			
+			<pipe
+				name="getRole_esb_new"
+				className="nl.nn.adapterframework.jdbc.ResultSetIteratingPipe"
+				query="SELECT ROLE FROM AUTHORISATION WHERE BUSINESSDOMAIN=? AND SERV_APPL_NAME=?"
+				active="${ldap.check.active}"
+			>
+				<sender className="nl.nn.adapterframework.senders.SenderSeries">
+					<sender 
+						className="nl.nn.adapterframework.senders.XsltSender"
+						styleSheetName="ResendFromExceptionLog/xsl/CreateCheckRoleRequest.xsl"
+					>
+						<param
+							name="principal"
+							sessionKey="principal" />
+					</sender>
+					<sender
+						className="nl.nn.adapterframework.senders.IbisLocalSender"
+						javaListener="ResendFromExceptionLog_Check_Role"
+					>
+					</sender>
+				</sender>
+				<param
+					name="BUSINESSDOMAIN"
+					sessionKey="BUSINESSDOMAIN" />
+				<param
+					name="SERV_APPL_NAME"
+					sessionKey="SERVICENAME" />
+				<forward
+					name="success"
+					path="switchResultFound" />
+			</pipe>
+			<FixedResultPipe
+				name="getRole_esb_new"
+				returnString="&lt;results&gt;&lt;result&gt;[found]&lt;/result&gt;&lt;/results&gt;"
+				active="!${ldap.check.active}"
+			>
+				<forward
+					name="success"
+					path="switchResultFound" />
+			</FixedResultPipe>
+			<!--Toegevoegd tbv test env -->
+			<FixedResultPipe
+				name="getRole_esb_old"
+				returnString="&lt;results&gt;&lt;result&gt;[found]&lt;/result&gt;&lt;/results&gt;"
+				active="!${ldap.check.active}"
+			>
+				<forward
+					name="success"
+					path="switchResultFound" />
+			</FixedResultPipe>
+			<pipe
+				name="getRole_p2p"
+				className="nl.nn.adapterframework.jdbc.ResultSetIteratingPipe"
+				query="SELECT ROLE FROM AUTHORISATION WHERE BUSINESSDOMAIN=? AND SERV_APPL_NAME=?"
+				active="${ldap.check.active}"
+			>
+				<sender className="nl.nn.adapterframework.senders.SenderSeries">
+					<sender 
+						className="nl.nn.adapterframework.senders.XsltSender"
+						styleSheetName="ResendFromExceptionLog/xsl/CreateCheckRoleRequest.xsl"
+					>
+						<param
+							name="principal"
+							sessionKey="principal" />
+					</sender>
+					<sender
+						className="nl.nn.adapterframework.senders.IbisLocalSender"
+						javaListener="ResendFromExceptionLog_Check_Role"
+					>
+					</sender>
+				</sender>
+				<param
+					name="BUSINESSDOMAIN"
+					sessionKey="BUSINESSDOMAIN" />
+				<param
+					name="SERV_APPL_NAME"
+					sessionKey="APPLICATIONNAME" />
+				<forward
+					name="success"
+					path="switchResultFound" />
+			</pipe>
+			<FixedResultPipe
+				name="getRole_p2p"
+				returnString="&lt;results&gt;&lt;result&gt;[found]&lt;/result&gt;&lt;/results&gt;"
+				active="!${ldap.check.active}"
+			>
+				<forward
+					name="success"
+					path="switchResultFound" />
+			</FixedResultPipe>
+			<pipe
+				name="switchResultFound"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(results/result[normalize-space(.)='[found]'])=0"
+			>
+				<forward
+					name="true"
+					path="switchResultNotFound" />
+				<forward
+					name="false"
+					path="Okay" />
+			</pipe>
+			<pipe
+				name="switchResultNotFound"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="count(results/result[normalize-space(.)='[notFound]'])=0"
+			>
+				<forward
+					name="true"
+					path="LdapError" />
+				<forward
+					name="false"
+					path="NotAuthorizedError" />
+			</pipe>
+			<FixedResultPipe
+				name="LdapError"
+				returnString="&lt;error&gt;LDAP_ERROR&lt;/error&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="NotAuthorizedError"
+				returnString="&lt;error&gt;NOT_AUTHORIZED&lt;/error&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<pipe
+				name="Okay"
+				className="nl.nn.adapterframework.pipes.GetFromSession"
+				sessionKey="originalMessage"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+
+	<adapter name="ResendFromExceptionLog_Check_Role">
+		<receiver
+			
+			name="ResendFromExceptionLog_Check_Role"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="ResendFromExceptionLog_Check_Role" />
+		</receiver>
+		<pipeline firstPipe="switchRole">
+			<exits>
+				<exit
+					state="success"
+					name="EXIT" />
+			</exits>
+			<cache name="ResendFromExceptionLog_Check_Role" timeToLiveSeconds="${resend.ldap.cache.ttl}" />
+			<pipe
+				name="switchRole"
+				className="nl.nn.adapterframework.pipes.XmlSwitch"
+				xpathExpression="string-length(checkRole/role)=0"
+			>
+				<forward
+					name="true"
+					path="found" />
+				<forward
+					name="false"
+					path="getDnFind" />
+			</pipe>
+			<pipe
+				name="getDnFind"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="replace('${resend.ldap.dn.user}','%principal%',checkRole/principal)"
+				xsltVersion="2"
+				storeResultInSessionKey="dnFind"
+			>
+				<forward
+					name="success"
+					path="ldapFindMemberPipe" />
+			</pipe>
+			<pipe
+				name="ldapFindMemberPipe"
+				className="nl.nn.adapterframework.ldap.LdapFindMemberPipe"
+				host="insim.biz"
+				port="636"
+				useSsl="true"
+				authAlias="${esb.ff.alias}"
+			>
+				<param
+					name="dnSearchIn"
+					sessionKey="originalMessage"
+					xpathExpression="checkRole/role" />
+				<param
+					name="dnFind"
+					sessionKey="dnFind" />
+				<forward
+					name="success"
+					path="found" />
+				<forward
+					name="notFound"
+					path="notFaund" />
+				<forward
+					name="ldapException"
+					path="ldapExseption" />
+			</pipe>
+			<FixedResultPipe
+				name="found"
+				returnString="[found]"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="notFaund"
+				returnString="[notFound]"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+			<FixedResultPipe
+				name="ldapExseption"
+				returnString="[ldapException]"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+		</pipeline>
+	</adapter>
+</module>

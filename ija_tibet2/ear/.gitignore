@@ -1,0 +1,10 @@
+.idea
+*.iml
+target
+lib
+overlays
+.settings
+.classpath
+/bin/
+*.db
+/build/

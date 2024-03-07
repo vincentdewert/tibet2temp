@@ -1,0 +1,40 @@
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by HP SLMS Purchasing (ING) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/AuditLog/1" targetNamespace="http://nn.nl/XSD/Infrastructure/Log/BusinessLog/2/AuditLog/1" elementFormDefault="qualified">
+	<!-- 2012-11-23 # Peter Leeuwenburgh # initial version -->
+	<!-- 2012-11-29 # Peter Leeuwenburgh # changed service context version from 1 to 2 -->
+	<!-- 2012-12-03 # Peter Leeuwenburgh # typo in namespace -->
+	<!-- 2012-12-20 # Peter Leeuwenburgh # added FunctionalError element -->
+	<xs:include schemaLocation="../../xsd/Header.xsd"/>
+	<xs:complexType name="MessageType">
+		<xs:sequence>
+			<xs:element name="Text" type="xs:string"/>
+			<xs:element name="Type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="received"/>
+						<xs:enumeration value="sent"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="FunctionCallId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>identifier for function calls from the service</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Label" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>identifier to recognize messages (composed of values from the message)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AuditLog_Action">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header" type="HeaderType"/>
+				<xs:element name="Message" type="MessageType"/>
+				<xs:element name="FunctionalError" type="ExceptionType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

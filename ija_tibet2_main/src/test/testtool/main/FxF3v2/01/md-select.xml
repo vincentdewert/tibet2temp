@@ -1,0 +1,1275 @@
+<manageDatabaseRLY>
+	<completionInformation>
+		<returnCode>OK</returnCode>
+	</completionInformation>
+	<results>
+		<result item="1">
+			<result>
+				<fielddefinition>
+					<field name="MESSAGEKEY" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="TYPE" type="CHAR" columnDisplaySize="1" precision="1" scale="0" isCurrency="false" columnTypeName="CHAR" columnClassName="java.lang.String"/>
+					<field name="SLOTID" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="HOST" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CORRELATIONID" type="VARCHAR" columnDisplaySize="256" precision="256" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGEDATE" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="COMMENTS" type="VARCHAR" columnDisplaySize="1000" precision="1000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="EXPIRYDATE" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="LABEL" type="VARCHAR" columnDisplaySize="100" precision="100" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset/>
+			</result>
+		</result>
+		<result item="2">
+			<result>
+				<fielddefinition>
+					<field name="LOGID" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CONVERSATIONID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CPAID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXTVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="OPERATIONVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="APPLICATIONFUNCTION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LOG_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="SENDERID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CRE_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="TYPE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_CALLID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LABEL" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_CODE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_REASON" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="FUNCT_ERROR_TEXT" type="VARCHAR" columnDisplaySize="4000" precision="4000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset>
+					<row number="0">
+						<field name="LOGID">135790</field>
+						<field name="MESSAGEID">0101a5c7ae4f41b4a16723e5a37edad2</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413</field>
+						<field name="CPAID">n/a</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransfer</field>
+						<field name="LOG_TIMESTAMP">2015-09-11 14:12:36</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:35</field>
+						<field name="MESSAGE">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soapenv:Header&gt;&lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/2"&gt;
+   &lt;From&gt;
+      &lt;Id&gt;Ibis4Scan&lt;/Id&gt;
+   &lt;/From&gt;
+   &lt;To&gt;
+      &lt;Location&gt;ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action&lt;/Location&gt;
+   &lt;/To&gt;
+   &lt;HeaderFields&gt;
+      &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+      &lt;ConversationId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-774a&lt;/ConversationId&gt;
+      &lt;MessageId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-7749&lt;/MessageId&gt;
+      &lt;Timestamp&gt;2015-09-11T14:12:35&lt;/Timestamp&gt;
+   &lt;/HeaderFields&gt;
+   &lt;Service&gt;
+      &lt;Name&gt;Transfer&lt;/Name&gt;
+      &lt;Context&gt;Filetransfer&lt;/Context&gt;
+      &lt;Action&gt;
+         &lt;Paradigm&gt;Action&lt;/Paradigm&gt;
+         &lt;Name&gt;StartTransfer&lt;/Name&gt;
+         &lt;Version&gt;2&lt;/Version&gt;
+      &lt;/Action&gt;
+   &lt;/Service&gt;
+&lt;/MessageHeader&gt;
+&lt;/soapenv:Header&gt;&lt;soapenv:Body&gt;&lt;StartTransfer_Action xmlns="http://nn.nl/XSD/Infrastructure/Transfer/FileTransfer/1/StartTransfer/2"&gt;
+	  &lt;TransferDetails&gt;
+		    &lt;SenderApplication&gt;Ibis4Scan&lt;/SenderApplication&gt;
+		    &lt;RecipientApplication/&gt;
+		    &lt;Filename&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/Filename&gt;
+		    &lt;TransferFlowId&gt;NNT12345&lt;/TransferFlowId&gt;
+	  &lt;/TransferDetails&gt;
+&lt;/StartTransfer_Action&gt;
+&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="1">
+						<field name="LOGID">135791</field>
+						<field name="MESSAGEID">5277038a487e4aec8175b7e643bcd24e</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413</field>
+						<field name="CPAID">I911500004</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+						<field name="LOG_TIMESTAMP">2015-09-11 14:12:36</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:35</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884366:114&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1441973556699&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferImmediate&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I911500004&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Transaction I911500004 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully &lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">received</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="2">
+						<field name="LOGID">135792</field>
+						<field name="MESSAGEID">34303b6ff39f4c42be097f39d96bf88f</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413</field>
+						<field name="CPAID">I911500004</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+						<field name="LOG_TIMESTAMP">2015-09-11 14:12:41</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:35</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884366:115&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1441973561940&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Transfer Complete&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferStatus&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I911500004&lt;/InitiatorTransactionID&gt;
+        &lt;Message/&gt;
+        &lt;NumRecords&gt;1&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+    &lt;Body&gt;
+        &lt;Body&gt;
+            &lt;ns0:ResponseType xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;TransferStatus&lt;/ns0:ResponseType&gt;
+            &lt;ns0:ServerName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;SRTZZAPP0157&lt;/ns0:ServerName&gt;
+            &lt;ns0:HostName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;srtzzapp0157.insim.biz&lt;/ns0:HostName&gt;
+            &lt;ns0:NumRecords xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;1&lt;/ns0:NumRecords&gt;
+            &lt;ns0:AuditRecord xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;
+                &lt;ns0:AuditType&gt;PlatformServer&lt;/ns0:AuditType&gt;
+                &lt;ns0:AuditID/&gt;
+                &lt;ns0:CKPTInterval&gt;5&lt;/ns0:CKPTInterval&gt;
+                &lt;ns0:CKPTCount/&gt;
+                &lt;ns0:NodeName&gt;SRTZZAPP0157&lt;/ns0:NodeName&gt;
+                &lt;ns0:InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/ns0:InitiatorFileName&gt;
+                &lt;ns0:Delimiter&gt;None&lt;/ns0:Delimiter&gt;
+                &lt;ns0:Conversion&gt;Binary&lt;/ns0:Conversion&gt;
+                &lt;ns0:Department/&gt;
+                &lt;ns0:Description&gt;NNT12345-Ibis4Scan&lt;/ns0:Description&gt;
+                &lt;ns0:Encryption/&gt;
+                &lt;ns0:InitiatorTransactionID&gt;I911500004&lt;/ns0:InitiatorTransactionID&gt;
+                &lt;ns0:LocalCTFile/&gt;
+                &lt;ns0:ServerName/&gt;
+                &lt;ns0:ZOSAllocationType/&gt;
+                &lt;ns0:ZOSAllocationPrimary&gt;0&lt;/ns0:ZOSAllocationPrimary&gt;
+                &lt;ns0:ZOSAllocationSecondary&gt;0&lt;/ns0:ZOSAllocationSecondary&gt;
+                &lt;ns0:ZOSRecordFormat/&gt;
+                &lt;ns0:ZOSRecordLength&gt;0&lt;/ns0:ZOSRecordLength&gt;
+                &lt;ns0:ZOSBlocksize&gt;0&lt;/ns0:ZOSBlocksize&gt;
+                &lt;ns0:ZOSUnitName/&gt;
+                &lt;ns0:ZOSVolumeName/&gt;
+                &lt;ns0:ZOSStorageClass/&gt;
+                &lt;ns0:ZOSDataClass/&gt;
+                &lt;ns0:ZOSManagementClass/&gt;
+                &lt;ns0:PPASource1/&gt;
+                &lt;ns0:PPAStatus1/&gt;
+                &lt;ns0:PPAType1/&gt;
+                &lt;ns0:PPAData1/&gt;
+                &lt;ns0:PPAReturnCode1/&gt;
+                &lt;ns0:PPASource2/&gt;
+                &lt;ns0:PPAStatus2/&gt;
+                &lt;ns0:PPAType2/&gt;
+                &lt;ns0:PPAData2/&gt;
+                &lt;ns0:PPAReturnCode2/&gt;
+                &lt;ns0:PPASource3/&gt;
+                &lt;ns0:PPAStatus3/&gt;
+                &lt;ns0:PPAType3/&gt;
+                &lt;ns0:PPAData3/&gt;
+                &lt;ns0:PPAReturnCode3/&gt;
+                &lt;ns0:PPASource4/&gt;
+                &lt;ns0:PPAStatus4/&gt;
+                &lt;ns0:PPAType4/&gt;
+                &lt;ns0:PPAData4/&gt;
+                &lt;ns0:PPAReturnCode4/&gt;
+                &lt;ns0:RemoteCTFile/&gt;
+                &lt;ns0:ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis8062954636537196100.xml&lt;/ns0:ResponderFileName&gt;
+                &lt;ns0:SendRecv&gt;Send&lt;/ns0:SendRecv&gt;
+                &lt;ns0:EmailSuccess/&gt;
+                &lt;ns0:EmailFailure/&gt;
+                &lt;ns0:TransferByteCount&gt;30&lt;/ns0:TransferByteCount&gt;
+                &lt;ns0:TransferCompressedByteCount&gt;0&lt;/ns0:TransferCompressedByteCount&gt;
+                &lt;ns0:TransferStartDateTime&gt;2015-09-11T14:12:36&lt;/ns0:TransferStartDateTime&gt;
+                &lt;ns0:TransferEndDateTime&gt;2015-09-11T14:12:37&lt;/ns0:TransferEndDateTime&gt;
+                &lt;ns0:TransferType&gt;File&lt;/ns0:TransferType&gt;
+                &lt;ns0:ProcessName&gt;NNT12345&lt;/ns0:ProcessName&gt;
+                &lt;ns0:UserData&gt;NNT12345-Ibis4Scan&lt;/ns0:UserData&gt;
+                &lt;ns0:TransferStatus&gt;Success&lt;/ns0:TransferStatus&gt;
+                &lt;ns0:TransferStatusMsg&gt;Transfer Completed Successfully.&lt;/ns0:TransferStatusMsg&gt;
+                &lt;ns0:InitiatorUserId&gt;NPATZZAPP0014&lt;/ns0:InitiatorUserId&gt;
+                &lt;ns0:FileWriteMode&gt;CreateReplace&lt;/ns0:FileWriteMode&gt;
+                &lt;ns0:AS2MDNStatus/&gt;
+                &lt;ns0:ProxyStatusMsg/&gt;
+                &lt;ns0:CrlMsg/&gt;
+                &lt;ns0:MemberCount/&gt;
+                &lt;ns0:NodeClass/&gt;
+                &lt;ns0:ZOSAllocationDirectory/&gt;
+                &lt;ns0:Priority&gt;2&lt;/ns0:Priority&gt;
+                &lt;ns0:RecordCount&gt;1&lt;/ns0:RecordCount&gt;
+                &lt;ns0:NodeType/&gt;
+                &lt;ns0:NTDomain&gt;INSIM&lt;/ns0:NTDomain&gt;
+                &lt;ns0:IPPort&gt;46464&lt;/ns0:IPPort&gt;
+                &lt;ns0:ResponderTransactionID&gt;R911500005&lt;/ns0:ResponderTransactionID&gt;
+                &lt;ns0:ResponderUserId&gt;INSIM\NPATZZAPP0014&lt;/ns0:ResponderUserId&gt;
+                &lt;ns0:SSLFlag&gt;No&lt;/ns0:SSLFlag&gt;
+                &lt;ns0:SSLPortNum/&gt;
+                &lt;ns0:TempError&gt;N&lt;/ns0:TempError&gt;
+                &lt;ns0:TransferCommand/&gt;
+                &lt;ns0:Compression&gt;None&lt;/ns0:Compression&gt;
+                &lt;ns0:TrDiagCode&gt;0&lt;/ns0:TrDiagCode&gt;
+                &lt;ns0:TrReturnCode/&gt;
+                &lt;ns0:TrSeverity&gt;00&lt;/ns0:TrSeverity&gt;
+                &lt;ns0:TryCount&gt;1&lt;/ns0:TryCount&gt;
+                &lt;ns0:MaxTryCount&gt;1&lt;/ns0:MaxTryCount&gt;
+                &lt;ns0:UNIXFilePermissions/&gt;
+                &lt;ns0:VersionNum&gt;7.1.1&lt;/ns0:VersionNum&gt;
+            &lt;/ns0:AuditRecord&gt;
+        &lt;/Body&gt;
+    &lt;/Body&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">received</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="3">
+						<field name="LOGID">135793</field>
+						<field name="MESSAGEID">13b5a4ba94214e0fadfc5c3ef16daab7</field>
+						<field name="CONVERSATIONID">n/a</field>
+						<field name="CPAID">I911500004</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">OnCompleteTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">Notify</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">Notify</field>
+						<field name="LOG_TIMESTAMP">2015-09-11 14:22:37</field>
+						<field name="SENDERID">P2P.General.Ibis4Scan.FileTransfer.Action</field>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;&lt;JMSHeaders&gt;&lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action&lt;/jms1:JMSDestination&gt;&lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;&lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B131:2145CB79&lt;/jms1:JMSMessageID&gt;&lt;jms1:JMSTimestamp&gt;1441974157648&lt;/jms1:JMSTimestamp&gt;&lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;&lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;&lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;&lt;jms1:JMSType&gt;EMSAlert&lt;/jms1:JMSType&gt;&lt;/JMSHeaders&gt;&lt;JMSProperties/&gt;&lt;Body&gt;&lt;AuditResponse xmlns="http://www.tibco.com/MFT/JMS-XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd"&gt;&lt;ResponseType&gt;Alert&lt;/ResponseType&gt;&lt;NumRecords&gt;1&lt;/NumRecords&gt;&lt;AuditRecord&gt;&lt;AuditType&gt;PlatformServer&lt;/AuditType&gt;&lt;AuditID&gt;C91150006194&lt;/AuditID&gt;&lt;CKPTInterval&gt;5&lt;/CKPTInterval&gt;&lt;CKPTCount/&gt;&lt;NodeName&gt;10.206.8.253&lt;/NodeName&gt;&lt;InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/InitiatorFileName&gt;&lt;Delimiter&gt;None&lt;/Delimiter&gt;&lt;Conversion&gt;Binary&lt;/Conversion&gt;&lt;Department&gt;ING NN&lt;/Department&gt;&lt;Description&gt;NNT12345-Ibis4Scan&lt;/Description&gt;&lt;Encryption/&gt;&lt;InitiatorTransactionID&gt;R911500005&lt;/InitiatorTransactionID&gt;&lt;LocalCTFile/&gt;&lt;ServerName&gt;SRTZZAPP0157&lt;/ServerName&gt;&lt;ZOSAllocationType/&gt;&lt;ZOSAllocationPrimary&gt;0&lt;/ZOSAllocationPrimary&gt;&lt;ZOSAllocationSecondary&gt;0&lt;/ZOSAllocationSecondary&gt;&lt;ZOSRecordFormat/&gt;&lt;ZOSRecordLength&gt;0&lt;/ZOSRecordLength&gt;&lt;ZOSBlocksize&gt;0&lt;/ZOSBlocksize&gt;&lt;ZOSUnitName/&gt;&lt;ZOSVolumeName/&gt;&lt;ZOSStorageClass/&gt;&lt;ZOSDataClass/&gt;&lt;ZOSManagementClass/&gt;&lt;PPASource1/&gt;&lt;PPAStatus1/&gt;&lt;PPAType1/&gt;&lt;PPAData1/&gt;&lt;PPAReturnCode1/&gt;&lt;PPASource2/&gt;&lt;PPAStatus2/&gt;&lt;PPAType2/&gt;&lt;PPAData2/&gt;&lt;PPAReturnCode2/&gt;&lt;PPASource3/&gt;&lt;PPAStatus3/&gt;&lt;PPAType3/&gt;&lt;PPAData3/&gt;&lt;PPAReturnCode3/&gt;&lt;PPASource4/&gt;&lt;PPAStatus4/&gt;&lt;PPAType4/&gt;&lt;PPAData4/&gt;&lt;PPAReturnCode4/&gt;&lt;RemoteCTFile/&gt;&lt;ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis8062954636537196100.xml&lt;/ResponderFileName&gt;&lt;SendRecv&gt;Receive&lt;/SendRecv&gt;&lt;EmailSuccess/&gt;&lt;EmailFailure/&gt;&lt;TransferByteCount&gt;30&lt;/TransferByteCount&gt;&lt;TransferCompressedByteCount&gt;0&lt;/TransferCompressedByteCount&gt;&lt;TransferStartDateTime&gt;2015-09-11T14:12:36&lt;/TransferStartDateTime&gt;&lt;TransferEndDateTime&gt;2015-09-11T14:12:37&lt;/TransferEndDateTime&gt;&lt;TransferType&gt;File&lt;/TransferType&gt;&lt;ProcessName&gt;NNT12345&lt;/ProcessName&gt;&lt;UserData&gt;NNT12345-Ibis4Scan&lt;/UserData&gt;&lt;TransferStatus&gt;Success&lt;/TransferStatus&gt;&lt;TransferStatusMsg&gt;Transfer Completed Successfully.&lt;/TransferStatusMsg&gt;&lt;InitiatorUserId&gt;NPATZZAPP0014&lt;/InitiatorUserId&gt;&lt;FileWriteMode&gt;CreateReplace&lt;/FileWriteMode&gt;&lt;AS2MDNStatus/&gt;&lt;ProxyStatusMsg/&gt;&lt;CrlMsg/&gt;&lt;MemberCount/&gt;&lt;NodeClass/&gt;&lt;ZOSAllocationDirectory/&gt;&lt;Priority/&gt;&lt;RecordCount&gt;1&lt;/RecordCount&gt;&lt;NodeType/&gt;&lt;NTDomain&gt;INSIM&lt;/NTDomain&gt;&lt;IPPort/&gt;&lt;ResponderTransactionID&gt;I911500004&lt;/ResponderTransactionID&gt;&lt;ResponderUserId&gt;NPATZZAPP0014&lt;/ResponderUserId&gt;&lt;SSLFlag&gt;No&lt;/SSLFlag&gt;&lt;SSLPortNum/&gt;&lt;TempError&gt;N&lt;/TempError&gt;&lt;TransferCommand/&gt;&lt;Compression&gt;None&lt;/Compression&gt;&lt;TrDiagCode&gt;0&lt;/TrDiagCode&gt;&lt;TrReturnCode/&gt;&lt;TrSeverity&gt;00&lt;/TrSeverity&gt;&lt;TryCount&gt;0&lt;/TryCount&gt;&lt;MaxTryCount&gt;0&lt;/MaxTryCount&gt;&lt;UNIXFilePermissions/&gt;&lt;VersionNum&gt;7.1.1&lt;/VersionNum&gt;&lt;/AuditRecord&gt;&lt;/AuditResponse&gt;&lt;/Body&gt;&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="4">
+						<field name="LOGID">135794</field>
+						<field name="MESSAGEID">0101a5c7ae4f41b4a16723e5a37edad2</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973</field>
+						<field name="CPAID">n/a</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransfer</field>
+						<field name="LOG_TIMESTAMP">2015-09-12 06:04:28</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soapenv:Header&gt;&lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/2"&gt;
+   &lt;From&gt;
+      &lt;Id&gt;Ibis4Scan&lt;/Id&gt;
+   &lt;/From&gt;
+   &lt;To&gt;
+      &lt;Location&gt;ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action&lt;/Location&gt;
+   &lt;/To&gt;
+   &lt;HeaderFields&gt;
+      &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+      &lt;ConversationId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-774a&lt;/ConversationId&gt;
+      &lt;MessageId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-7749&lt;/MessageId&gt;
+      &lt;Timestamp&gt;2015-09-11T14:12:35&lt;/Timestamp&gt;
+   &lt;/HeaderFields&gt;
+   &lt;Service&gt;
+      &lt;Name&gt;Transfer&lt;/Name&gt;
+      &lt;Context&gt;Filetransfer&lt;/Context&gt;
+      &lt;Action&gt;
+         &lt;Paradigm&gt;Action&lt;/Paradigm&gt;
+         &lt;Name&gt;StartTransfer&lt;/Name&gt;
+         &lt;Version&gt;2&lt;/Version&gt;
+      &lt;/Action&gt;
+   &lt;/Service&gt;
+&lt;/MessageHeader&gt;
+&lt;/soapenv:Header&gt;&lt;soapenv:Body&gt;&lt;StartTransfer_Action xmlns="http://nn.nl/XSD/Infrastructure/Transfer/FileTransfer/1/StartTransfer/2"&gt;
+	  &lt;TransferDetails&gt;
+		    &lt;SenderApplication&gt;Ibis4Scan&lt;/SenderApplication&gt;
+		    &lt;RecipientApplication/&gt;
+		    &lt;Filename&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/Filename&gt;
+		    &lt;TransferFlowId&gt;NNT12345&lt;/TransferFlowId&gt;
+	  &lt;/TransferDetails&gt;
+&lt;/StartTransfer_Action&gt;
+&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="5">
+						<field name="LOGID">135795</field>
+						<field name="MESSAGEID">5277038a487e4aec8175b7e643bcd24e</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973</field>
+						<field name="CPAID">I911500017</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+						<field name="LOG_TIMESTAMP">2015-09-12 06:04:28</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884366:114&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1441973556699&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferImmediate&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I911500017&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Transaction I911500017 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully &lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">received</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="6">
+						<field name="LOGID">135797</field>
+						<field name="MESSAGEID">e4e7e97873cd4065aafe45ca437b28a6</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627</field>
+						<field name="CPAID">n/a</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransfer</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:46:41</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soapenv:Header&gt;&lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/2"&gt;
+   &lt;From&gt;
+      &lt;Id&gt;Ibis4Scan&lt;/Id&gt;
+   &lt;/From&gt;
+   &lt;To&gt;
+      &lt;Location&gt;ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action&lt;/Location&gt;
+   &lt;/To&gt;
+   &lt;HeaderFields&gt;
+      &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+      &lt;ConversationId&gt;SRTZZAPP0157_0ace08fd-40ea0aa5_14fcac774ea_-7bfb&lt;/ConversationId&gt;
+      &lt;MessageId&gt;SRTZZAPP0157_0ace08fd-40ea0aa5_14fcac774ea_-7bfa&lt;/MessageId&gt;
+      &lt;Timestamp&gt;2015-09-15T10:46:41&lt;/Timestamp&gt;
+   &lt;/HeaderFields&gt;
+   &lt;Service&gt;
+      &lt;Name&gt;Transfer&lt;/Name&gt;
+      &lt;Context&gt;Filetransfer&lt;/Context&gt;
+      &lt;Action&gt;
+         &lt;Paradigm&gt;Action&lt;/Paradigm&gt;
+         &lt;Name&gt;StartTransfer&lt;/Name&gt;
+         &lt;Version&gt;2&lt;/Version&gt;
+      &lt;/Action&gt;
+   &lt;/Service&gt;
+&lt;/MessageHeader&gt;
+&lt;/soapenv:Header&gt;&lt;soapenv:Body&gt;&lt;StartTransfer_Action xmlns="http://nn.nl/XSD/Infrastructure/Transfer/FileTransfer/1/StartTransfer/2"&gt;
+	  &lt;TransferDetails&gt;
+		    &lt;SenderApplication&gt;Ibis4Scan&lt;/SenderApplication&gt;
+		    &lt;RecipientApplication/&gt;
+		    &lt;Filename&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis756514140482104993.*&lt;/Filename&gt;
+		    &lt;TransferFlowId&gt;NNT12345&lt;/TransferFlowId&gt;
+	  &lt;/TransferDetails&gt;
+&lt;/StartTransfer_Action&gt;
+&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="7">
+						<field name="LOGID">135798</field>
+						<field name="MESSAGEID">d010936c563342539a144e21167a3728</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627</field>
+						<field name="CPAID">I915500000</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferSubmitted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:46:41</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138B608B:127&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442306801855&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferImmediate&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I915500000&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Transaction I915500000 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully &lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="8">
+						<field name="LOGID">135799</field>
+						<field name="MESSAGEID">4b13511c10ba4e82b87c225d399f3b20</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627</field>
+						<field name="CPAID">I915500000</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferExecuted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:46:47</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138B608B:128&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442306807296&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Transfer Complete&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferStatus&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I915500000&lt;/InitiatorTransactionID&gt;
+        &lt;Message/&gt;
+        &lt;NumRecords&gt;1&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+    &lt;Body&gt;
+        &lt;Body&gt;
+            &lt;ns0:ResponseType xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;TransferStatus&lt;/ns0:ResponseType&gt;
+            &lt;ns0:ServerName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;SRTZZAPP0157&lt;/ns0:ServerName&gt;
+            &lt;ns0:HostName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;srtzzapp0157.insim.biz&lt;/ns0:HostName&gt;
+            &lt;ns0:NumRecords xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;1&lt;/ns0:NumRecords&gt;
+            &lt;ns0:AuditRecord xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;
+                &lt;ns0:AuditType&gt;PlatformServer&lt;/ns0:AuditType&gt;
+                &lt;ns0:AuditID/&gt;
+                &lt;ns0:CKPTInterval&gt;5&lt;/ns0:CKPTInterval&gt;
+                &lt;ns0:CKPTCount/&gt;
+                &lt;ns0:NodeName&gt;SRTZZAPP0157&lt;/ns0:NodeName&gt;
+                &lt;ns0:InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis756514140482104993.*&lt;/ns0:InitiatorFileName&gt;
+                &lt;ns0:Delimiter&gt;None&lt;/ns0:Delimiter&gt;
+                &lt;ns0:Conversion&gt;Binary&lt;/ns0:Conversion&gt;
+                &lt;ns0:Department/&gt;
+                &lt;ns0:Description&gt;NNT12345-Ibis4Scan&lt;/ns0:Description&gt;
+                &lt;ns0:Encryption/&gt;
+                &lt;ns0:InitiatorTransactionID&gt;I915500000&lt;/ns0:InitiatorTransactionID&gt;
+                &lt;ns0:LocalCTFile/&gt;
+                &lt;ns0:ServerName/&gt;
+                &lt;ns0:ZOSAllocationType/&gt;
+                &lt;ns0:ZOSAllocationPrimary&gt;0&lt;/ns0:ZOSAllocationPrimary&gt;
+                &lt;ns0:ZOSAllocationSecondary&gt;0&lt;/ns0:ZOSAllocationSecondary&gt;
+                &lt;ns0:ZOSRecordFormat/&gt;
+                &lt;ns0:ZOSRecordLength&gt;0&lt;/ns0:ZOSRecordLength&gt;
+                &lt;ns0:ZOSBlocksize&gt;0&lt;/ns0:ZOSBlocksize&gt;
+                &lt;ns0:ZOSUnitName/&gt;
+                &lt;ns0:ZOSVolumeName/&gt;
+                &lt;ns0:ZOSStorageClass/&gt;
+                &lt;ns0:ZOSDataClass/&gt;
+                &lt;ns0:ZOSManagementClass/&gt;
+                &lt;ns0:PPASource1/&gt;
+                &lt;ns0:PPAStatus1/&gt;
+                &lt;ns0:PPAType1/&gt;
+                &lt;ns0:PPAData1/&gt;
+                &lt;ns0:PPAReturnCode1/&gt;
+                &lt;ns0:PPASource2/&gt;
+                &lt;ns0:PPAStatus2/&gt;
+                &lt;ns0:PPAType2/&gt;
+                &lt;ns0:PPAData2/&gt;
+                &lt;ns0:PPAReturnCode2/&gt;
+                &lt;ns0:PPASource3/&gt;
+                &lt;ns0:PPAStatus3/&gt;
+                &lt;ns0:PPAType3/&gt;
+                &lt;ns0:PPAData3/&gt;
+                &lt;ns0:PPAReturnCode3/&gt;
+                &lt;ns0:PPASource4/&gt;
+                &lt;ns0:PPAStatus4/&gt;
+                &lt;ns0:PPAType4/&gt;
+                &lt;ns0:PPAData4/&gt;
+                &lt;ns0:PPAReturnCode4/&gt;
+                &lt;ns0:RemoteCTFile/&gt;
+                &lt;ns0:ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\$(LocalFileName)&lt;/ns0:ResponderFileName&gt;
+                &lt;ns0:SendRecv&gt;Send&lt;/ns0:SendRecv&gt;
+                &lt;ns0:EmailSuccess/&gt;
+                &lt;ns0:EmailFailure/&gt;
+                &lt;ns0:TransferByteCount&gt;0&lt;/ns0:TransferByteCount&gt;
+                &lt;ns0:TransferCompressedByteCount&gt;0&lt;/ns0:TransferCompressedByteCount&gt;
+                &lt;ns0:TransferStartDateTime&gt;2015-09-15T10:46:41&lt;/ns0:TransferStartDateTime&gt;
+                &lt;ns0:TransferEndDateTime&gt;2015-09-15T10:46:42&lt;/ns0:TransferEndDateTime&gt;
+                &lt;ns0:TransferType&gt;File&lt;/ns0:TransferType&gt;
+                &lt;ns0:ProcessName&gt;NNT12345&lt;/ns0:ProcessName&gt;
+                &lt;ns0:UserData&gt;NNT12345-Ibis4Scan&lt;/ns0:UserData&gt;
+                &lt;ns0:TransferStatus&gt;Success&lt;/ns0:TransferStatus&gt;
+                &lt;ns0:TransferStatusMsg&gt;One or more files transferred successfully. Success:2 Failure:0&lt;/ns0:TransferStatusMsg&gt;
+                &lt;ns0:InitiatorUserId&gt;NPATZZAPP0014&lt;/ns0:InitiatorUserId&gt;
+                &lt;ns0:FileWriteMode&gt;CreateReplace&lt;/ns0:FileWriteMode&gt;
+                &lt;ns0:AS2MDNStatus/&gt;
+                &lt;ns0:ProxyStatusMsg/&gt;
+                &lt;ns0:CrlMsg/&gt;
+                &lt;ns0:MemberCount/&gt;
+                &lt;ns0:NodeClass/&gt;
+                &lt;ns0:ZOSAllocationDirectory/&gt;
+                &lt;ns0:Priority&gt;2&lt;/ns0:Priority&gt;
+                &lt;ns0:RecordCount&gt;1&lt;/ns0:RecordCount&gt;
+                &lt;ns0:NodeType/&gt;
+                &lt;ns0:NTDomain&gt;INSIM&lt;/ns0:NTDomain&gt;
+                &lt;ns0:IPPort&gt;46464&lt;/ns0:IPPort&gt;
+                &lt;ns0:ResponderTransactionID/&gt;
+                &lt;ns0:ResponderUserId&gt;INSIM\NPATZZAPP0014&lt;/ns0:ResponderUserId&gt;
+                &lt;ns0:SSLFlag&gt;No&lt;/ns0:SSLFlag&gt;
+                &lt;ns0:SSLPortNum/&gt;
+                &lt;ns0:TempError&gt;N&lt;/ns0:TempError&gt;
+                &lt;ns0:TransferCommand/&gt;
+                &lt;ns0:Compression&gt;None&lt;/ns0:Compression&gt;
+                &lt;ns0:TrDiagCode&gt;0&lt;/ns0:TrDiagCode&gt;
+                &lt;ns0:TrReturnCode/&gt;
+                &lt;ns0:TrSeverity&gt;00&lt;/ns0:TrSeverity&gt;
+                &lt;ns0:TryCount&gt;0&lt;/ns0:TryCount&gt;
+                &lt;ns0:MaxTryCount&gt;1&lt;/ns0:MaxTryCount&gt;
+                &lt;ns0:UNIXFilePermissions/&gt;
+                &lt;ns0:VersionNum&gt;7.1.1&lt;/ns0:VersionNum&gt;
+            &lt;/ns0:AuditRecord&gt;
+        &lt;/Body&gt;
+    &lt;/Body&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="9">
+						<field name="LOGID">135800</field>
+						<field name="MESSAGEID">eb72d6cc331c4350bdc2835e36efbc17</field>
+						<field name="CONVERSATIONID">n/a</field>
+						<field name="CPAID">I915500001</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">OnCompleteTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">Notify</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">Notify</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:56:04</field>
+						<field name="SENDERID">P2P.General.Ibis4Scan.FileTransfer.Action</field>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="MESSAGE">&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;&lt;JMSHeaders&gt;&lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action&lt;/jms1:JMSDestination&gt;&lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;&lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B131:2193B880&lt;/jms1:JMSMessageID&gt;&lt;jms1:JMSTimestamp&gt;1442307364247&lt;/jms1:JMSTimestamp&gt;&lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;&lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;&lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;&lt;jms1:JMSType&gt;EMSAlert&lt;/jms1:JMSType&gt;&lt;/JMSHeaders&gt;&lt;JMSProperties/&gt;&lt;Body&gt;&lt;AuditResponse xmlns="http://www.tibco.com/MFT/JMS-XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd"&gt;&lt;ResponseType&gt;Alert&lt;/ResponseType&gt;&lt;NumRecords&gt;1&lt;/NumRecords&gt;&lt;AuditRecord&gt;&lt;AuditType&gt;PlatformServer&lt;/AuditType&gt;&lt;AuditID&gt;C91550004444&lt;/AuditID&gt;&lt;CKPTInterval&gt;5&lt;/CKPTInterval&gt;&lt;CKPTCount/&gt;&lt;NodeName&gt;10.206.8.253&lt;/NodeName&gt;&lt;InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis756514140482104993.txt&lt;/InitiatorFileName&gt;&lt;Delimiter&gt;None&lt;/Delimiter&gt;&lt;Conversion&gt;Binary&lt;/Conversion&gt;&lt;Department&gt;ING NN&lt;/Department&gt;&lt;Description&gt;NNT12345-Ibis4Scan&lt;/Description&gt;&lt;Encryption/&gt;&lt;InitiatorTransactionID&gt;R915500002&lt;/InitiatorTransactionID&gt;&lt;LocalCTFile/&gt;&lt;ServerName&gt;SRTZZAPP0157&lt;/ServerName&gt;&lt;ZOSAllocationType/&gt;&lt;ZOSAllocationPrimary&gt;0&lt;/ZOSAllocationPrimary&gt;&lt;ZOSAllocationSecondary&gt;0&lt;/ZOSAllocationSecondary&gt;&lt;ZOSRecordFormat/&gt;&lt;ZOSRecordLength&gt;0&lt;/ZOSRecordLength&gt;&lt;ZOSBlocksize&gt;0&lt;/ZOSBlocksize&gt;&lt;ZOSUnitName/&gt;&lt;ZOSVolumeName/&gt;&lt;ZOSStorageClass/&gt;&lt;ZOSDataClass/&gt;&lt;ZOSManagementClass/&gt;&lt;PPASource1/&gt;&lt;PPAStatus1/&gt;&lt;PPAType1/&gt;&lt;PPAData1/&gt;&lt;PPAReturnCode1/&gt;&lt;PPASource2/&gt;&lt;PPAStatus2/&gt;&lt;PPAType2/&gt;&lt;PPAData2/&gt;&lt;PPAReturnCode2/&gt;&lt;PPASource3/&gt;&lt;PPAStatus3/&gt;&lt;PPAType3/&gt;&lt;PPAData3/&gt;&lt;PPAReturnCode3/&gt;&lt;PPASource4/&gt;&lt;PPAStatus4/&gt;&lt;PPAType4/&gt;&lt;PPAData4/&gt;&lt;PPAReturnCode4/&gt;&lt;RemoteCTFile/&gt;&lt;ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis756514140482104993.txt&lt;/ResponderFileName&gt;&lt;SendRecv&gt;Receive&lt;/SendRecv&gt;&lt;EmailSuccess/&gt;&lt;EmailFailure/&gt;&lt;TransferByteCount&gt;7&lt;/TransferByteCount&gt;&lt;TransferCompressedByteCount&gt;0&lt;/TransferCompressedByteCount&gt;&lt;TransferStartDateTime&gt;2015-09-15T10:46:41&lt;/TransferStartDateTime&gt;&lt;TransferEndDateTime&gt;2015-09-15T10:46:42&lt;/TransferEndDateTime&gt;&lt;TransferType&gt;File&lt;/TransferType&gt;&lt;ProcessName&gt;NNT12345&lt;/ProcessName&gt;&lt;UserData&gt;NNT12345-Ibis4Scan&lt;/UserData&gt;&lt;TransferStatus&gt;Success&lt;/TransferStatus&gt;&lt;TransferStatusMsg&gt;Transfer Completed Successfully.&lt;/TransferStatusMsg&gt;&lt;InitiatorUserId&gt;NPATZZAPP0014&lt;/InitiatorUserId&gt;&lt;FileWriteMode&gt;CreateReplace&lt;/FileWriteMode&gt;&lt;AS2MDNStatus/&gt;&lt;ProxyStatusMsg/&gt;&lt;CrlMsg/&gt;&lt;MemberCount/&gt;&lt;NodeClass/&gt;&lt;ZOSAllocationDirectory/&gt;&lt;Priority/&gt;&lt;RecordCount&gt;1&lt;/RecordCount&gt;&lt;NodeType/&gt;&lt;NTDomain&gt;INSIM&lt;/NTDomain&gt;&lt;IPPort/&gt;&lt;ResponderTransactionID&gt;I915500001&lt;/ResponderTransactionID&gt;&lt;ResponderUserId&gt;NPATZZAPP0014&lt;/ResponderUserId&gt;&lt;SSLFlag&gt;No&lt;/SSLFlag&gt;&lt;SSLPortNum/&gt;&lt;TempError&gt;N&lt;/TempError&gt;&lt;TransferCommand/&gt;&lt;Compression&gt;None&lt;/Compression&gt;&lt;TrDiagCode&gt;0&lt;/TrDiagCode&gt;&lt;TrReturnCode/&gt;&lt;TrSeverity&gt;00&lt;/TrSeverity&gt;&lt;TryCount&gt;0&lt;/TryCount&gt;&lt;MaxTryCount&gt;0&lt;/MaxTryCount&gt;&lt;UNIXFilePermissions/&gt;&lt;VersionNum&gt;7.1.1&lt;/VersionNum&gt;&lt;/AuditRecord&gt;&lt;/AuditResponse&gt;&lt;/Body&gt;&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="10">
+						<field name="LOGID">135801</field>
+						<field name="MESSAGEID">d25fcbbf447644e2bbfa993f5c7e9bf5</field>
+						<field name="CONVERSATIONID">n/a</field>
+						<field name="CPAID">I915500003</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">OnCompleteTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">Notify</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">Notify</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:56:04</field>
+						<field name="SENDERID">P2P.General.Ibis4Scan.FileTransfer.Action</field>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:37</field>
+						<field name="MESSAGE">&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;&lt;JMSHeaders&gt;&lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.NotifyCompletedTransfer.Action&lt;/jms1:JMSDestination&gt;&lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;&lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B131:2193B88E&lt;/jms1:JMSMessageID&gt;&lt;jms1:JMSTimestamp&gt;1442307364549&lt;/jms1:JMSTimestamp&gt;&lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;&lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;&lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;&lt;jms1:JMSType&gt;EMSAlert&lt;/jms1:JMSType&gt;&lt;/JMSHeaders&gt;&lt;JMSProperties/&gt;&lt;Body&gt;&lt;AuditResponse xmlns="http://www.tibco.com/MFT/JMS-XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tibco.com/MFT/JMS-XMLSchema /opt/tibco/mftcc/server/webapps/cfcc/WEB-INF/xsds/AuditResponse.xsd"&gt;&lt;ResponseType&gt;Alert&lt;/ResponseType&gt;&lt;NumRecords&gt;1&lt;/NumRecords&gt;&lt;AuditRecord&gt;&lt;AuditType&gt;PlatformServer&lt;/AuditType&gt;&lt;AuditID&gt;C91550004447&lt;/AuditID&gt;&lt;CKPTInterval&gt;5&lt;/CKPTInterval&gt;&lt;CKPTCount/&gt;&lt;NodeName&gt;10.206.8.253&lt;/NodeName&gt;&lt;InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis756514140482104993.xml&lt;/InitiatorFileName&gt;&lt;Delimiter&gt;None&lt;/Delimiter&gt;&lt;Conversion&gt;Binary&lt;/Conversion&gt;&lt;Department&gt;ING NN&lt;/Department&gt;&lt;Description&gt;NNT12345-Ibis4Scan&lt;/Description&gt;&lt;Encryption/&gt;&lt;InitiatorTransactionID&gt;R915500004&lt;/InitiatorTransactionID&gt;&lt;LocalCTFile/&gt;&lt;ServerName&gt;SRTZZAPP0157&lt;/ServerName&gt;&lt;ZOSAllocationType/&gt;&lt;ZOSAllocationPrimary&gt;0&lt;/ZOSAllocationPrimary&gt;&lt;ZOSAllocationSecondary&gt;0&lt;/ZOSAllocationSecondary&gt;&lt;ZOSRecordFormat/&gt;&lt;ZOSRecordLength&gt;0&lt;/ZOSRecordLength&gt;&lt;ZOSBlocksize&gt;0&lt;/ZOSBlocksize&gt;&lt;ZOSUnitName/&gt;&lt;ZOSVolumeName/&gt;&lt;ZOSStorageClass/&gt;&lt;ZOSDataClass/&gt;&lt;ZOSManagementClass/&gt;&lt;PPASource1/&gt;&lt;PPAStatus1/&gt;&lt;PPAType1/&gt;&lt;PPAData1/&gt;&lt;PPAReturnCode1/&gt;&lt;PPASource2/&gt;&lt;PPAStatus2/&gt;&lt;PPAType2/&gt;&lt;PPAData2/&gt;&lt;PPAReturnCode2/&gt;&lt;PPASource3/&gt;&lt;PPAStatus3/&gt;&lt;PPAType3/&gt;&lt;PPAData3/&gt;&lt;PPAReturnCode3/&gt;&lt;PPASource4/&gt;&lt;PPAStatus4/&gt;&lt;PPAType4/&gt;&lt;PPAData4/&gt;&lt;PPAReturnCode4/&gt;&lt;RemoteCTFile/&gt;&lt;ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis756514140482104993.xml&lt;/ResponderFileName&gt;&lt;SendRecv&gt;Receive&lt;/SendRecv&gt;&lt;EmailSuccess/&gt;&lt;EmailFailure/&gt;&lt;TransferByteCount&gt;30&lt;/TransferByteCount&gt;&lt;TransferCompressedByteCount&gt;0&lt;/TransferCompressedByteCount&gt;&lt;TransferStartDateTime&gt;2015-09-15T10:46:42&lt;/TransferStartDateTime&gt;&lt;TransferEndDateTime&gt;2015-09-15T10:46:42&lt;/TransferEndDateTime&gt;&lt;TransferType&gt;File&lt;/TransferType&gt;&lt;ProcessName&gt;NNT12345&lt;/ProcessName&gt;&lt;UserData&gt;NNT12345-Ibis4Scan&lt;/UserData&gt;&lt;TransferStatus&gt;Success&lt;/TransferStatus&gt;&lt;TransferStatusMsg&gt;Transfer Completed Successfully.&lt;/TransferStatusMsg&gt;&lt;InitiatorUserId&gt;NPATZZAPP0014&lt;/InitiatorUserId&gt;&lt;FileWriteMode&gt;CreateReplace&lt;/FileWriteMode&gt;&lt;AS2MDNStatus/&gt;&lt;ProxyStatusMsg/&gt;&lt;CrlMsg/&gt;&lt;MemberCount/&gt;&lt;NodeClass/&gt;&lt;ZOSAllocationDirectory/&gt;&lt;Priority/&gt;&lt;RecordCount&gt;1&lt;/RecordCount&gt;&lt;NodeType/&gt;&lt;NTDomain&gt;INSIM&lt;/NTDomain&gt;&lt;IPPort/&gt;&lt;ResponderTransactionID&gt;I915500003&lt;/ResponderTransactionID&gt;&lt;ResponderUserId&gt;NPATZZAPP0014&lt;/ResponderUserId&gt;&lt;SSLFlag&gt;No&lt;/SSLFlag&gt;&lt;SSLPortNum/&gt;&lt;TempError&gt;N&lt;/TempError&gt;&lt;TransferCommand/&gt;&lt;Compression&gt;None&lt;/Compression&gt;&lt;TrDiagCode&gt;0&lt;/TrDiagCode&gt;&lt;TrReturnCode/&gt;&lt;TrSeverity&gt;00&lt;/TrSeverity&gt;&lt;TryCount&gt;0&lt;/TryCount&gt;&lt;MaxTryCount&gt;0&lt;/MaxTryCount&gt;&lt;UNIXFilePermissions/&gt;&lt;VersionNum&gt;7.1.1&lt;/VersionNum&gt;&lt;/AuditRecord&gt;&lt;/AuditResponse&gt;&lt;/Body&gt;&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="11">
+						<field name="LOGID">135802</field>
+						<field name="MESSAGEID">0101a5c7ae4f41b4a16723e5a37edad2</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:149413</field>
+						<field name="CPAID">n/a</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransfer</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransver</field>
+						<field name="LOG_TIMESTAMP">2015-09-11 14:12:36</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:37</field>
+						<field name="MESSAGE">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;&lt;soapenv:Header&gt;&lt;MessageHeader xmlns="http://nn.nl/XSD/Generic/MessageHeader/2"&gt;
+   &lt;From&gt;
+      &lt;Id&gt;Ibis4Scan&lt;/Id&gt;
+   &lt;/From&gt;
+   &lt;To&gt;
+      &lt;Location&gt;ESB.Infrastructure.US.Transfer.Filetransfer.1.StartTransfer.2.Action&lt;/Location&gt;
+   &lt;/To&gt;
+   &lt;HeaderFields&gt;
+      &lt;CPAId&gt;n/a&lt;/CPAId&gt;
+      &lt;ConversationId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-774a&lt;/ConversationId&gt;
+      &lt;MessageId&gt;SRTZZAPP0157_0ace08fd--706bc0eb_14f921459ec_-7749&lt;/MessageId&gt;
+      &lt;Timestamp&gt;2015-09-11T14:12:35&lt;/Timestamp&gt;
+   &lt;/HeaderFields&gt;
+   &lt;Service&gt;
+      &lt;Name&gt;Transfer&lt;/Name&gt;
+      &lt;Context&gt;Filetransfer&lt;/Context&gt;
+      &lt;Action&gt;
+         &lt;Paradigm&gt;Action&lt;/Paradigm&gt;
+         &lt;Name&gt;StartTransfer&lt;/Name&gt;
+         &lt;Version&gt;2&lt;/Version&gt;
+      &lt;/Action&gt;
+   &lt;/Service&gt;
+&lt;/MessageHeader&gt;
+&lt;/soapenv:Header&gt;&lt;soapenv:Body&gt;&lt;StartTransfer_Action xmlns="http://nn.nl/XSD/Infrastructure/Transfer/FileTransfer/1/StartTransfer/2"&gt;
+	  &lt;TransferDetails&gt;
+		    &lt;SenderApplication&gt;Ibis4Scan&lt;/SenderApplication&gt;
+		    &lt;RecipientApplication/&gt;
+		    &lt;Filename&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/Filename&gt;
+		    &lt;TransferFlowId&gt;NNT12345&lt;/TransferFlowId&gt;
+	  &lt;/TransferDetails&gt;
+&lt;/StartTransfer_Action&gt;
+&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="12">
+						<field name="LOGID">135803</field>
+						<field name="MESSAGEID">d010936c563342539a144e21167a3728</field>
+						<field name="CONVERSATIONID">d010936c563342539a144e21167a3728</field>
+						<field name="CPAID">I915500000</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferSubmitted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferSubmitted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:46:41</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:37</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138B608B:127&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442306801855&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferImmediate&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I915500000&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Transaction I915500000 submitted successfully to Server SRTZZAPP0157:
+Transfer submitted successfully &lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+					<row number="13">
+						<field name="LOGID">135804</field>
+						<field name="MESSAGEID">4b13511c10ba4e82b87c225d399f3b20</field>
+						<field name="CONVERSATIONID">4b13511c10ba4e82b87c225d399f3b20</field>
+						<field name="CPAID">I915500000</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferExecuted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 10:46:47</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:37</field>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138B608B:128&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442306807296&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13877128:194627&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Transfer Complete&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferStatus&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;0&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I915500000&lt;/InitiatorTransactionID&gt;
+        &lt;Message/&gt;
+        &lt;NumRecords&gt;1&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+    &lt;Body&gt;
+        &lt;Body&gt;
+            &lt;ns0:ResponseType xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;TransferStatus&lt;/ns0:ResponseType&gt;
+            &lt;ns0:ServerName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;SRTZZAPP0157&lt;/ns0:ServerName&gt;
+            &lt;ns0:HostName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;srtzzapp0157.insim.biz&lt;/ns0:HostName&gt;
+            &lt;ns0:NumRecords xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;1&lt;/ns0:NumRecords&gt;
+            &lt;ns0:AuditRecord xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;
+                &lt;ns0:AuditType&gt;PlatformServer&lt;/ns0:AuditType&gt;
+                &lt;ns0:AuditID/&gt;
+                &lt;ns0:CKPTInterval&gt;5&lt;/ns0:CKPTInterval&gt;
+                &lt;ns0:CKPTCount/&gt;
+                &lt;ns0:NodeName&gt;SRTZZAPP0157&lt;/ns0:NodeName&gt;
+                &lt;ns0:InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out/ibis756514140482104993.*&lt;/ns0:InitiatorFileName&gt;
+                &lt;ns0:Delimiter&gt;None&lt;/ns0:Delimiter&gt;
+                &lt;ns0:Conversion&gt;Binary&lt;/ns0:Conversion&gt;
+                &lt;ns0:Department/&gt;
+                &lt;ns0:Description&gt;NNT12345-Ibis4Scan&lt;/ns0:Description&gt;
+                &lt;ns0:Encryption/&gt;
+                &lt;ns0:InitiatorTransactionID&gt;I915500000&lt;/ns0:InitiatorTransactionID&gt;
+                &lt;ns0:LocalCTFile/&gt;
+                &lt;ns0:ServerName/&gt;
+                &lt;ns0:ZOSAllocationType/&gt;
+                &lt;ns0:ZOSAllocationPrimary&gt;0&lt;/ns0:ZOSAllocationPrimary&gt;
+                &lt;ns0:ZOSAllocationSecondary&gt;0&lt;/ns0:ZOSAllocationSecondary&gt;
+                &lt;ns0:ZOSRecordFormat/&gt;
+                &lt;ns0:ZOSRecordLength&gt;0&lt;/ns0:ZOSRecordLength&gt;
+                &lt;ns0:ZOSBlocksize&gt;0&lt;/ns0:ZOSBlocksize&gt;
+                &lt;ns0:ZOSUnitName/&gt;
+                &lt;ns0:ZOSVolumeName/&gt;
+                &lt;ns0:ZOSStorageClass/&gt;
+                &lt;ns0:ZOSDataClass/&gt;
+                &lt;ns0:ZOSManagementClass/&gt;
+                &lt;ns0:PPASource1/&gt;
+                &lt;ns0:PPAStatus1/&gt;
+                &lt;ns0:PPAType1/&gt;
+                &lt;ns0:PPAData1/&gt;
+                &lt;ns0:PPAReturnCode1/&gt;
+                &lt;ns0:PPASource2/&gt;
+                &lt;ns0:PPAStatus2/&gt;
+                &lt;ns0:PPAType2/&gt;
+                &lt;ns0:PPAData2/&gt;
+                &lt;ns0:PPAReturnCode2/&gt;
+                &lt;ns0:PPASource3/&gt;
+                &lt;ns0:PPAStatus3/&gt;
+                &lt;ns0:PPAType3/&gt;
+                &lt;ns0:PPAData3/&gt;
+                &lt;ns0:PPAReturnCode3/&gt;
+                &lt;ns0:PPASource4/&gt;
+                &lt;ns0:PPAStatus4/&gt;
+                &lt;ns0:PPAType4/&gt;
+                &lt;ns0:PPAData4/&gt;
+                &lt;ns0:PPAReturnCode4/&gt;
+                &lt;ns0:RemoteCTFile/&gt;
+                &lt;ns0:ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\$(LocalFileName)&lt;/ns0:ResponderFileName&gt;
+                &lt;ns0:SendRecv&gt;Send&lt;/ns0:SendRecv&gt;
+                &lt;ns0:EmailSuccess/&gt;
+                &lt;ns0:EmailFailure/&gt;
+                &lt;ns0:TransferByteCount&gt;0&lt;/ns0:TransferByteCount&gt;
+                &lt;ns0:TransferCompressedByteCount&gt;0&lt;/ns0:TransferCompressedByteCount&gt;
+                &lt;ns0:TransferStartDateTime&gt;2015-09-15T10:46:41&lt;/ns0:TransferStartDateTime&gt;
+                &lt;ns0:TransferEndDateTime&gt;2015-09-15T10:46:42&lt;/ns0:TransferEndDateTime&gt;
+                &lt;ns0:TransferType&gt;File&lt;/ns0:TransferType&gt;
+                &lt;ns0:ProcessName&gt;NNT12345&lt;/ns0:ProcessName&gt;
+                &lt;ns0:UserData&gt;NNT12345-Ibis4Scan&lt;/ns0:UserData&gt;
+                &lt;ns0:TransferStatus&gt;Success&lt;/ns0:TransferStatus&gt;
+                &lt;ns0:TransferStatusMsg&gt;One or more files transferred successfully. Success:2 Failure:0&lt;/ns0:TransferStatusMsg&gt;
+                &lt;ns0:InitiatorUserId&gt;NPATZZAPP0014&lt;/ns0:InitiatorUserId&gt;
+                &lt;ns0:FileWriteMode&gt;CreateReplace&lt;/ns0:FileWriteMode&gt;
+                &lt;ns0:AS2MDNStatus/&gt;
+                &lt;ns0:ProxyStatusMsg/&gt;
+                &lt;ns0:CrlMsg/&gt;
+                &lt;ns0:MemberCount/&gt;
+                &lt;ns0:NodeClass/&gt;
+                &lt;ns0:ZOSAllocationDirectory/&gt;
+                &lt;ns0:Priority&gt;2&lt;/ns0:Priority&gt;
+                &lt;ns0:RecordCount&gt;1&lt;/ns0:RecordCount&gt;
+                &lt;ns0:NodeType/&gt;
+                &lt;ns0:NTDomain&gt;INSIM&lt;/ns0:NTDomain&gt;
+                &lt;ns0:IPPort&gt;46464&lt;/ns0:IPPort&gt;
+                &lt;ns0:ResponderTransactionID/&gt;
+                &lt;ns0:ResponderUserId&gt;INSIM\NPATZZAPP0014&lt;/ns0:ResponderUserId&gt;
+                &lt;ns0:SSLFlag&gt;No&lt;/ns0:SSLFlag&gt;
+                &lt;ns0:SSLPortNum/&gt;
+                &lt;ns0:TempError&gt;N&lt;/ns0:TempError&gt;
+                &lt;ns0:TransferCommand/&gt;
+                &lt;ns0:Compression&gt;None&lt;/ns0:Compression&gt;
+                &lt;ns0:TrDiagCode&gt;0&lt;/ns0:TrDiagCode&gt;
+                &lt;ns0:TrReturnCode/&gt;
+                &lt;ns0:TrSeverity&gt;00&lt;/ns0:TrSeverity&gt;
+                &lt;ns0:TryCount&gt;0&lt;/ns0:TryCount&gt;
+                &lt;ns0:MaxTryCount&gt;1&lt;/ns0:MaxTryCount&gt;
+                &lt;ns0:UNIXFilePermissions/&gt;
+                &lt;ns0:VersionNum&gt;7.1.1&lt;/ns0:VersionNum&gt;
+            &lt;/ns0:AuditRecord&gt;
+        &lt;/Body&gt;
+    &lt;/Body&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="TYPE">sent</field>
+						<field name="FUNCT_CALLID" null="true"/>
+						<field name="LABEL" null="true"/>
+						<field name="FUNCT_ERROR_CODE" null="true"/>
+						<field name="FUNCT_ERROR_REASON" null="true"/>
+						<field name="FUNCT_ERROR_TEXT" null="true"/>
+					</row>
+				</rowset>
+			</result>
+		</result>
+		<result item="3">
+			<result>
+				<fielddefinition>
+					<field name="LOGID" type="NUMERIC" columnDisplaySize="11" precision="10" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="MESSAGEID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CONVERSATIONID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CPAID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="SERVICECONTEXTVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="OPERATIONVERSION" type="NUMERIC" columnDisplaySize="4" precision="3" scale="0" isCurrency="true" columnTypeName="NUMBER" columnClassName="java.math.BigDecimal"/>
+					<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="APPLICATIONFUNCTION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="LOG_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="SENDERID" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="CRE_TIMESTAMP" type="TIMESTAMP" columnDisplaySize="11" precision="0" scale="6" isCurrency="false" columnTypeName="TIMESTAMP" columnClassName="oracle.sql.TIMESTAMP"/>
+					<field name="ERROR_CODE" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="ERROR_REASON" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="ERROR_TEXT" type="VARCHAR" columnDisplaySize="4000" precision="4000" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob"/>
+					<field name="RESEND_CONN_FACT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="RESEND_PROV_URL" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+					<field name="RESEND_DESTINATION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String"/>
+				</fielddefinition>
+				<rowset>
+					<row number="0">
+						<field name="LOGID">135796</field>
+						<field name="MESSAGEID">6cadd7ece3314bd48d74665286653617</field>
+						<field name="CONVERSATIONID">ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B13884363:141973</field>
+						<field name="CPAID">I911500017</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferExecuted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 15:50:50</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:36</field>
+						<field name="ERROR_CODE">ERR6005</field>
+						<field name="ERROR_REASON">Backend system failure response</field>
+						<field name="ERROR_TEXT" null="true"/>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138BB427:216&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442325050210&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138BB424:198184&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferStatus&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;503&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I911500017&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Open file "E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml" failed 1.  The system cannot find the file specified.&lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+    &lt;Body&gt;
+        &lt;Body&gt;
+            &lt;ns0:ResponseType xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;TransferStatus&lt;/ns0:ResponseType&gt;
+            &lt;ns0:ServerName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;SRTZZAPP0157&lt;/ns0:ServerName&gt;
+            &lt;ns0:HostName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;srtzzapp0157.insim.biz&lt;/ns0:HostName&gt;
+            &lt;ns0:NumRecords xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;1&lt;/ns0:NumRecords&gt;
+            &lt;ns0:AuditRecord xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;
+                &lt;ns0:AuditType&gt;PlatformServer&lt;/ns0:AuditType&gt;
+                &lt;ns0:AuditID/&gt;
+                &lt;ns0:CKPTInterval&gt;5&lt;/ns0:CKPTInterval&gt;
+                &lt;ns0:CKPTCount/&gt;
+                &lt;ns0:NodeName&gt;SRTZZAPP0157&lt;/ns0:NodeName&gt;
+                &lt;ns0:InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/ns0:InitiatorFileName&gt;
+                &lt;ns0:Delimiter&gt;None&lt;/ns0:Delimiter&gt;
+                &lt;ns0:Conversion&gt;Binary&lt;/ns0:Conversion&gt;
+                &lt;ns0:Department/&gt;
+                &lt;ns0:Description&gt;NNT12345-Ibis4Scan&lt;/ns0:Description&gt;
+                &lt;ns0:Encryption/&gt;
+                &lt;ns0:InitiatorTransactionID&gt;I911500017&lt;/ns0:InitiatorTransactionID&gt;
+                &lt;ns0:LocalCTFile/&gt;
+                &lt;ns0:ServerName/&gt;
+                &lt;ns0:ZOSAllocationType/&gt;
+                &lt;ns0:ZOSAllocationPrimary&gt;0&lt;/ns0:ZOSAllocationPrimary&gt;
+                &lt;ns0:ZOSAllocationSecondary&gt;0&lt;/ns0:ZOSAllocationSecondary&gt;
+                &lt;ns0:ZOSRecordFormat/&gt;
+                &lt;ns0:ZOSRecordLength&gt;0&lt;/ns0:ZOSRecordLength&gt;
+                &lt;ns0:ZOSBlocksize&gt;0&lt;/ns0:ZOSBlocksize&gt;
+                &lt;ns0:ZOSUnitName/&gt;
+                &lt;ns0:ZOSVolumeName/&gt;
+                &lt;ns0:ZOSStorageClass/&gt;
+                &lt;ns0:ZOSDataClass/&gt;
+                &lt;ns0:ZOSManagementClass/&gt;
+                &lt;ns0:PPASource1/&gt;
+                &lt;ns0:PPAStatus1/&gt;
+                &lt;ns0:PPAType1/&gt;
+                &lt;ns0:PPAData1/&gt;
+                &lt;ns0:PPAReturnCode1/&gt;
+                &lt;ns0:PPASource2/&gt;
+                &lt;ns0:PPAStatus2/&gt;
+                &lt;ns0:PPAType2/&gt;
+                &lt;ns0:PPAData2/&gt;
+                &lt;ns0:PPAReturnCode2/&gt;
+                &lt;ns0:PPASource3/&gt;
+                &lt;ns0:PPAStatus3/&gt;
+                &lt;ns0:PPAType3/&gt;
+                &lt;ns0:PPAData3/&gt;
+                &lt;ns0:PPAReturnCode3/&gt;
+                &lt;ns0:PPASource4/&gt;
+                &lt;ns0:PPAStatus4/&gt;
+                &lt;ns0:PPAType4/&gt;
+                &lt;ns0:PPAData4/&gt;
+                &lt;ns0:PPAReturnCode4/&gt;
+                &lt;ns0:RemoteCTFile/&gt;
+                &lt;ns0:ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis3831649605387339219.xml&lt;/ns0:ResponderFileName&gt;
+                &lt;ns0:SendRecv&gt;Send&lt;/ns0:SendRecv&gt;
+                &lt;ns0:EmailSuccess/&gt;
+                &lt;ns0:EmailFailure/&gt;
+                &lt;ns0:TransferByteCount&gt;0&lt;/ns0:TransferByteCount&gt;
+                &lt;ns0:TransferCompressedByteCount&gt;0&lt;/ns0:TransferCompressedByteCount&gt;
+                &lt;ns0:TransferStartDateTime&gt;2015-09-15T15:50:44&lt;/ns0:TransferStartDateTime&gt;
+                &lt;ns0:TransferEndDateTime&gt;2015-09-15T15:50:44&lt;/ns0:TransferEndDateTime&gt;
+                &lt;ns0:TransferType&gt;File&lt;/ns0:TransferType&gt;
+                &lt;ns0:ProcessName&gt;NNT12345&lt;/ns0:ProcessName&gt;
+                &lt;ns0:UserData&gt;NNT12345-Ibis4Scan&lt;/ns0:UserData&gt;
+                &lt;ns0:TransferStatus&gt;Failed&lt;/ns0:TransferStatus&gt;
+                &lt;ns0:TransferStatusMsg&gt;Open file "E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis3831649605387339219.xml" failed 1.  The system cannot find the file specified.&lt;/ns0:TransferStatusMsg&gt;
+                &lt;ns0:InitiatorUserId&gt;NPATZZAPP0014&lt;/ns0:InitiatorUserId&gt;
+                &lt;ns0:FileWriteMode&gt;CreateReplace&lt;/ns0:FileWriteMode&gt;
+                &lt;ns0:AS2MDNStatus/&gt;
+                &lt;ns0:ProxyStatusMsg/&gt;
+                &lt;ns0:CrlMsg/&gt;
+                &lt;ns0:MemberCount/&gt;
+                &lt;ns0:NodeClass/&gt;
+                &lt;ns0:ZOSAllocationDirectory/&gt;
+                &lt;ns0:Priority&gt;2&lt;/ns0:Priority&gt;
+                &lt;ns0:RecordCount&gt;0&lt;/ns0:RecordCount&gt;
+                &lt;ns0:NodeType/&gt;
+                &lt;ns0:NTDomain&gt;INSIM&lt;/ns0:NTDomain&gt;
+                &lt;ns0:IPPort&gt;46464&lt;/ns0:IPPort&gt;
+                &lt;ns0:ResponderTransactionID/&gt;
+                &lt;ns0:ResponderUserId&gt;INSIM\NPATZZAPP0014&lt;/ns0:ResponderUserId&gt;
+                &lt;ns0:SSLFlag&gt;No&lt;/ns0:SSLFlag&gt;
+                &lt;ns0:SSLPortNum/&gt;
+                &lt;ns0:TempError&gt;N&lt;/ns0:TempError&gt;
+                &lt;ns0:TransferCommand/&gt;
+                &lt;ns0:Compression&gt;None&lt;/ns0:Compression&gt;
+                &lt;ns0:TrDiagCode&gt;8&lt;/ns0:TrDiagCode&gt;
+                &lt;ns0:TrReturnCode/&gt;
+                &lt;ns0:TrSeverity&gt;01&lt;/ns0:TrSeverity&gt;
+                &lt;ns0:TryCount&gt;1&lt;/ns0:TryCount&gt;
+                &lt;ns0:MaxTryCount&gt;1&lt;/ns0:MaxTryCount&gt;
+                &lt;ns0:UNIXFilePermissions/&gt;
+                &lt;ns0:VersionNum&gt;7.1.1&lt;/ns0:VersionNum&gt;
+            &lt;/ns0:AuditRecord&gt;
+        &lt;/Body&gt;
+    &lt;/Body&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="RESEND_CONN_FACT" null="true"/>
+						<field name="RESEND_PROV_URL" null="true"/>
+						<field name="RESEND_DESTINATION" null="true"/>
+					</row>
+					<row number="1">
+						<field name="LOGID">135805</field>
+						<field name="MESSAGEID">6cadd7ece3314bd48d74665286653617</field>
+						<field name="CONVERSATIONID">6cadd7ece3314bd48d74665286653617</field>
+						<field name="CPAID">I911500017</field>
+						<field name="BUSINESSDOMAIN">Infrastructure</field>
+						<field name="SERVICENAME">FxF3</field>
+						<field name="SERVICECONTEXT">SubmitTransfer</field>
+						<field name="SERVICECONTEXTVERSION">2</field>
+						<field name="OPERATIONNAME">StartTransferExecuted</field>
+						<field name="OPERATIONVERSION">2</field>
+						<field name="APPLICATIONNAME">FxF3.2</field>
+						<field name="APPLICATIONFUNCTION">StartTransferExecuted</field>
+						<field name="LOG_TIMESTAMP">2015-09-15 15:50:50</field>
+						<field name="SENDERID" null="true"/>
+						<field name="CRE_TIMESTAMP">2020-09-08 17:08:37</field>
+						<field name="ERROR_CODE">ERR6005</field>
+						<field name="ERROR_REASON">Backend system failure response</field>
+						<field name="ERROR_TEXT" null="true"/>
+						<field name="MESSAGE">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;jms1:ActivityOutput xmlns:jms1="http://www.tibco.com/namespaces/tnt/plugins/jms"&gt;
+    &lt;JMSHeaders&gt;
+        &lt;jms1:JMSDestination&gt;P2P.Infrastructure.TIBCOMFT.Transfer.Request&lt;/jms1:JMSDestination&gt;
+        &lt;jms1:JMSDeliveryMode&gt;PERSISTENT&lt;/jms1:JMSDeliveryMode&gt;
+        &lt;jms1:JMSMessageID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138BB427:216&lt;/jms1:JMSMessageID&gt;
+        &lt;jms1:JMSTimestamp&gt;1442325050210&lt;/jms1:JMSTimestamp&gt;
+        &lt;jms1:JMSExpiration&gt;0&lt;/jms1:JMSExpiration&gt;
+        &lt;jms1:JMSRedelivered&gt;false&lt;/jms1:JMSRedelivered&gt;
+        &lt;jms1:JMSPriority&gt;4&lt;/jms1:JMSPriority&gt;
+        &lt;jms1:JMSCorrelationID&gt;ID:EMS_TST_ESB_P2P_LARGE.205A55DE2B138BB424:198184&lt;/jms1:JMSCorrelationID&gt;
+        &lt;jms1:JMSType&gt;Platform-Response&lt;/jms1:JMSType&gt;
+    &lt;/JMSHeaders&gt;
+    &lt;JMSProperties/&gt;
+    &lt;OtherProperties&gt;
+        &lt;Status&gt;Submit Success&lt;/Status&gt;
+        &lt;ResponseType&gt;TransferStatus&lt;/ResponseType&gt;
+        &lt;ReturnCode&gt;503&lt;/ReturnCode&gt;
+        &lt;InitiatorTransactionID&gt;I911500017&lt;/InitiatorTransactionID&gt;
+        &lt;Message&gt;Open file "E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml" failed 1.  The system cannot find the file specified.&lt;/Message&gt;
+        &lt;NumRecords&gt;0&lt;/NumRecords&gt;
+    &lt;/OtherProperties&gt;
+    &lt;Body&gt;
+        &lt;Body&gt;
+            &lt;ns0:ResponseType xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;TransferStatus&lt;/ns0:ResponseType&gt;
+            &lt;ns0:ServerName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;SRTZZAPP0157&lt;/ns0:ServerName&gt;
+            &lt;ns0:HostName xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;srtzzapp0157.insim.biz&lt;/ns0:HostName&gt;
+            &lt;ns0:NumRecords xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;1&lt;/ns0:NumRecords&gt;
+            &lt;ns0:AuditRecord xmlns:ns0="http://www.tibco.com/MFT/JMS-XMLSchema"&gt;
+                &lt;ns0:AuditType&gt;PlatformServer&lt;/ns0:AuditType&gt;
+                &lt;ns0:AuditID/&gt;
+                &lt;ns0:CKPTInterval&gt;5&lt;/ns0:CKPTInterval&gt;
+                &lt;ns0:CKPTCount/&gt;
+                &lt;ns0:NodeName&gt;SRTZZAPP0157&lt;/ns0:NodeName&gt;
+                &lt;ns0:InitiatorFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis8062954636537196100.xml&lt;/ns0:InitiatorFileName&gt;
+                &lt;ns0:Delimiter&gt;None&lt;/ns0:Delimiter&gt;
+                &lt;ns0:Conversion&gt;Binary&lt;/ns0:Conversion&gt;
+                &lt;ns0:Department/&gt;
+                &lt;ns0:Description&gt;NNT12345-Ibis4Scan&lt;/ns0:Description&gt;
+                &lt;ns0:Encryption/&gt;
+                &lt;ns0:InitiatorTransactionID&gt;I911500017&lt;/ns0:InitiatorTransactionID&gt;
+                &lt;ns0:LocalCTFile/&gt;
+                &lt;ns0:ServerName/&gt;
+                &lt;ns0:ZOSAllocationType/&gt;
+                &lt;ns0:ZOSAllocationPrimary&gt;0&lt;/ns0:ZOSAllocationPrimary&gt;
+                &lt;ns0:ZOSAllocationSecondary&gt;0&lt;/ns0:ZOSAllocationSecondary&gt;
+                &lt;ns0:ZOSRecordFormat/&gt;
+                &lt;ns0:ZOSRecordLength&gt;0&lt;/ns0:ZOSRecordLength&gt;
+                &lt;ns0:ZOSBlocksize&gt;0&lt;/ns0:ZOSBlocksize&gt;
+                &lt;ns0:ZOSUnitName/&gt;
+                &lt;ns0:ZOSVolumeName/&gt;
+                &lt;ns0:ZOSStorageClass/&gt;
+                &lt;ns0:ZOSDataClass/&gt;
+                &lt;ns0:ZOSManagementClass/&gt;
+                &lt;ns0:PPASource1/&gt;
+                &lt;ns0:PPAStatus1/&gt;
+                &lt;ns0:PPAType1/&gt;
+                &lt;ns0:PPAData1/&gt;
+                &lt;ns0:PPAReturnCode1/&gt;
+                &lt;ns0:PPASource2/&gt;
+                &lt;ns0:PPAStatus2/&gt;
+                &lt;ns0:PPAType2/&gt;
+                &lt;ns0:PPAData2/&gt;
+                &lt;ns0:PPAReturnCode2/&gt;
+                &lt;ns0:PPASource3/&gt;
+                &lt;ns0:PPAStatus3/&gt;
+                &lt;ns0:PPAType3/&gt;
+                &lt;ns0:PPAData3/&gt;
+                &lt;ns0:PPAReturnCode3/&gt;
+                &lt;ns0:PPASource4/&gt;
+                &lt;ns0:PPAStatus4/&gt;
+                &lt;ns0:PPAType4/&gt;
+                &lt;ns0:PPAData4/&gt;
+                &lt;ns0:PPAReturnCode4/&gt;
+                &lt;ns0:RemoteCTFile/&gt;
+                &lt;ns0:ResponderFileName&gt;E:\WAS\7.0\wasap01\fxf-work\NNX12345\in\ibis3831649605387339219.xml&lt;/ns0:ResponderFileName&gt;
+                &lt;ns0:SendRecv&gt;Send&lt;/ns0:SendRecv&gt;
+                &lt;ns0:EmailSuccess/&gt;
+                &lt;ns0:EmailFailure/&gt;
+                &lt;ns0:TransferByteCount&gt;0&lt;/ns0:TransferByteCount&gt;
+                &lt;ns0:TransferCompressedByteCount&gt;0&lt;/ns0:TransferCompressedByteCount&gt;
+                &lt;ns0:TransferStartDateTime&gt;2015-09-15T15:50:44&lt;/ns0:TransferStartDateTime&gt;
+                &lt;ns0:TransferEndDateTime&gt;2015-09-15T15:50:44&lt;/ns0:TransferEndDateTime&gt;
+                &lt;ns0:TransferType&gt;File&lt;/ns0:TransferType&gt;
+                &lt;ns0:ProcessName&gt;NNT12345&lt;/ns0:ProcessName&gt;
+                &lt;ns0:UserData&gt;NNT12345-Ibis4Scan&lt;/ns0:UserData&gt;
+                &lt;ns0:TransferStatus&gt;Failed&lt;/ns0:TransferStatus&gt;
+                &lt;ns0:TransferStatusMsg&gt;Open file "E:\WAS\7.0\wasap01\fxf-work\NNX12345\out\ibis3831649605387339219.xml" failed 1.  The system cannot find the file specified.&lt;/ns0:TransferStatusMsg&gt;
+                &lt;ns0:InitiatorUserId&gt;NPATZZAPP0014&lt;/ns0:InitiatorUserId&gt;
+                &lt;ns0:FileWriteMode&gt;CreateReplace&lt;/ns0:FileWriteMode&gt;
+                &lt;ns0:AS2MDNStatus/&gt;
+                &lt;ns0:ProxyStatusMsg/&gt;
+                &lt;ns0:CrlMsg/&gt;
+                &lt;ns0:MemberCount/&gt;
+                &lt;ns0:NodeClass/&gt;
+                &lt;ns0:ZOSAllocationDirectory/&gt;
+                &lt;ns0:Priority&gt;2&lt;/ns0:Priority&gt;
+                &lt;ns0:RecordCount&gt;0&lt;/ns0:RecordCount&gt;
+                &lt;ns0:NodeType/&gt;
+                &lt;ns0:NTDomain&gt;INSIM&lt;/ns0:NTDomain&gt;
+                &lt;ns0:IPPort&gt;46464&lt;/ns0:IPPort&gt;
+                &lt;ns0:ResponderTransactionID/&gt;
+                &lt;ns0:ResponderUserId&gt;INSIM\NPATZZAPP0014&lt;/ns0:ResponderUserId&gt;
+                &lt;ns0:SSLFlag&gt;No&lt;/ns0:SSLFlag&gt;
+                &lt;ns0:SSLPortNum/&gt;
+                &lt;ns0:TempError&gt;N&lt;/ns0:TempError&gt;
+                &lt;ns0:TransferCommand/&gt;
+                &lt;ns0:Compression&gt;None&lt;/ns0:Compression&gt;
+                &lt;ns0:TrDiagCode&gt;8&lt;/ns0:TrDiagCode&gt;
+                &lt;ns0:TrReturnCode/&gt;
+                &lt;ns0:TrSeverity&gt;01&lt;/ns0:TrSeverity&gt;
+                &lt;ns0:TryCount&gt;1&lt;/ns0:TryCount&gt;
+                &lt;ns0:MaxTryCount&gt;1&lt;/ns0:MaxTryCount&gt;
+                &lt;ns0:UNIXFilePermissions/&gt;
+                &lt;ns0:VersionNum&gt;7.1.1&lt;/ns0:VersionNum&gt;
+            &lt;/ns0:AuditRecord&gt;
+        &lt;/Body&gt;
+    &lt;/Body&gt;
+&lt;/jms1:ActivityOutput&gt;</field>
+						<field name="RESEND_CONN_FACT" null="true"/>
+						<field name="RESEND_PROV_URL" null="true"/>
+						<field name="RESEND_DESTINATION" null="true"/>
+					</row>
+				</rowset>
+			</result>
+		</result>
+	</results>
+</manageDatabaseRLY>

@@ -1,0 +1,26 @@
+<result>
+	<fielddefinition>
+	<field name="BUSINESSDOMAIN" type="VARCHAR" columnDisplaySize="30" precision="30" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="SERVICENAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="SERVICECONTEXT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="APPLICATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="OPERATIONNAME" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="MESSAGE" type="BLOB" columnDisplaySize="4000" precision="-1" scale="0" isCurrency="false" columnTypeName="BLOB" columnClassName="oracle.jdbc.OracleBlob" />
+	<field name="RESEND_CONN_FACT" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="RESEND_PROV_URL" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	<field name="RESEND_DESTINATION" type="VARCHAR" columnDisplaySize="255" precision="255" scale="0" isCurrency="false" columnTypeName="VARCHAR2" columnClassName="java.lang.String" />
+	</fielddefinition>
+	<rowset>
+	<row number="0">
+	<field name="BUSINESSDOMAIN">CustomerAdministration</field>
+	<field name="SERVICENAME">CustomerProcessData</field>
+	<field name="SERVICECONTEXT" null="true" />
+	<field name="APPLICATIONNAME">CustomerProcessData</field>
+	<field name="OPERATIONNAME" null="true" />
+	<field name="MESSAGE">&lt;test/&gt;</field>
+	<field name="RESEND_CONN_FACT">TLNHN_Queue_ConnectionFactory</field>
+	<field name="RESEND_PROV_URL">tibjmsnaming://TSTESBLARGEDC1.insim.biz:37243,tibjmsnaming://TSTESBLARGEDC2.insim.biz:37243</field>
+	<field name="RESEND_DESTINATION">ESB.CustomerAdministration.TS.Customer.CustomerProcessData.1.ManageCase.1.Request</field>
+	</row>
+	</rowset>
+	</result>

@@ -1,0 +1,202 @@
+<module>
+	<adapter
+		name="GetManagementRole"
+		description="Api for getting the management role(s) for this user"
+	>
+		<receiver
+			name="GetManagementRole"
+			
+		>
+			<listener
+				name="GetManagementRole"
+				className="nl.nn.adapterframework.http.rest.ApiListener"
+				uriPattern="getavailableroles"/>
+		</receiver>
+		<pipeline firstPipe="GetPrincipalName">
+			<exits>
+				<exit
+					name="EXIT"
+					state="success"
+					code="201" />
+				<exit
+					name="ERROR"
+					state="error"
+					code="500" />
+			</exits>
+			<pipe
+				name="GetPrincipalName"
+				className="nl.nn.adapterframework.pipes.GetPrincipalPipe"
+				storeResultInSessionKey="principal"
+				preserveInput="true"
+			>
+				<forward
+					name="success"
+					path="getRoles" />
+			</pipe>
+			<SenderPipe
+				name="getRoles"
+			>
+				<IbisLocalSender
+					name="getRoles"
+					javaListener="checkForStubAndReturnRoles"
+				>
+					<param
+						name="principal"
+						sessionKey="principal" />
+				</IbisLocalSender>
+				<forward
+					name="success"
+					path="EXIT"
+				/>
+			</SenderPipe>
+		</pipeline>
+	</adapter>
+	<adapter
+		name="checkForStubAndReturnRoles"
+		description="Returns a list of available Claimroles for this user"
+	>
+		<receiver
+			name="checkForStubAndReturnRoles"
+			
+		>
+			<listener
+				name="checkForStubAndReturnRoles"
+				className="nl.nn.adapterframework.receivers.JavaListener" />
+		</receiver>
+		<pipeline firstPipe="GetManagementRoles">
+			<exits>
+				<exit
+					name="EXIT"
+					state="success"
+					code="201" />
+				<exit
+					name="ERROR"
+					state="error"
+					code="500" />
+			</exits>
+			<FixedResultPipe
+				name="GetManagementRoles"
+				filename="Claimroles/Claimroles.xml"
+			>
+				<forward
+					name="success"
+					path="CheckLdapForEachRole" />
+			</FixedResultPipe>
+			<!--Makes it possible to stub LDAP environment if it's not available -->
+			<pipe
+				name="CheckLdapForEachRole"
+				className="nl.nn.adapterframework.pipes.ForEachChildElementPipe"
+				elementXPathExpression="roles/role"
+			>
+				<sender
+					name="checkLdap"
+					active="!${stubLdapConnection.active}"
+					className="nl.nn.adapterframework.senders.IbisLocalSender"
+					javaListener="CheckLdap"
+				>
+					<param
+						name="principal"
+						sessionKey="principal" />
+				</sender>
+				<sender
+					name="ReturnFoundRole"
+					className="nl.nn.adapterframework.senders.XsltSender"
+					active="${stubLdapConnection.active}"
+					styleSheetName="xml/xsl/extractrole.xsl"
+				>
+					<param
+						name="ldapstring"
+						xpathExpression="role" />
+				</sender>
+				<forward
+					name="success"
+					path="ReturnFoundRoles" />
+			</pipe>
+			<pipe
+				name="ReturnFoundRoles"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				styleSheetName="xml/xsl/wrapFoundRoles.xsl"
+			>
+				<forward
+					name="succes"
+					path="EXIT" />
+			</pipe>
+		</pipeline>
+	</adapter>
+	<adapter name="CheckLdap">
+		<receiver
+			
+			name="CheckLdap"
+		>
+			<listener
+				className="nl.nn.adapterframework.receivers.JavaListener"
+				name="CheckLdap" />
+		</receiver>
+		<pipeline firstPipe="getDnFind">
+			<exits>
+				<exit
+					name="EXIT"
+					state="success" />
+			</exits>
+			<pipe
+				name="getDnFind"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				xpathExpression="replace('${ldap.dn.user}','%principal%',$principal)"
+				xsltVersion="2"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+				storeResultInSessionKey="dnFind"
+			>
+				<param
+					name="principal"
+					sessionKey="principal" />
+				<forward
+					name="success"
+					path="IsUserMemberOfClaimRole" />
+			</pipe>
+			<pipe
+				name="IsUserMemberOfClaimRole"
+				className="nl.nn.adapterframework.ldap.LdapFindMemberPipe"
+				exceptionForwardName="notFound"
+				host="insim.biz"
+				port="636"
+				useSsl="true"
+				authAlias="${esb.ff.alias}"
+			>
+				<param
+					name="dnSearchIn"
+					xpathExpression="role"
+					sessionKey="originalMessage" />
+				<param
+					name="dnFind"
+					sessionKey="dnFind" />
+				<forward
+					name="success"
+					path="ReturnFoundRole" />
+				
+			</pipe>
+			<!-- Returns the name of the found claimrole and converts it to a readable form -->
+			<pipe
+				name="ReturnFoundRole"
+				className="nl.nn.adapterframework.pipes.XsltPipe"
+				getInputFromFixedValue="&lt;dummy/&gt;"
+				styleSheetName="xml/xsl/extractrole.xsl"
+			>
+				<param
+					name="ldapstring"
+					xpathExpression="role"
+					sessionKey="originalMessage" />
+				<forward
+					name="success"
+					path="EXIT" />
+			</pipe>
+			<FixedResultPipe
+				name="notFound"
+				returnString="&lt;role/&gt;"
+			>
+				<forward
+					name="success"
+					path="EXIT" />
+			</FixedResultPipe>
+		</pipeline>
+	</adapter>
+</module>
