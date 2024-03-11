@@ -1,10 +1,10 @@
 <project default="restart">
     <target name="restart">
         <basename property="project.dir" file="${basedir}"/>
-        <condition property="exe" value="../frank-runner/restart.bat" else="/bin/bash">
+        <condition property="exe" value="../../frank-runner/restart.bat" else="/bin/bash">
             <os family="windows"/>
         </condition>
-        <condition property="arg" value="../frank-runner/restart.sh" else="">
+        <condition property="arg" value="../../frank-runner/restart.sh" else="">
             <os family="unix"/>
         </condition>
         <exec executable="${exe}" vmlauncher="false" failonerror="true">

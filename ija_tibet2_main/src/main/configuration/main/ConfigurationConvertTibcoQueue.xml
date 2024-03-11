@@ -1,0 +1,31 @@
+<module>
+    <Adapter name="ConvertTibcoQueue" description="Convert Tibco XML to JSON">
+
+        <Receiver name="ConvertTibcoQueue">
+            <JavaListener name="ConvertTibcoQueue" serviceName="conversionMagic" />
+        </Receiver>
+
+        <Pipeline firstPipe="retrieveFile">
+            <Exits>
+                <Exit name="Exit" state="SUCCESS" />
+            </Exits>
+            <LocalFileSystemPipe name="retrieveFile"
+                action="read" 
+                filename="//showTibcoQueues_ESB_FF.xml"> 
+                <Forward name="success" path="convertFile" />              
+            </LocalFileSystemPipe>
+            <JsonPipe name="convertFile"
+                direction="XML2JSON">                
+                <Forward name="success" path="storeFile" />
+            </JsonPipe>
+            <LocalFileSystemPipe name="storeFile"
+                action="write" 
+                filename="//showTibcoQueues_ESB_FF.json"
+                overwrite="true"> 
+                <Forward name="success" path="Exit"/>              
+            </LocalFileSystemPipe>
+
+        </Pipeline>
+    </Adapter>
+
+</module>
